@@ -9,6 +9,7 @@ public class EnemyMovement : MonoBehaviour
     private Transform target;
     private int wavePointIndex = 0;
     private WaypointsContainer waypoints;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class EnemyMovement : MonoBehaviour
     {
         Vector3 direction = target.position - transform.position;
         transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
-        if (Vector3.Distance(transform.position, target.position) <= 0.2f)
+        if (Vector3.Distance(transform.position, target.position) <= 0.4f)
         {
             GetNextWaypoint();
         }
