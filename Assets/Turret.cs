@@ -7,6 +7,7 @@ public class Turret : MonoBehaviour
 
     private Transform target;
     public float range = 15f;
+    public float turnSpeed = 5f;
     public string targetTag = "Enemy";
     public Transform partToRotate;
     // Start is called before the first frame update
@@ -17,19 +18,19 @@ public class Turret : MonoBehaviour
 
     void UpdateTarget()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(targetTag);
-        float shortestDistance = Mathf.Infinity;
+        var enemies = GameObject.FindGameObjectsWithTag(targetTag);
+        var shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
-        foreach(var enemy in enemies)
+        foreach (var enemy in enemies)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if(distanceToEnemy < shortestDistance)
+            var distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distanceToEnemy < shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
                 nearestEnemy = enemy;
             }
         }
-        if(nearestEnemy != null && shortestDistance <= range)
+        if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
         }
@@ -42,13 +43,19 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target == null) return;
-
-        var dir = target.position - transform.position;
-        var lookRotation = Quaternion.LookRotation(dir);
-        var rotation = lookRotation.eulerAngles;
-        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        if (target == null)
+        {
+            return;
+        }
+        else
+        {
+            var dir = target.position - transform.position;
+            var lookRotation = Quaternion.LookRotation(dir);
+            var rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+            partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        }
     }
+
 
     private void OnDrawGizmosSelected()
     {
