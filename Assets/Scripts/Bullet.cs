@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(target == null)
+        if (target == null)
         {
             Destroy(gameObject);
         }
@@ -27,10 +27,15 @@ public class Bullet : MonoBehaviour
         var direction = target.position - transform.position;
         var distanceThisFrame = speed * Time.deltaTime;
 
-        if(direction.magnitude <= distanceThisFrame)
+        if (direction.magnitude <= distanceThisFrame)
         {
             HitTarget();
         }
+        MoveToTarget(direction, distanceThisFrame);
+    }
+
+    private void MoveToTarget(Vector3 direction, float distanceThisFrame)
+    {
         transform.Translate(direction.normalized * distanceThisFrame, Space.World);
     }
 

@@ -22,22 +22,37 @@ public class EnemyMovement : MonoBehaviour
     {
         Vector3 direction = target.position - transform.position;
         transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
-        if (Vector3.Distance(transform.position, target.position) <= 0.4f)
+        if (HasReachedCurrentWayPoint())
         {
             GetNextWaypoint();
         }
     }
 
+    private bool HasReachedCurrentWayPoint()
+    {
+        return Vector3.Distance(transform.position, target.position) <= 0.4;
+    }
+
+    private bool HasNotReachedLastWaypoint()
+    {
+        return wavePointIndex < waypoints.points.Length - 1;
+    }
+
     private void GetNextWaypoint()
     {
-        if (wavePointIndex < waypoints.points.Length - 1)
+        if (HasNotReachedLastWaypoint())
         {
-            wavePointIndex++;
-            target = waypoints.points[wavePointIndex];
+            SetTargetToNextWaypoint();
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    private void SetTargetToNextWaypoint()
+    {
+        wavePointIndex++;
+        target = waypoints.points[wavePointIndex];
     }
 }
