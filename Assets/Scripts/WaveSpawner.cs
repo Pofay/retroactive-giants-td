@@ -15,9 +15,14 @@ public class WaveSpawner : MonoBehaviour
         if (countdown < 0f)
         {
             StartCoroutine(SpawnWave());
-            countdown = timeBetweenWaves;
+            ResetCountdown();
         }
         countdown -= Time.deltaTime;
+    }
+
+    void ResetCountdown()
+    {
+        countdown = timeBetweenWaves;
     }
 
     IEnumerator SpawnWave()

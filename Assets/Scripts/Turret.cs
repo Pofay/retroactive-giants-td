@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Screams to be called TurretTargeting
 public class Turret : MonoBehaviour
 {
 
@@ -31,6 +32,8 @@ public class Turret : MonoBehaviour
         var enemies = GameObject.FindGameObjectsWithTag(targetTag);
         var shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
+        // Bloody hell.. can't refactor
+        // It's all about finding the nearest enemy that's withing range.
         foreach (var enemy in enemies)
         {
             var distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
@@ -40,14 +43,24 @@ public class Turret : MonoBehaviour
                 nearestEnemy = enemy;
             }
         }
-        if (nearestEnemy != null && shortestDistance <= range)
+        if (nearestEnemy != null && IsInRange(shortestDistance))
         {
-            target = nearestEnemy.transform;
+            LockOn(nearestEnemy.transform);
         }
         else
         {
             target = null;
         }
+    }
+
+    bool IsInRange(float distance)
+    {
+        return distance <= range;
+    }
+    
+    void LockOn(Transform enemy)
+    {
+        target = enemy;
     }
 
     // Update is called once per frame
@@ -59,18 +72,24 @@ public class Turret : MonoBehaviour
         }
         else
         {
-            var dir = target.position - transform.position;
-            var lookRotation = Quaternion.LookRotation(dir);
-            var rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-            partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+            LookAtCurrentTarget();
         }
 
-        if(fireCountdown <= 0f)
+        // Should be placed in a Different Script
+        if (fireCountdown <= 0f)
         {
             Shoot();
             fireCountdown = 1f / fireRate;
         }
         fireCountdown -= Time.deltaTime;
+    }
+
+    private void LookAtCurrentTarget()
+    {
+        var dir = target.position - transform.position;
+        var lookRotation = Quaternion.LookRotation(dir);
+        var rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
     private void Shoot()
