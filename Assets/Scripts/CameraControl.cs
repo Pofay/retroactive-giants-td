@@ -8,6 +8,8 @@ public class CameraControl : MonoBehaviour
     public float panSpeed = 30f;
     public float panBorderThickness = 10f;
     public float scrollSpeed = 5f;
+    public float maxY = 80f;
+    public float minY = 10f;
 
     private bool doMovement = true;
 
@@ -43,11 +45,17 @@ public class CameraControl : MonoBehaviour
             transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
         }
 
+        ScrollCamera();
+    }
+
+    private void ScrollCamera()
+    {
         var scroll = Input.GetAxis("Mouse ScrollWheel");
         var currentPos = transform.position;
         Debug.Log(scroll);
 
         currentPos.y -= (scroll * 1000) * scrollSpeed * Time.deltaTime;
+        currentPos.y = Mathf.Clamp(currentPos.y, minY, maxY);
         transform.position = currentPos;
     }
 }
