@@ -28,6 +28,12 @@ public class CameraControl : MonoBehaviour
 
     private void GetInput()
     {
+        MoveCamera();
+        ScrollCamera();
+    }
+
+    private void MoveCamera()
+    {
         if (Input.GetKey("w") || Input.mousePosition.y >= Screen.height - panBorderThickness)
         {
             transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World);
@@ -44,8 +50,6 @@ public class CameraControl : MonoBehaviour
         {
             transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
         }
-
-        ScrollCamera();
     }
 
     private void ScrollCamera()
