@@ -11555,6 +11555,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1817914095}
     m_Modifications:
+    - target: {fileID: 854032758466701197, guid: 423f9d4ac74f4614d8e7927fe815b5cb,
+        type: 3}
+      propertyPath: hoverColor.r
+      value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 854032758466701197, guid: 423f9d4ac74f4614d8e7927fe815b5cb,
+        type: 3}
+      propertyPath: hoverColor.g
+      value: 0.4723656
+      objectReference: {fileID: 0}
+    - target: {fileID: 854032758466701197, guid: 423f9d4ac74f4614d8e7927fe815b5cb,
+        type: 3}
+      propertyPath: hoverColor.b
+      value: 0.4723656
+      objectReference: {fileID: 0}
     - target: {fileID: 4188500823106710649, guid: 423f9d4ac74f4614d8e7927fe815b5cb,
         type: 3}
       propertyPath: m_Name
@@ -18705,6 +18720,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1845434739872847171, guid: 423f9d4ac74f4614d8e7927fe815b5cb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 423f9d4ac74f4614d8e7927fe815b5cb, type: 3}
