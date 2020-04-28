@@ -10,6 +10,7 @@ public class Node : MonoBehaviour
     private TurretConstructor turretConstructor;
     private Color startColor;
     private Renderer materialRenderer;
+    private Vector3 positionOffset;
 
     private void OnMouseEnter()
     {
@@ -41,8 +42,7 @@ public class Node : MonoBehaviour
 
     private void Build(GameObject turrret)
     {
-        var turretPosition = transform.position;
-        turretPosition.y = 0.5f;
+        var turretPosition = transform.position + positionOffset;
         Instantiate(turret, turretPosition, transform.rotation);
     }
 
@@ -52,5 +52,6 @@ public class Node : MonoBehaviour
         materialRenderer = GetComponent<Renderer>();
         startColor = materialRenderer.material.color;
         turretConstructor = FindObjectOfType<TurretConstructor>();
+        positionOffset = new Vector3(0, 0.5f, 0);
     }
 }
