@@ -24,7 +24,7 @@ public class EnemyMovement : MonoBehaviour
         transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
         if (HasReachedCurrentWayPoint())
         {
-            GetNextWaypoint();
+            SetNextWaypoint();
         }
     }
 
@@ -38,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
         return wavePointIndex < waypoints.points.Length - 1;
     }
 
-    private void GetNextWaypoint()
+    private void SetNextWaypoint()
     {
         if (HasNotReachedLastWaypoint())
         {
