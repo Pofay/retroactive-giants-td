@@ -23,12 +23,24 @@ public class Node : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (turret != null)
+        if (IsTurretBuiltAlready())
         {
             Debug.Log("Can't Build there.");
         }
+        else
+        {
+            turret = turretConstructor.GetTurretToBuild();
+            Build(turret);
+        }
+    }
 
-        turret = turretConstructor.GetTurretToBuild();
+    private bool IsTurretBuiltAlready()
+    {
+        return turret != null; 
+    }
+
+    private void Build(GameObject turrret)
+    {
         var turretPosition = transform.position;
         turretPosition.y = 0.5f;
         Instantiate(turret, turretPosition, transform.rotation);
