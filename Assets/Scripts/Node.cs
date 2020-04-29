@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class Node : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         if (HasSelectedTurret())
         {
             materialRenderer.material.color = hoverColor;
@@ -22,6 +27,10 @@ public class Node : MonoBehaviour
 
     private void OnMouseExit()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         if (HasSelectedTurret())
         {
             materialRenderer.material.color = startColor;
