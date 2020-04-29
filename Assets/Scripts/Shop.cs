@@ -16,9 +16,9 @@ public class Shop : MonoBehaviour
         turretConstructor.SetTurretToConstruct(0);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PurchaseMissileLauncher()
     {
-        
+        turretConstructor.SetTurretToConstruct(1);
     }
+    
 }

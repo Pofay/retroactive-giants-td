@@ -19,7 +19,7 @@ public class Node : MonoBehaviour
         {
             return;
         }
-        if (HasSelectedTurret())
+        if (IsTurretToBuildNotNull())
         {
             materialRenderer.material.color = hoverColor;
         }
@@ -31,7 +31,7 @@ public class Node : MonoBehaviour
         {
             return;
         }
-        if (HasSelectedTurret())
+        if (IsTurretToBuildNotNull())
         {
             materialRenderer.material.color = startColor;
         }
@@ -45,7 +45,7 @@ public class Node : MonoBehaviour
         }
         else
         {
-            if (HasSelectedTurret())
+            if (IsTurretToBuildNotNull())
             {
                 turret = turretConstructor.GetTurretToBuild();
                 Build(turret);
@@ -53,7 +53,7 @@ public class Node : MonoBehaviour
         }
     }
 
-    private bool HasSelectedTurret()
+    private bool IsTurretToBuildNotNull()
     {
         return turretConstructor.GetTurretToBuild() != null;
     }
