@@ -56,8 +56,6 @@ public class CameraControl : MonoBehaviour
     {
         var scroll = Input.GetAxis("Mouse ScrollWheel");
         var currentPos = transform.position;
-        Debug.Log(scroll);
-
         currentPos.y -= (scroll * 1000) * scrollSpeed * Time.deltaTime;
         currentPos.y = Mathf.Clamp(currentPos.y, minY, maxY);
         transform.position = currentPos;
