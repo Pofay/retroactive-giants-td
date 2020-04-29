@@ -14,12 +14,18 @@ public class Node : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        materialRenderer.material.color = hoverColor;
+        if (HasSelectedTurret())
+        {
+            materialRenderer.material.color = hoverColor;
+        }
     }
 
     private void OnMouseExit()
     {
-        materialRenderer.material.color = startColor;
+        if (HasSelectedTurret())
+        {
+            materialRenderer.material.color = startColor;
+        }
     }
 
     private void OnMouseDown()
@@ -30,14 +36,22 @@ public class Node : MonoBehaviour
         }
         else
         {
-            turret = turretConstructor.GetTurretToBuild();
-            Build(turret);
+            if (HasSelectedTurret())
+            {
+                turret = turretConstructor.GetTurretToBuild();
+                Build(turret);
+            }
         }
+    }
+
+    private bool HasSelectedTurret()
+    {
+        return turretConstructor.GetTurretToBuild() != null;
     }
 
     private bool IsTurretBuiltAlready()
     {
-        return turret != null; 
+        return turret != null;
     }
 
     private void Build(GameObject turrret)
