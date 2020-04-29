@@ -5,7 +5,8 @@ using UnityEngine;
 public class TurretConstructor : MonoBehaviour
 {
 
-    public GameObject standardTurretPrefab;
+    public GameObject[] turretPrefabs;
+
     private GameObject turretToBuild;
 
     public GameObject GetTurretToBuild()
@@ -13,8 +14,8 @@ public class TurretConstructor : MonoBehaviour
         return turretToBuild;
     }
 
-    void Start()
+    public void SetTurretToConstruct(int turretIndex)
     {
-        turretToBuild = standardTurretPrefab; 
+        turretToBuild = turretPrefabs[turretIndex];
     }
 }
