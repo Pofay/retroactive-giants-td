@@ -69,7 +69,6 @@ public class Node : MonoBehaviour
         Instantiate(turret, turretPosition, transform.rotation);
     }
 
-    // Start is called before the first frame update
     void Awake()
     {
         materialRenderer = GetComponent<Renderer>();

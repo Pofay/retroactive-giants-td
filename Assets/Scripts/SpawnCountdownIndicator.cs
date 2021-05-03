@@ -18,7 +18,4 @@ public class SpawnCountdownIndicator : MonoBehaviour
     {
         countdownIndicator.text = Math.Round(spawner.countdown).ToString();
     }
-
-
-
 }
