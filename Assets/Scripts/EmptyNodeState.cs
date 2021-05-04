@@ -8,7 +8,7 @@ public class EmptyNodeState : INodeState
 {
     public void OnPointerDown(Node context)
     {
-        if (context.HasTurretToBuild())
+        if (context.CanBuildTurret())
         {
             context.BuildTurret();
             context.MakeMaterialDefault();
@@ -18,7 +18,7 @@ public class EmptyNodeState : INodeState
 
     public void OnPointerEnter(Node context)
     {
-        if(context.HasTurretToBuild())
+        if(context.CanBuildTurret())
         {
             context.MakeMaterialGreen();
         }

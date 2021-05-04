@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
@@ -23,6 +20,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         turretConstructor = FindObjectOfType<TurretConstructor>();
         positionOffset = new Vector3(0, 0.5f, 0);
     }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         currentState.OnPointerEnter(this);
@@ -40,9 +38,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void BuildTurret()
     {
-        var turret = turretConstructor.GetTurretToBuild();
-        var turretPosition = transform.position + positionOffset;
-        Instantiate(turret, turretPosition, transform.rotation);
+        turretConstructor.BuildTurret(this, positionOffset);
     }
 
     public void MakeMaterialDefault()
@@ -60,8 +56,8 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         currentState = state;
     }
 
-    public bool HasTurretToBuild()
+    public bool CanBuildTurret()
     {
-        return turretConstructor.GetTurretToBuild() != null;
+        return turretConstructor.CanBuildTurret();
     }
 }
