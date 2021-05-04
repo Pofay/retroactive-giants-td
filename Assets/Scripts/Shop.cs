@@ -12,7 +12,6 @@ public class Shop : MonoBehaviour
     }
     public void PurchaseStandardTurret()
     {
-        Debug.Log("Standard Turret Purchased");
         turretConstructor.SetTurretToConstruct(0);
     }
 
