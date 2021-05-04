@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -37,10 +35,5 @@ public class PlayerStats : MonoBehaviour
     public bool HasEnoughCurrencyForTurret(Turret t)
     {
         return currency >= t.cost;
-    }
-
-    void Update()
-    {
-        Debug.Log(string.Format("Currency: {0}", currency));
     }
 }
