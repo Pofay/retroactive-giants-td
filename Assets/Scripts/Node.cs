@@ -15,6 +15,14 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     private Vector3 positionOffset;
     private INodeState currentState;
 
+    void Awake()
+    {
+        currentState = new EmptyNodeState();
+        materialRenderer = GetComponent<Renderer>();
+        startColor = materialRenderer.material.color;
+        turretConstructor = FindObjectOfType<TurretConstructor>();
+        positionOffset = new Vector3(0, 0.5f, 0);
+    }
     public void OnPointerEnter(PointerEventData eventData)
     {
         currentState.OnPointerEnter(this);
@@ -55,14 +63,5 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     public bool HasTurretToBuild()
     {
         return turretConstructor.GetTurretToBuild() != null;
-    }
-
-    void Awake()
-    {
-        currentState = new EmptyNodeState();
-        materialRenderer = GetComponent<Renderer>();
-        startColor = materialRenderer.material.color;
-        turretConstructor = FindObjectOfType<TurretConstructor>();
-        positionOffset = new Vector3(0, 0.5f, 0);
     }
 }
