@@ -15,17 +15,9 @@ public class CameraControl : MonoBehaviour
     private bool doMovement = true;
     private Vector2 mousePosition;
 
-    // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    doMovement = !doMovement;
-        //}
-        //if (!doMovement)
-        //    return;
         MoveCamera(mousePosition);
-
     }
 
     private void GetInput()
