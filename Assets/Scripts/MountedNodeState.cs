@@ -2,16 +2,18 @@
 {
     public void OnPointerDown(Node context)
     {
-        // Does nothing?
+        // Show sell/upgrade prompt
     }
 
     public void OnPointerEnter(Node context)
     {
-        // Show sell/upgrade prompt
+        // Change material to something else
+        context.MakeMaterialGreen();
     }
 
-    public void OnPointerExit(Node node)
+    public void OnPointerExit(Node context)
     {
-        // Unshow sell/upgrade prompt
+        // Back to Material Default
+        context.MakeMaterialDefault();
     }
 }
