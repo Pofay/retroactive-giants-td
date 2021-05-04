@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Node : MonoBehaviour
+public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
     public Color hoverColor;
     public GameObject turret;
@@ -13,31 +13,23 @@ public class Node : MonoBehaviour
     private Renderer materialRenderer;
     private Vector3 positionOffset;
 
-    private void OnMouseEnter()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            return;
-        }
         if (IsTurretToBuildNotNull())
         {
             materialRenderer.material.color = hoverColor;
         }
     }
 
-    private void OnMouseExit()
+    public void OnPointerExit(PointerEventData eventData)
     {
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            return;
-        }
         if (IsTurretToBuildNotNull())
         {
             materialRenderer.material.color = startColor;
         }
     }
 
-    private void OnMouseDown()
+    public void OnPointerDown(PointerEventData eventData)
     {
         if (IsTurretBuiltAlready())
         {
@@ -76,4 +68,6 @@ public class Node : MonoBehaviour
         turretConstructor = FindObjectOfType<TurretConstructor>();
         positionOffset = new Vector3(0, 0.5f, 0);
     }
+
+
 }
