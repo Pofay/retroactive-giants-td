@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -8,66 +9,60 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     public Color hoverColor;
     public GameObject turret;
 
+    private Renderer materialRenderer;
     private TurretConstructor turretConstructor;
     private Color startColor;
-    private Renderer materialRenderer;
     private Vector3 positionOffset;
+    private INodeState currentState;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (IsTurretToBuildNotNull())
-        {
-            materialRenderer.material.color = hoverColor;
-        }
+        currentState.OnPointerEnter(this);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (IsTurretToBuildNotNull())
-        {
-            materialRenderer.material.color = startColor;
-        }
+        currentState.OnPointerExit(this);
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (IsTurretBuiltAlready())
-        {
-            Debug.Log("Can't Build there.");
-        }
-        else
-        {
-            if (IsTurretToBuildNotNull())
-            {
-                turret = turretConstructor.GetTurretToBuild();
-                Build(turret);
-            }
-        }
+        currentState.OnPointerDown(this);
     }
 
-    private bool IsTurretToBuildNotNull()
+    public void BuildTurret()
     {
-        return turretConstructor.GetTurretToBuild() != null;
-    }
-
-    private bool IsTurretBuiltAlready()
-    {
-        return turret != null;
-    }
-
-    private void Build(GameObject turrret)
-    {
+        var turret = turretConstructor.GetTurretToBuild();
         var turretPosition = transform.position + positionOffset;
         Instantiate(turret, turretPosition, transform.rotation);
     }
 
+    public void MakeMaterialDefault()
+    {
+        materialRenderer.material.color = startColor;
+    }
+
+    public void MakeMaterialGreen()
+    {
+        materialRenderer.material.color = hoverColor;
+    }
+
+    public void SetState(INodeState state)
+    {
+        currentState = state;
+    }
+
+    public bool HasTurretToBuild()
+    {
+        return turretConstructor.GetTurretToBuild() != null;
+    }
+
     void Awake()
     {
+        currentState = new EmptyNodeState();
         materialRenderer = GetComponent<Renderer>();
         startColor = materialRenderer.material.color;
         turretConstructor = FindObjectOfType<TurretConstructor>();
         positionOffset = new Vector3(0, 0.5f, 0);
     }
-
-
 }
