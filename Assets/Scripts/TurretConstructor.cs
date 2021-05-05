@@ -12,14 +12,18 @@ public class TurretConstructor : MonoBehaviour
     private PlayerStats playerStats;
     private GameObject turretToBuild;
 
+    public GameObject[] AvailableTurrets => turretPrefabs;
+    
+
     void Awake()
     {
         playerStats = GetComponent<PlayerStats>();
     }
 
+
     public bool CanBuildTurret()
     {
-        if(turretToBuild != null)
+        if (turretToBuild != null)
         {
             var t = turretToBuild.GetComponent<Turret>();
             return playerStats.HasEnoughCurrencyForTurret(t);

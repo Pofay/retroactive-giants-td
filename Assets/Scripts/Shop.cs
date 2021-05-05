@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Shop : MonoBehaviour
@@ -10,6 +11,18 @@ public class Shop : MonoBehaviour
     {
         turretConstructor = FindObjectOfType<TurretConstructor>();
     }
+
+    void Start()
+    {
+        var textComponents = GetComponentsInChildren<TextMeshProUGUI>();
+        var turretsGO = turretConstructor.AvailableTurrets;
+        for (var i = 0; i < turretsGO.Length; i++)
+        {
+            var turret = turretsGO[i].GetComponent<Turret>();
+            textComponents[i].text = string.Format("$ {0}", turret.cost.ToString());
+        }
+    }
+
     public void PurchaseStandardTurret()
     {
         turretConstructor.SetTurretToConstruct(0);
@@ -19,5 +32,5 @@ public class Shop : MonoBehaviour
     {
         turretConstructor.SetTurretToConstruct(1);
     }
-    
+
 }
