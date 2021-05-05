@@ -998,8 +998,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 65.8, y: -30.315}
-  m_SizeDelta: {x: 109.74768, y: 32.899567}
+  m_AnchoredPosition: {x: 107.94, y: -30.315}
+  m_SizeDelta: {x: 194.02966, y: 32.899567}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &125113244
 MonoBehaviour:
@@ -1086,7 +1086,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0.4750061, w: 0}
+  m_margin: {x: 0, y: 0, z: 0.4749756, w: 0}
   m_textInfo:
     textComponent: {fileID: 125113244}
     characterCount: 9
@@ -10545,6 +10545,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currency: 500
   lives: 20
+--- !u!114 &1166153258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166153254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dc719d5fdb3e7247abea1251d02a25a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currencyText: {fileID: 125113244}
+  livesText: {fileID: 787845761}
+  stats: {fileID: 0}
 --- !u!4 &1179182258 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 890650871868319326, guid: 97c3104e4459e6e49bd49537e5e15f5e,
@@ -11411,8 +11426,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 101, y: 46}
-  m_SizeDelta: {x: 163.9997, y: 60.629425}
+  m_AnchoredPosition: {x: 125.63, y: 34.056}
+  m_SizeDelta: {x: 213.25897, y: 60.629425}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1223800538
 MonoBehaviour:
