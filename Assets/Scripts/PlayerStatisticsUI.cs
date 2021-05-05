@@ -27,4 +27,10 @@ public class PlayerStatisticsUI : MonoBehaviour
     {
         livesText.text = string.Format("Lives: {0}", lives);
     }
+
+    void OnDestroy()
+    {
+        stats.OnCurrencyChange -= ShowCurrency;
+        stats.OnLivesChange -= ShowLives;
+    }
 }
