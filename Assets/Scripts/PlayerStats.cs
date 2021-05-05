@@ -10,12 +10,6 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private int currency = 500;
     [SerializeField] private int lives = 20;
 
-    void Awake()
-    {
-        OnLivesChange?.Invoke(lives);
-        OnCurrencyChange?.Invoke(currency);
-    }
-
     public void ReduceCurrency(int amount)
     {
         if (currency > 0)

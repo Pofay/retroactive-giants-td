@@ -16,6 +16,8 @@ public class PlayerStatisticsUI : MonoBehaviour
         stats = GetComponent<PlayerStats>();
         stats.OnLivesChange += ShowLives;
         stats.OnCurrencyChange += ShowCurrency;
+        stats.AddCurrency(0);
+        stats.AddLives(0);
     }
 
     private void ShowCurrency(int currency)
