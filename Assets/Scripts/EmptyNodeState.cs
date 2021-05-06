@@ -18,7 +18,7 @@ public class EmptyNodeState : INodeState
 
     public void OnPointerEnter(Node context)
     {
-        if(context.CanBuildTurret())
+        if (context.CanBuildTurret())
         {
             context.MakeMaterialGreen();
         }
@@ -27,6 +27,10 @@ public class EmptyNodeState : INodeState
     public void OnPointerExit(Node context)
     {
         context.MakeMaterialDefault();
+    }
+
+    public void SellTurret(Node context)
+    {
     }
 }
 

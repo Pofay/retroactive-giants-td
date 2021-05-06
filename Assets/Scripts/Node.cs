@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
@@ -11,6 +12,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     private Color startColor;
     private Vector3 positionOffset;
     private INodeState currentState;
+    private TurretPromptUI turretPrompt;
 
     void Awake()
     {
@@ -19,8 +21,10 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         startColor = materialRenderer.material.color;
         turretConstructor = FindObjectOfType<TurretConstructor>();
         positionOffset = new Vector3(0, 0.5f, 0);
+        turretPrompt = FindObjectOfType<TurretPromptUI>();
     }
 
+    #region State forwarding functions
     public void OnPointerEnter(PointerEventData eventData)
     {
         currentState.OnPointerEnter(this);
@@ -35,6 +39,14 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     {
         currentState.OnPointerDown(this);
     }
+
+    public void SellTurret()
+    {
+        currentState.SellTurret(this);
+        turretPrompt.DetachButtonEvents();
+        HideTurretPrompt();
+    }
+    #endregion
 
     public void BuildTurret()
     {
@@ -63,14 +75,19 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void ShowTurretPrompt()
     {
-        var turretPrompt = FindObjectOfType<TurretPromptUI>();
         turretPrompt.Show();
         turretPrompt.TransferPosition(this.transform.position);
+        turretPrompt.AttachButtonEvents(this);
     }
 
     public void HideTurretPrompt()
     {
-        var turretPrompt = FindObjectOfType<TurretPromptUI>();
+        turretPrompt.DetachButtonEvents();
         turretPrompt.Hide();
+    }
+
+    public void RefundTurret()
+    {
+        Destroy(turret);
     }
 }

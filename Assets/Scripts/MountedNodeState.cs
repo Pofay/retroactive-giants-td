@@ -26,4 +26,10 @@
     {
         context.MakeMaterialDefault();
     }
+
+    public void SellTurret(Node context)
+    {
+        context.SetState(new EmptyNodeState());
+        context.RefundTurret();
+    }
 }
