@@ -10,16 +10,22 @@ public class Turret : MonoBehaviour
     [Header("Currency cost")]
     public int cost;
 
-    [Header("Combat Attributes")]
+    [Header("General Combat Attributes")]
     public float range = 15f;
+
+    [Header("Ballistic Turret Attribute(default)")]
     public float fireRate = 1f;
     public float turnSpeed = 5f;
     private float fireCountdown = 0f;
+    public GameObject bulletPrefab;
+
+    [Header("Laser Turret Attribute")]
+    public bool useLaser = false;
+    public LineRenderer lineRenderer;
 
     [Header("Unity Setup Settings")]
     public string targetTag = "Enemy";
     public Transform partToRotate;
-    public GameObject bulletPrefab;
     public Transform firePoint;
 
     private Transform target;
@@ -60,7 +66,7 @@ public class Turret : MonoBehaviour
     {
         return distance <= range;
     }
-    
+
     void LockOn(Transform enemy)
     {
         target = enemy;
@@ -71,6 +77,10 @@ public class Turret : MonoBehaviour
     {
         if (target == null)
         {
+            if(useLaser)
+            {
+                lineRenderer.enabled = false;
+            }
             return;
         }
         else
@@ -78,13 +88,28 @@ public class Turret : MonoBehaviour
             LookAtCurrentTarget();
         }
 
-        // Should be placed in a Different Script
-        if (fireCountdown <= 0f)
+        if (useLaser)
         {
-            Shoot();
-            fireCountdown = 1f / fireRate;
+            FireLaser();
         }
-        fireCountdown -= Time.deltaTime;
+        else
+        {
+            // Should be placed in a Different Script
+            if (fireCountdown <= 0f)
+            {
+                ShootBallistic();
+                fireCountdown = 1f / fireRate;
+            }
+            fireCountdown -= Time.deltaTime;
+        }
+
+    }
+
+    private void FireLaser()
+    {
+        lineRenderer.enabled = true;
+        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(1, target.position);
     }
 
     private void LookAtCurrentTarget()
@@ -95,7 +120,7 @@ public class Turret : MonoBehaviour
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
-    private void Shoot()
+    private void ShootBallistic()
     {
         var bulletInstance = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bulletInstance.GetComponent<Bullet>().Seek(target);
