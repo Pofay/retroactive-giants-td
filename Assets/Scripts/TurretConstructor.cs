@@ -44,4 +44,10 @@ public class TurretConstructor : MonoBehaviour
         node.turret = turretGO;
         playerStats.ReduceCurrency(turret.cost);
     }
+
+    public void RefundTurret(Turret t)
+    {
+        playerStats.AddCurrency(t.cost);
+        Destroy(t.gameObject);
+    }
 }

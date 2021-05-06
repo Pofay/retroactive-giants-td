@@ -88,6 +88,6 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void RefundTurret()
     {
-        Destroy(turret);
+        turretConstructor.RefundTurret(turret.GetComponent<Turret>());
     }
 }
