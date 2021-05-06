@@ -3,6 +3,7 @@
     public void OnPointerDown(Node context)
     {
         // Show sell/upgrade prompt
+        context.ShowTurretPrompt();
     }
 
     public void OnPointerEnter(Node context)

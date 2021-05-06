@@ -60,4 +60,10 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     {
         return turretConstructor.CanBuildTurret();
     }
+
+    public void ShowTurretPrompt()
+    {
+        var turretPrompt = FindObjectOfType<TurretPromptUI>();
+        turretPrompt.TransferPosition(this.transform.position);
+    }
 }
