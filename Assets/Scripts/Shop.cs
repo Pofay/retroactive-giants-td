@@ -33,4 +33,9 @@ public class Shop : MonoBehaviour
         turretConstructor.SetTurretToConstruct(1);
     }
 
+    public void PurchaseLaserBeamer()
+    {
+        turretConstructor.SetTurretToConstruct(2);
+    }
+
 }
