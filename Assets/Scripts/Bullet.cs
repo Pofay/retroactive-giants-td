@@ -6,9 +6,12 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [Header("Unity Setup Settings")]
-    public float speed = 70f;
-    public float explosiveRadius = 0f;
     public GameObject impactEffect;
+
+    [Header("Game Attributes")]
+    public float damage = 10;
+    public float explosiveRadius = 0f;
+    public float speed = 70f;
 
     private Transform target;
 
@@ -73,7 +76,11 @@ public class Bullet : MonoBehaviour
 
     void Damage(Transform enemy)
     {
-        Destroy(enemy.gameObject);
+        var enemyHealth = enemy.GetComponent<EnemyHealth>();
+        if(enemyHealth != null)
+        {
+            enemyHealth.TakeDamage(damage);
+        }
     }
 
     private void OnDrawGizmosSelected()
