@@ -1,9 +1,19 @@
 ﻿public class MountedNodeState : INodeState
 {
+    private int numberOfClicks = 0;
+
     public void OnPointerDown(Node context)
     {
-        // Show sell/upgrade prompt
-        context.ShowTurretPrompt();
+        if (numberOfClicks == 0)
+        {
+            context.ShowTurretPrompt();
+            numberOfClicks++;
+        }
+        else
+        {
+            context.HideTurretPrompt();
+            numberOfClicks = 0;
+        }
     }
 
     public void OnPointerEnter(Node context)
@@ -14,7 +24,6 @@
 
     public void OnPointerExit(Node context)
     {
-        // Back to Material Default
         context.MakeMaterialDefault();
     }
 }

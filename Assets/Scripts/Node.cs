@@ -64,6 +64,13 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     public void ShowTurretPrompt()
     {
         var turretPrompt = FindObjectOfType<TurretPromptUI>();
+        turretPrompt.Show();
         turretPrompt.TransferPosition(this.transform.position);
+    }
+
+    public void HideTurretPrompt()
+    {
+        var turretPrompt = FindObjectOfType<TurretPromptUI>();
+        turretPrompt.Hide();
     }
 }
