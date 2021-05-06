@@ -44,10 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829cc1bc8da18c446bc074be9f5b84c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
-  explosiveRadius: 5
   impactEffect: {fileID: 1626357405638025137, guid: 1133dd3bc89692b4e95f776f9a397944,
     type: 3}
+  damage: 40
+  explosiveRadius: 5
+  speed: 30
 --- !u!1001 &7695530334005365085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55,11 +56,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5384053081768491057}
     m_Modifications:
-    - target: {fileID: 2271947324457668755, guid: d8f56969c17899145824d283d527bc5c,
-        type: 3}
-      propertyPath: m_Name
-      value: GFX
-      objectReference: {fileID: 0}
     - target: {fileID: 2065118620932992889, guid: d8f56969c17899145824d283d527bc5c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -114,6 +110,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271947324457668755, guid: d8f56969c17899145824d283d527bc5c,
+        type: 3}
+      propertyPath: m_Name
+      value: GFX
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8f56969c17899145824d283d527bc5c, type: 3}
