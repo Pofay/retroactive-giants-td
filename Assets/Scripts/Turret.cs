@@ -15,7 +15,6 @@ public class Turret : MonoBehaviour
 
     [Header("Ballistic Turret Attribute(default)")]
     public float fireRate = 1f;
-    public float turnSpeed = 5f;
     private float fireCountdown = 0f;
     public GameObject bulletPrefab;
 
@@ -34,14 +33,14 @@ public class Turret : MonoBehaviour
 
     [Header("Unity Setup Settings")]
     public string targetTag = "Enemy";
-    public Transform partToRotate;
-    public Transform firePoint;
 
     private Transform target;
+    private TurretRotation turretRotation;
 
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0, 0.5f);
+        turretRotation = GetComponent<TurretRotation>();
     }
 
     void UpdateTarget()
@@ -97,7 +96,7 @@ public class Turret : MonoBehaviour
         }
         else
         {
-            LookAtCurrentTarget();
+            turretRotation.LookAtCurrentTarget(target);
         }
 
         if (useLaser)
@@ -114,7 +113,6 @@ public class Turret : MonoBehaviour
             }
             fireCountdown -= Time.deltaTime;
         }
-
     }
 
     private void FireLaser()
@@ -128,25 +126,17 @@ public class Turret : MonoBehaviour
             impactEffect.Play();
             impactLight.enabled = true;
         }
-        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(0, turretRotation.FirePointPosition);
         lineRenderer.SetPosition(1, target.position);
 
-        var firePointDirection = firePoint.position - target.position;
+        var firePointDirection = turretRotation.FirePointPosition - target.position;
         impactEffect.transform.rotation = Quaternion.LookRotation(firePointDirection);
         impactEffect.transform.position = target.position + firePointDirection.normalized;
     }
 
-    private void LookAtCurrentTarget()
-    {
-        var dir = target.position - transform.position;
-        var lookRotation = Quaternion.LookRotation(dir);
-        var rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-    }
-
     private void ShootBallistic()
     {
-        var bulletInstance = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        var bulletInstance = Instantiate(bulletPrefab, turretRotation.FirePointPosition, turretRotation.FirePointRotation);
         bulletInstance.GetComponent<Bullet>().Seek(target);
     }
 
