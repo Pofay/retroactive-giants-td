@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 278062727865421349}
-  - component: {fileID: 7201634700399082719}
   - component: {fileID: 8477902887674129533}
+  - component: {fileID: 8211546682072322643}
   m_Layer: 0
   m_Name: StandardTurret
   m_TagString: Untagged
@@ -34,31 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7201634700399082719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3855285012939619382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5dce2b9e8881c54d92a8054dbcd691e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 100
-  range: 15
-  fireRate: 1
-  bulletPrefab: {fileID: 219067940391051583, guid: 126526f77a274764990560a4ac4408a7,
-    type: 3}
-  useLaser: 0
-  lineRenderer: {fileID: 0}
-  impactEffect: {fileID: 0}
-  impactLight: {fileID: 0}
-  damageOverTime: 30
-  slowPercentage: 0.2
-  slowDuration: 2
-  targetTag: Enemy
 --- !u!114 &8477902887674129533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,9 +46,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af75c74539c99494f995cc64d79a7880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turnSpeed: 10
   partToRotate: {fileID: 1144727613748256734}
   firePoint: {fileID: 1414575238140577224}
-  turnSpeed: 10
+  targetTag: Enemy
+--- !u!114 &8211546682072322643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3855285012939619382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20fdfb9503de69d47b3ba9ff69ad8d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 100
+  range: 15
+  fireRate: 1
+  bulletPrefab: {fileID: 219067940391051583, guid: 126526f77a274764990560a4ac4408a7,
+    type: 3}
 --- !u!1 &4177915151405840613
 GameObject:
   m_ObjectHideFlags: 0

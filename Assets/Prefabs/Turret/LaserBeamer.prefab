@@ -4844,9 +4844,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2472656565513807372}
-  - component: {fileID: 2962089441412037815}
   - component: {fileID: 467641934}
   - component: {fileID: -5480904722124018271}
+  - component: {fileID: 7288767273182278826}
   m_Layer: 0
   m_Name: LaserBeamer
   m_TagString: Untagged
@@ -4871,30 +4871,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2962089441412037815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2962089441412037814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5dce2b9e8881c54d92a8054dbcd691e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 350
-  range: 20
-  fireRate: 1
-  bulletPrefab: {fileID: 0}
-  useLaser: 1
-  lineRenderer: {fileID: 467641934}
-  impactEffect: {fileID: 5258962416696430548}
-  impactLight: {fileID: 357528872830242045}
-  damageOverTime: 30
-  slowPercentage: 0.4
-  slowDuration: 2
-  targetTag: Enemy
 --- !u!120 &467641934
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -5004,9 +4980,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af75c74539c99494f995cc64d79a7880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turnSpeed: 10
   partToRotate: {fileID: 5857625605966783188}
   firePoint: {fileID: 5857625607081795929}
-  turnSpeed: 10
+  targetTag: Enemy
+--- !u!114 &7288767273182278826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2962089441412037814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c52c8d42a70b7489dd012478bc42a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 350
+  range: 20
+  useLaser: 0
+  lineRenderer: {fileID: 467641934}
+  impactEffect: {fileID: 5258962416696430548}
+  impactLight: {fileID: 357528872830242045}
+  damageOverTime: 30
+  slowPercentage: 0.2
+  slowDuration: 2
 --- !u!1 &5258962416696430550
 GameObject:
   m_ObjectHideFlags: 0
