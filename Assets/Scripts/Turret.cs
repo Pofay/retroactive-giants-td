@@ -25,6 +25,12 @@ public class Turret : MonoBehaviour
     public ParticleSystem impactEffect;
     public Light impactLight;
 
+    //TO MOVE, Laser Specific Attributes
+    public int damageOverTime = 30;
+    [Range(0f, 1f)]public float slowPercentage = 0.2f;
+    private EnemyMovement targetMovement;
+    private EnemyHealth targetHealth;
+
     [Header("Unity Setup Settings")]
     public string targetTag = "Enemy";
     public Transform partToRotate;
@@ -72,6 +78,9 @@ public class Turret : MonoBehaviour
     void LockOn(Transform enemy)
     {
         target = enemy;
+        // Laser specific
+        targetHealth = enemy.GetComponent<EnemyHealth>();
+        targetMovement = enemy.GetComponent<EnemyMovement>();
     }
 
     // Update is called once per frame
@@ -111,6 +120,9 @@ public class Turret : MonoBehaviour
 
     private void FireLaser()
     {
+        targetHealth.TakeDamage(damageOverTime * Time.deltaTime);
+        targetMovement.Slow(slowPercentage);
+
         lineRenderer.enabled = true;
         if (impactEffect.isStopped)
         {
