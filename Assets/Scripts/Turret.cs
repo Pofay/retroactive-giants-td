@@ -23,16 +23,12 @@ public class Turret : MonoBehaviour
     public LineRenderer lineRenderer;
     public ParticleSystem impactEffect;
     public Light impactLight;
-
-    //TO MOVE, Laser Specific Attributes
     public int damageOverTime = 30;
     [Range(0f, 1f)] public float slowPercentage = 0.2f;
     public float slowDuration = 2f;
     private EnemyMovement targetMovement;
     private EnemyHealth targetHealth;
 
-    [Header("Unity Setup Settings")]
-    public string targetTag = "Enemy";
 
     private Transform target;
     private TurretTargeting targeting;
