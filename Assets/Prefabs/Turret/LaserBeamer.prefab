@@ -4846,6 +4846,7 @@ GameObject:
   - component: {fileID: 2472656565513807372}
   - component: {fileID: 2962089441412037815}
   - component: {fileID: 467641934}
+  - component: {fileID: -5480904722124018271}
   m_Layer: 0
   m_Name: LaserBeamer
   m_TagString: Untagged
@@ -4885,7 +4886,6 @@ MonoBehaviour:
   cost: 350
   range: 20
   fireRate: 1
-  turnSpeed: 5
   bulletPrefab: {fileID: 0}
   useLaser: 1
   lineRenderer: {fileID: 467641934}
@@ -4895,8 +4895,6 @@ MonoBehaviour:
   slowPercentage: 0.4
   slowDuration: 2
   targetTag: Enemy
-  partToRotate: {fileID: 5857625605966783188}
-  firePoint: {fileID: 5857625607081795929}
 --- !u!120 &467641934
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -4994,6 +4992,21 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &-5480904722124018271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2962089441412037814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af75c74539c99494f995cc64d79a7880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partToRotate: {fileID: 5857625605966783188}
+  firePoint: {fileID: 5857625607081795929}
+  turnSpeed: 10
 --- !u!1 &5258962416696430550
 GameObject:
   m_ObjectHideFlags: 0
