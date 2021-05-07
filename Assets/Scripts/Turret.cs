@@ -26,7 +26,7 @@ public class Turret : MonoBehaviour
 
     //TO MOVE, Laser Specific Attributes
     public int damageOverTime = 30;
-    [Range(0f, 1f)]public float slowPercentage = 0.2f;
+    [Range(0f, 1f)] public float slowPercentage = 0.2f;
     public float slowDuration = 2f;
     private EnemyMovement targetMovement;
     private EnemyHealth targetHealth;
@@ -35,51 +35,22 @@ public class Turret : MonoBehaviour
     public string targetTag = "Enemy";
 
     private Transform target;
-    private TurretRotation turretRotation;
+    private TurretTargeting targeting;
 
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0, 0.5f);
-        turretRotation = GetComponent<TurretRotation>();
+        targeting = GetComponent<TurretTargeting>();
     }
 
     void UpdateTarget()
     {
-        var enemies = GameObject.FindGameObjectsWithTag(targetTag);
-        var shortestDistance = Mathf.Infinity;
-        GameObject nearestEnemy = null;
-        // Bloody hell.. can't refactor
-        // It's all about finding the nearest enemy that's withing range.
-        foreach (var enemy in enemies)
+        target = targeting.CalculateNextTarget(range);
+        if(useLaser && target != null)
         {
-            var distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distanceToEnemy < shortestDistance)
-            {
-                shortestDistance = distanceToEnemy;
-                nearestEnemy = enemy;
-            }
+            targetHealth = target.GetComponent<EnemyHealth>();
+            targetMovement = target.GetComponent<EnemyMovement>();
         }
-        if (nearestEnemy != null && IsInRange(shortestDistance))
-        {
-            LockOn(nearestEnemy.transform);
-        }
-        else
-        {
-            target = null;
-        }
-    }
-
-    bool IsInRange(float distance)
-    {
-        return distance <= range;
-    }
-
-    void LockOn(Transform enemy)
-    {
-        target = enemy;
-        // Laser specific
-        targetHealth = enemy.GetComponent<EnemyHealth>();
-        targetMovement = enemy.GetComponent<EnemyMovement>();
     }
 
     void Update()
@@ -96,7 +67,7 @@ public class Turret : MonoBehaviour
         }
         else
         {
-            turretRotation.LookAtCurrentTarget(target);
+            targeting.LookAtCurrentTarget(target);
         }
 
         if (useLaser)
@@ -126,17 +97,17 @@ public class Turret : MonoBehaviour
             impactEffect.Play();
             impactLight.enabled = true;
         }
-        lineRenderer.SetPosition(0, turretRotation.FirePointPosition);
+        lineRenderer.SetPosition(0, targeting.FirePointPosition);
         lineRenderer.SetPosition(1, target.position);
 
-        var firePointDirection = turretRotation.FirePointPosition - target.position;
+        var firePointDirection = targeting.FirePointPosition - target.position;
         impactEffect.transform.rotation = Quaternion.LookRotation(firePointDirection);
         impactEffect.transform.position = target.position + firePointDirection.normalized;
     }
 
     private void ShootBallistic()
     {
-        var bulletInstance = Instantiate(bulletPrefab, turretRotation.FirePointPosition, turretRotation.FirePointRotation);
+        var bulletInstance = Instantiate(bulletPrefab, targeting.FirePointPosition, targeting.FirePointRotation);
         bulletInstance.GetComponent<Bullet>().Seek(target);
     }
 
