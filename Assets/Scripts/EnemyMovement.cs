@@ -12,9 +12,12 @@ public class EnemyMovement : MonoBehaviour
     private WaypointsContainer waypoints;
     private float currentSpeed;
 
+    private bool isSlowed;
+
     void Awake()
     {
         currentSpeed = speed;
+        isSlowed = false;
     }
 
     void Start()
@@ -31,7 +34,6 @@ public class EnemyMovement : MonoBehaviour
         {
             SetNextWaypoint();
         }
-        ResetMovement();
     }
 
     private bool HasReachedCurrentWayPoint()
@@ -66,13 +68,26 @@ public class EnemyMovement : MonoBehaviour
         target = waypoints.points[wavePointIndex];
     }
 
-    public void Slow(float slowPercentage)
+    public void Slow(float slowPercentage, float time)
     {
-        currentSpeed = speed * (1f - slowPercentage);
+        if (!isSlowed)
+        {
+            isSlowed = true;
+            StartCoroutine(TriggerSlowDebuff(slowPercentage, time));
+        }
+    }
+
+    private IEnumerator TriggerSlowDebuff(float amount, float time)
+    {
+        currentSpeed = speed * (1f - amount);
+        yield return new WaitForSeconds(time);
+        ResetMovement();
+        yield return null;
     }
 
     public void ResetMovement()
     {
+        isSlowed = false;
         currentSpeed = speed;
     }
 }
