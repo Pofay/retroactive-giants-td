@@ -23,7 +23,6 @@ public class EnemyMovement : MonoBehaviour
         target = waypoints.points[0];
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         Vector3 direction = target.position - transform.position;

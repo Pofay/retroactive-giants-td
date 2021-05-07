@@ -38,7 +38,6 @@ public class Turret : MonoBehaviour
 
     private Transform target;
 
-    // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0, 0.5f);
@@ -83,7 +82,6 @@ public class Turret : MonoBehaviour
         targetMovement = enemy.GetComponent<EnemyMovement>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (target == null)
