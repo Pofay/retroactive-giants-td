@@ -23,6 +23,7 @@ public class Turret : MonoBehaviour
     public bool useLaser = false;
     public LineRenderer lineRenderer;
     public ParticleSystem impactEffect;
+    public Light impactLight;
 
     [Header("Unity Setup Settings")]
     public string targetTag = "Enemy";
@@ -81,6 +82,7 @@ public class Turret : MonoBehaviour
             if (useLaser)
             {
                 lineRenderer.enabled = false;
+                impactLight.enabled = false;
                 impactEffect.Stop();
             }
             return;
@@ -113,11 +115,14 @@ public class Turret : MonoBehaviour
         if (impactEffect.isStopped)
         {
             impactEffect.Play();
+            impactLight.enabled = true;
         }
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, target.position);
 
-        impactEffect.transform.position = target.position;
+        var firePointDirection = firePoint.position - target.position;
+        impactEffect.transform.rotation = Quaternion.LookRotation(firePointDirection);
+        impactEffect.transform.position = target.position + firePointDirection.normalized;
     }
 
     private void LookAtCurrentTarget()
