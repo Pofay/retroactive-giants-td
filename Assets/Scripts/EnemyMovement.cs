@@ -7,10 +7,16 @@ public class EnemyMovement : MonoBehaviour
 {
     public float speed = 10f;
     private Transform target;
+
     private int wavePointIndex = 0;
     private WaypointsContainer waypoints;
+    private float currentSpeed;
 
-    // Start is called before the first frame update
+    void Awake()
+    {
+        currentSpeed = speed;
+    }
+
     void Start()
     {
         waypoints = FindObjectOfType<WaypointsContainer>();
@@ -21,11 +27,12 @@ public class EnemyMovement : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 direction = target.position - transform.position;
-        transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
+        transform.Translate(direction.normalized * currentSpeed * Time.deltaTime, Space.World);
         if (HasReachedCurrentWayPoint())
         {
             SetNextWaypoint();
         }
+        ResetMovement();
     }
 
     private bool HasReachedCurrentWayPoint()
@@ -58,5 +65,15 @@ public class EnemyMovement : MonoBehaviour
     {
         wavePointIndex++;
         target = waypoints.points[wavePointIndex];
+    }
+
+    public void Slow(float slowPercentage)
+    {
+        currentSpeed = speed * (1f - slowPercentage);
+    }
+
+    public void ResetMovement()
+    {
+        currentSpeed = speed;
     }
 }
