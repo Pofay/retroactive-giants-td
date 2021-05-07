@@ -28,6 +28,7 @@ public class Turret : MonoBehaviour
     //TO MOVE, Laser Specific Attributes
     public int damageOverTime = 30;
     [Range(0f, 1f)]public float slowPercentage = 0.2f;
+    public float slowDuration = 2f;
     private EnemyMovement targetMovement;
     private EnemyHealth targetHealth;
 
@@ -119,7 +120,7 @@ public class Turret : MonoBehaviour
     private void FireLaser()
     {
         targetHealth.TakeDamage(damageOverTime * Time.deltaTime);
-        targetMovement.Slow(slowPercentage);
+        targetMovement.Slow(slowPercentage, slowDuration);
 
         lineRenderer.enabled = true;
         if (impactEffect.isStopped)

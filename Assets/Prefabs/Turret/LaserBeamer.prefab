@@ -4891,6 +4891,9 @@ MonoBehaviour:
   lineRenderer: {fileID: 467641934}
   impactEffect: {fileID: 5258962416696430548}
   impactLight: {fileID: 357528872830242045}
+  damageOverTime: 30
+  slowPercentage: 0.4
+  slowDuration: 2
   targetTag: Enemy
   partToRotate: {fileID: 5857625605966783188}
   firePoint: {fileID: 5857625607081795929}
