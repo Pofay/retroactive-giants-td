@@ -79,7 +79,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void ShowTurretPrompt()
     {
-        turretPrompt.Show();
+        turretPrompt.Show(mountedTurretGO.GetComponent<Turret>());
         turretPrompt.TransferPosition(this.transform.position);
         turretPrompt.AttachButtonEvents(this);
     }

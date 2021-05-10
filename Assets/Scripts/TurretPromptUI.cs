@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class TurretPromptUI : MonoBehaviour
@@ -7,14 +8,26 @@ public class TurretPromptUI : MonoBehaviour
     [SerializeField] private Button sellButton;
     [SerializeField] private Button upgradeButton;
 
-    public void Show()
+    [SerializeField] private TextMeshProUGUI upgradeValueText;
+    [SerializeField] private TextMeshProUGUI sellValueText;
+
+    void Awake()
+    {
+        Hide();
+    }
+
+    public void Show(Turret t)
     {
         canvas.gameObject.SetActive(true);
+        sellValueText.text = t.cost.ToString();
+        upgradeValueText.text = t.upgradeCost.ToString();
     }
 
     public void Hide()
     {
         canvas.gameObject.SetActive(false);
+        sellValueText.text = "$";
+        upgradeValueText.text = "$";
     }
 
     public void TransferPosition(Vector3 targetPosition)
