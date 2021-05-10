@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(PlayerStats))]
 public class TurretConstructor : MonoBehaviour
@@ -14,12 +11,10 @@ public class TurretConstructor : MonoBehaviour
 
     public GameObject[] AvailableTurrets => turretPrefabs;
 
-
     void Awake()
     {
         playerStats = GetComponent<PlayerStats>();
     }
-
 
     public bool CanBuildTurret()
     {
