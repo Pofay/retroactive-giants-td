@@ -143,8 +143,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 250
+  upgradeCost: 0
+  upgradedVersion: {fileID: 0}
   range: 20
-  fireRate: 0.25
+  fireRate: 0.4
   bulletPrefab: {fileID: 5384053081768491062, guid: 83786ba32b6173f45a39170bc9f3ef37,
     type: 3}
 --- !u!1 &2033910163805668949
