@@ -63,6 +63,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 100
+  upgradeCost: 60
+  upgradedVersion: {fileID: 3855285012939619382, guid: 84f7413cb4935874bb620201b03b790c,
+    type: 3}
   range: 15
   fireRate: 1
   bulletPrefab: {fileID: 219067940391051583, guid: 126526f77a274764990560a4ac4408a7,
