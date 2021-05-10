@@ -11860,25 +11860,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1166153254}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd24ad15a307de64894beab60092767a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9480dd86d6fdee94db481b6aa2529911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverScreen: {fileID: 563290926}
---- !u!114 &1166153258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1166153254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dc719d5fdb3e7247abea1251d02a25a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currencyText: {fileID: 125113244}
-  livesText: {fileID: 787845761}
-  stats: {fileID: 0}
 --- !u!1 &1174964890
 GameObject:
   m_ObjectHideFlags: 0
@@ -22235,6 +22220,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1166153258, guid: 9b713213d3cb9384782098b1c2829258, type: 3}
+      propertyPath: currencyText
+      value: 
+      objectReference: {fileID: 125113244}
+    - target: {fileID: 1166153258, guid: 9b713213d3cb9384782098b1c2829258, type: 3}
+      propertyPath: livesText
+      value: 
+      objectReference: {fileID: 787845761}
     - target: {fileID: 3217403513204276936, guid: 9b713213d3cb9384782098b1c2829258,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22312,7 +22305,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2962089441412037814, guid: 5309bdacff92d56468edbcef0f12deb6,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1166153256, guid: 9b713213d3cb9384782098b1c2829258, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9b713213d3cb9384782098b1c2829258, type: 3}
 --- !u!4 &3373886082451985623 stripped
 Transform:
