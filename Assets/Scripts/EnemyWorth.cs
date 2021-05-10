@@ -7,7 +7,12 @@ public class EnemyWorth : MonoBehaviour
 
     void OnDestroy()
     {
-        FindObjectOfType<PlayerStats>().AddCurrency(currencyOnKill);
+        var playerStats = FindObjectOfType<PlayerStats>();
+        if(playerStats != null)
+        {
+            playerStats.AddCurrency(currencyOnKill);
+            playerStats.AddLives(livesOnKill);
+        }
     }
 
 }
