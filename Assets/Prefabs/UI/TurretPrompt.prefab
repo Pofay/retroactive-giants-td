@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 4301275555678432610}
   sellButton: {fileID: 4301275556553786809}
+  upgradeButton: {fileID: 4301275555833957938}
 --- !u!1 &4301275555612393618
 GameObject:
   m_ObjectHideFlags: 0

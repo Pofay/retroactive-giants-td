@@ -5,6 +5,7 @@ public class TurretPromptUI : MonoBehaviour
 {
     [SerializeField] private Transform canvas;
     [SerializeField] private Button sellButton;
+    [SerializeField] private Button upgradeButton;
 
     public void Show()
     {
@@ -24,10 +25,12 @@ public class TurretPromptUI : MonoBehaviour
     public void AttachButtonEvents(Node n)
     {
         sellButton.onClick.AddListener(() => n.SellTurret());
+        upgradeButton.onClick.AddListener(() => n.UpgradeTurret());
     }
 
     public void DetachButtonEvents()
     {
         sellButton.onClick.RemoveAllListeners();
+        upgradeButton.onClick.RemoveAllListeners();
     }
 }
