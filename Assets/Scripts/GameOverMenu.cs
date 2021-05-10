@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class GameMenu : MonoBehaviour
+public class GameOverMenu : MonoBehaviour
 {
     public GameObject gameOverScreen;
 

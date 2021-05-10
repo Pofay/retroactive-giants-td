@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3217403513204276936}
   - component: {fileID: 3217403513204276939}
+  - component: {fileID: 1166153255}
+  - component: {fileID: 1166153256}
+  - component: {fileID: 1166153258}
   m_Layer: 0
   m_Name: TurretConstructor
   m_TagString: Untagged
@@ -45,3 +48,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretPrefabs:
   - {fileID: 3855285012939619382, guid: 42d9c37ec5ce7474ba89dda3d4765c8a, type: 3}
+  - {fileID: 742073825746857423, guid: ab6bb2c7a8ff34b42931b13235156a70, type: 3}
+  - {fileID: 2962089441412037814, guid: 5309bdacff92d56468edbcef0f12deb6, type: 3}
+--- !u!114 &1166153255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3217403513204276938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 271e6010d37be39489a1e843964dd398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currency: 500
+  lives: 1
+--- !u!114 &1166153256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3217403513204276938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd24ad15a307de64894beab60092767a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverScreen: {fileID: 0}
+--- !u!114 &1166153258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3217403513204276938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dc719d5fdb3e7247abea1251d02a25a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currencyText: {fileID: 0}
+  livesText: {fileID: 0}
+  stats: {fileID: 0}
