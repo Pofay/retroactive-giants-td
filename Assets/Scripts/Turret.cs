@@ -10,6 +10,10 @@ public abstract class Turret : MonoBehaviour
     [Header("Currency cost")]
     public int cost;
 
+    [Header("Upgrade Attributes")]
+    public int upgradeCost;
+    public GameObject upgradedVersion;
+
     [Header("General Combat Attributes")]
     public float range = 15f;
 
