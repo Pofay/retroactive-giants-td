@@ -5,6 +5,7 @@ public class PlayerStats : MonoBehaviour
 {
     public event Action<int> OnLivesChange;
     public event Action<int> OnCurrencyChange;
+    public event Action OnLivesEmptied;
 
     [Header("Player Statistics")]
     [SerializeField] private int currency = 500;
@@ -38,6 +39,7 @@ public class PlayerStats : MonoBehaviour
             lives -= amount;
             OnLivesChange?.Invoke(lives);
         }
+        OnLivesEmptied?.Invoke();
     }
 
     public bool HasEnoughCurrencyForTurret(Turret t)
