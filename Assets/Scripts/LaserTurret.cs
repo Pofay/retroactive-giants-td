@@ -41,7 +41,6 @@ public class LaserTurret : Turret
         var firePointDirection = targeting.FirePointPosition - target.position;
         impactEffect.transform.rotation = Quaternion.LookRotation(firePointDirection);
         impactEffect.transform.position = target.position + firePointDirection.normalized;
-
     }
 
     protected override void Update()
