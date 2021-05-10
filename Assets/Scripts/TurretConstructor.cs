@@ -13,7 +13,7 @@ public class TurretConstructor : MonoBehaviour
     private GameObject turretToBuild;
 
     public GameObject[] AvailableTurrets => turretPrefabs;
-    
+
 
     void Awake()
     {
@@ -41,8 +41,18 @@ public class TurretConstructor : MonoBehaviour
         var turret = turretToBuild.GetComponent<Turret>();
         var turretPosition = node.transform.position + offset;
         var turretGO = Instantiate(turretToBuild, turretPosition, transform.rotation);
-        node.turret = turretGO;
+        node.mountedTurretGO = turretGO;
         playerStats.ReduceCurrency(turret.cost);
+    }
+
+    public void BuildUpgradedTurret(Node node, Vector3 offset)
+    {
+        var mountedTurret = node.mountedTurretGO.GetComponent<Turret>();
+        var turretPosition = node.transform.position + offset;
+        var turretGO = Instantiate(mountedTurret.upgradedVersion, turretPosition, transform.rotation);
+        node.mountedTurretGO = turretGO;
+        playerStats.ReduceCurrency(mountedTurret.upgradeCost);
+        Destroy(mountedTurret.gameObject);
     }
 
     public void RefundTurret(Turret t)

@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
     public Color hoverColor;
-    public GameObject turret;
+    public GameObject mountedTurretGO;
 
     private Renderer materialRenderer;
     private TurretConstructor turretConstructor;
@@ -43,8 +43,12 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     public void SellTurret()
     {
         currentState.SellTurret(this);
-        turretPrompt.DetachButtonEvents();
         HideTurretPrompt();
+    }
+
+    public void UpgradeTurret()
+    {
+        currentState.UpgradeTurret(this);
     }
     #endregion
 
@@ -86,8 +90,18 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         turretPrompt.Hide();
     }
 
+    public void ReplaceWithUpgradedVersion()
+    {
+        var turret = mountedTurretGO.GetComponent<Turret>();
+        if(turret.upgradedVersion != null)
+        {
+            turretConstructor.BuildUpgradedTurret(this, positionOffset);
+            HideTurretPrompt();
+        }
+    }
+
     public void RefundTurret()
     {
-        turretConstructor.RefundTurret(turret.GetComponent<Turret>());
+        turretConstructor.RefundTurret(mountedTurretGO.GetComponent<Turret>());
     }
 }

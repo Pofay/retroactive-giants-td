@@ -32,5 +32,9 @@ public class EmptyNodeState : INodeState
     public void SellTurret(Node context)
     {
     }
+
+    public void UpgradeTurret(Node context)
+    {
+    }
 }
 

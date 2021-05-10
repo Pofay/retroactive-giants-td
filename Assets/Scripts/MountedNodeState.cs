@@ -32,4 +32,9 @@
         context.SetState(new EmptyNodeState());
         context.RefundTurret();
     }
+
+    public void UpgradeTurret(Node context)
+    {
+        context.ReplaceWithUpgradedVersion();
+    }
 }
