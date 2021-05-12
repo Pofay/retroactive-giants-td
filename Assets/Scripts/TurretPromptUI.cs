@@ -21,6 +21,16 @@ public class TurretPromptUI : MonoBehaviour
         canvas.gameObject.SetActive(true);
         sellValueText.text = t.cost.ToString();
         upgradeValueText.text = t.upgradeCost.ToString();
+        if (t.IsStillUpgradable)
+        {
+            upgradeButton.gameObject.SetActive(true);
+            upgradeValueText.gameObject.SetActive(true);
+        }
+        else
+        {
+            upgradeButton.gameObject.SetActive(false);
+            upgradeValueText.gameObject.SetActive(false);
+        }
     }
 
     public void Hide()

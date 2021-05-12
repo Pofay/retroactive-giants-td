@@ -20,6 +20,8 @@ public abstract class Turret : MonoBehaviour
     protected TurretTargeting targeting;
     protected Transform target;
 
+    public bool IsStillUpgradable => upgradedVersion != null;
+
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0, 0.5f);
