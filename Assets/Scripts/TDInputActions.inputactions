@@ -44,6 +44,14 @@
                     "expectedControlType": "Axis",
                     "processors": "Normalize(min=-1,max=1)",
                     "interactions": ""
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "74804d4a-febc-4359-a4f9-3b8fde648f64",
+                    "expectedControlType": "Button",
+                    "processors": "Normalize(min=-1,max=1)",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -286,6 +294,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Zoom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "27667f80-2d1a-4004-b39f-83a3e54be47c",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
