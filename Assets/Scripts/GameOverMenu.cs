@@ -34,6 +34,6 @@ public class GameOverMenu : MonoBehaviour
     void ToMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MainMenu");
     }
 }
