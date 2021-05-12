@@ -33,6 +33,7 @@ public class GameOverMenu : MonoBehaviour
 
     void ToMenu()
     {
-        Debug.Log("To Implement Main Menu Scene and Screen");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
     }
 }
