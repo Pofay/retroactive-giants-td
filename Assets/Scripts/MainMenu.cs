@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -13,7 +11,6 @@ public class MainMenu : MonoBehaviour
     {
         playButton.onClick.AddListener(() => Play());
         quitButton.onClick.AddListener(() => Quit());
-
     }
 
     public void Play()
