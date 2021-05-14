@@ -10,9 +10,13 @@ public class EnemyHealthUI : MonoBehaviour
 
     private EnemyHealth health;
 
-    void Start()
+    void Awake()
     {
         health = GetComponent<EnemyHealth>();
+    }
+
+    void Start()
+    {
         health.OnHealthChanged += DisplayCurrentHealth;
     }
 
@@ -21,8 +25,14 @@ public class EnemyHealthUI : MonoBehaviour
         healthSlider.fillAmount = currentHealth / maxHealth;
     }
 
-    void OnDestroy()
+    void OnDisable()
     {
         health.OnHealthChanged -= DisplayCurrentHealth;
     }
+
+    void OnEnable()
+    {
+        health.OnHealthChanged += DisplayCurrentHealth;
+    }
 }
+
