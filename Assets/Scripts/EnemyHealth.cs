@@ -9,7 +9,7 @@ public class EnemyHealth : MonoBehaviour
 
     private float currentHealth;
 
-    void Awake()
+    void Start()
     {
         currentHealth = maxHealth;
     }
@@ -20,7 +20,7 @@ public class EnemyHealth : MonoBehaviour
         OnHealthChanged?.Invoke(currentHealth, maxHealth);
         if(currentHealth < 0)
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
     }
 }
