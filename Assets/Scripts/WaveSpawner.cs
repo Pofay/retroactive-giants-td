@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -52,7 +53,7 @@ public class WaveSpawner : MonoBehaviour
             {
                 countdown = 0;
                 levelUnlocker.UnlockLevel(levelToUnlock);
-                Debug.Log("To Implement going back to LevelSelect Screen");
+                SceneManager.LoadScene("LevelSelect");
             }
         }
     }
