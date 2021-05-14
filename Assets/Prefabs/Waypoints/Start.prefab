@@ -55,6 +55,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -66,6 +67,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -90,7 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c2b8234f1588c45889900fabd2a6b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8240857006569375120, guid: 5f690f5b30b31cc448c960aabaca2c97,
-    type: 3}
-  timeBetweenWaves: 5
-  countdown: 2
+  wavesForLevel:
+  - {fileID: 11400000, guid: f06b1474a23440841afca2a2b0554d93, type: 2}
+  - {fileID: 11400000, guid: de7d5445163707e49930cfdcfc719658, type: 2}
+  - {fileID: 11400000, guid: b25d632c378e5dd41bc6204e04a1f842, type: 2}
+  countdown: 5
