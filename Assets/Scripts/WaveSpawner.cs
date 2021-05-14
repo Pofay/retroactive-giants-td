@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
@@ -6,9 +7,16 @@ public class WaveSpawner : MonoBehaviour
     public WaveDetails[] wavesForLevel;
     public float countdown = 5;
 
+    private IList<GameObject> enemiesSpawned;
+
     private WaveDetails currentWave;
     private int currentRound = 0;
     private int currentWaveIndex = 0;
+
+    void Awake()
+    {
+        enemiesSpawned = new List<GameObject>();
+    }
 
     void Start()
     {
@@ -19,7 +27,6 @@ public class WaveSpawner : MonoBehaviour
     {
         if (IsNextWaveAvailable())
         {
-            currentWaveIndex++;
             currentRound = 0;
             currentWave = Instantiate(wavesForLevel[currentWaveIndex]);
         }
@@ -36,6 +43,27 @@ public class WaveSpawner : MonoBehaviour
             }
             countdown -= Time.deltaTime;
         }
+        else
+        {
+            if (AllEnemiesAreDisabled())
+            {
+                countdown = 0;
+                Debug.Log("Should Win Level");
+            }
+        }
+    }
+
+    private bool AllEnemiesAreDisabled()
+    {
+        var allEnemiesDisabled = true;
+        for (var i = 0; i < enemiesSpawned.Count; i++)
+        {
+            if (enemiesSpawned[i].activeSelf == true)
+            {
+                allEnemiesDisabled = false;
+            }
+        }
+        return allEnemiesDisabled;
     }
 
     private bool IsNextWaveAvailable()
@@ -53,6 +81,7 @@ public class WaveSpawner : MonoBehaviour
         yield return SpawnEnemiesForRound();
         if (IsCurrentWaveFinished())
         {
+            currentWaveIndex++;
             PrepareNextWave();
         }
     }
@@ -74,6 +103,6 @@ public class WaveSpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        Instantiate(currentWave.enemyPrefab);
+        enemiesSpawned.Add(Instantiate(currentWave.enemyPrefab));
     }
 }
