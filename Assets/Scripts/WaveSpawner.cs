@@ -1,40 +1,79 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public Transform enemyPrefab;
-    public float timeBetweenWaves = 5.5f;
-    public float countdown = 2.5f;
-    private int waveIndex = 0;
+    public WaveDetails[] wavesForLevel;
+    public float countdown = 5;
+
+    private WaveDetails currentWave;
+    private int currentRound = 0;
+    private int currentWaveIndex = 0;
+
+    void Start()
+    {
+        currentWave = Instantiate(wavesForLevel[currentWaveIndex]);
+    }
+
+    private void PrepareNextWave()
+    {
+        if (IsNextWaveAvailable())
+        {
+            currentWaveIndex++;
+            currentRound = 0;
+            currentWave = Instantiate(wavesForLevel[currentWaveIndex]);
+        }
+    }
 
     public void Update()
     {
-        if (countdown < 0f)
+        if (IsNextWaveAvailable())
         {
-            StartCoroutine(SpawnWave());
-            ResetCountdown();
+            if (countdown < 0f && currentRound < currentWave.numberOfRounds)
+            {
+                StartCoroutine(BeginSpawning());
+                ResetCountdown();
+            }
+            countdown -= Time.deltaTime;
         }
-        countdown -= Time.deltaTime;
+    }
+
+    private bool IsNextWaveAvailable()
+    {
+        return currentWaveIndex < wavesForLevel.Length;
     }
 
     void ResetCountdown()
     {
-        countdown = timeBetweenWaves;
+        countdown = currentWave.timeBetweenSpawns;
     }
 
-    IEnumerator SpawnWave()
+    IEnumerator BeginSpawning()
     {
-        waveIndex++;
-        for (var i = 0; i < waveIndex; i++)
+        yield return SpawnEnemiesForRound();
+        if (IsCurrentWaveFinished())
         {
-            Instantiate(enemyPrefab);
-            yield return new WaitForSeconds(0.5f);
+            PrepareNextWave();
         }
     }
 
+    IEnumerator SpawnEnemiesForRound()
+    {
+        for (var i = 0; i < currentWave.enemiesPerRound; i++)
+        {
+            SpawnEnemy();
+            yield return new WaitForSeconds(0.5f);
+        }
+        currentRound++;
+    }
 
+    private bool IsCurrentWaveFinished()
+    {
+        return currentRound == currentWave.numberOfRounds;
+    }
 
+    private void SpawnEnemy()
+    {
+        Instantiate(currentWave.enemyPrefab);
+    }
 }
