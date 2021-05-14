@@ -6,7 +6,9 @@ public class WaveSpawner : MonoBehaviour
 {
     public WaveDetails[] wavesForLevel;
     public float countdown = 5;
+    [Min(0)] public int levelToUnlock;
 
+    private LevelUnlocker levelUnlocker;
     private IList<GameObject> enemiesSpawned;
 
     private WaveDetails currentWave;
@@ -20,6 +22,7 @@ public class WaveSpawner : MonoBehaviour
 
     void Start()
     {
+        levelUnlocker = new LevelUnlocker();
         currentWave = Instantiate(wavesForLevel[currentWaveIndex]);
     }
 
@@ -48,7 +51,8 @@ public class WaveSpawner : MonoBehaviour
             if (AllEnemiesAreDisabled())
             {
                 countdown = 0;
-                Debug.Log("Should Win Level");
+                levelUnlocker.UnlockLevel(levelToUnlock);
+                Debug.Log("To Implement going back to LevelSelect Screen");
             }
         }
     }
