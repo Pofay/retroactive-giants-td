@@ -24,8 +24,8 @@ public class PauseMenu : MonoBehaviour
         {
             if (!pauseScreen.activeSelf)
             {
-                Time.timeScale = 0f;
                 pauseScreen.SetActive(true);
+                Time.timeScale = 0f;
             }
             else
             {
@@ -36,7 +36,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Retry()
     {
-        Time.timeScale = 1f;
+        Unpause();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -48,7 +48,7 @@ public class PauseMenu : MonoBehaviour
 
     void ToMainMenu()
     {
-        Time.timeScale = 1f;
+        Unpause();
         SceneManager.LoadScene("MainMenu");
     }
 }
