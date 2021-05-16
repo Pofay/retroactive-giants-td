@@ -57,7 +57,7 @@ public class EnemyMovement : MonoBehaviour
             if (target.GetComponent<LivesRemover>() != null)
             {
                 target.GetComponent<LivesRemover>().RemoveLives(1);
-                Destroy(gameObject);
+                this.gameObject.SetActive(false);
             }
         }
     }
