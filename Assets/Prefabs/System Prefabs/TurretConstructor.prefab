@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1166153255}
   - component: {fileID: 1166153258}
   - component: {fileID: 1166153256}
+  - component: {fileID: 3217403513646386504}
+  - component: {fileID: 3217403513646386505}
   m_Layer: 0
   m_Name: TurretConstructor
   m_TagString: Untagged
@@ -62,8 +64,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 271e6010d37be39489a1e843964dd398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currency: 500
-  lives: 1
+  currency: 1500
+  lives: 0
 --- !u!114 &1166153258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,3 +96,34 @@ MonoBehaviour:
   gameOverScreen: {fileID: 0}
   retryButton: {fileID: 0}
   mainMenuButton: {fileID: 0}
+--- !u!114 &3217403513646386504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3217403513204276938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fc934b0b10ab3b4bba07d04172f3ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseScreen: {fileID: 0}
+  continueButton: {fileID: 0}
+  mainMenuButton: {fileID: 0}
+  retryButton: {fileID: 0}
+--- !u!114 &3217403513646386505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3217403513204276938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2962f8b490f82ed4c9c6abf0965eb16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  continueScreen: {fileID: 0}
+  toNextLevelButton: {fileID: 0}
+  toLevelSelectionButton: {fileID: 0}

@@ -19618,6 +19618,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c52f55e8d8ebd714d86fda54ce55230a, type: 3}
+--- !u!114 &810669789553172952 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 137091562, guid: c52f55e8d8ebd714d86fda54ce55230a,
+    type: 3}
+  m_PrefabInstance: {fileID: 810669789553172951}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &810669789553172953 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 948738764, guid: c52f55e8d8ebd714d86fda54ce55230a,
+    type: 3}
+  m_PrefabInstance: {fileID: 810669789553172951}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &810669789553172954 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1797443495, guid: c52f55e8d8ebd714d86fda54ce55230a,
+    type: 3}
+  m_PrefabInstance: {fileID: 810669789553172951}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &890650870764700396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20005,7 +20035,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretConstructor
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3217403513646386505, guid: 9b713213d3cb9384782098b1c2829258,
+        type: 3}
+      propertyPath: continueScreen
+      value: 
+      objectReference: {fileID: 810669789553172954}
+    - target: {fileID: 3217403513646386505, guid: 9b713213d3cb9384782098b1c2829258,
+        type: 3}
+      propertyPath: toNextLevelButton
+      value: 
+      objectReference: {fileID: 810669789553172953}
+    - target: {fileID: 3217403513646386505, guid: 9b713213d3cb9384782098b1c2829258,
+        type: 3}
+      propertyPath: toLevelSelectionButton
+      value: 
+      objectReference: {fileID: 810669789553172952}
+    m_RemovedComponents:
+    - {fileID: 3217403513646386504, guid: 9b713213d3cb9384782098b1c2829258, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9b713213d3cb9384782098b1c2829258, type: 3}
 --- !u!1 &3217403513646386503 stripped
 GameObject:
