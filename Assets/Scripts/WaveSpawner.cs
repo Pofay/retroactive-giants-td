@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,7 @@ public class WaveSpawner : MonoBehaviour
     public WaveDetails[] wavesForLevel;
     public float countdown = 5;
     [Min(0)] public int levelToUnlock;
+    public event Action OnAllEnemiesDisabled;
 
     private LevelUnlocker levelUnlocker;
     private IList<GameObject> enemiesSpawned;
@@ -52,8 +54,11 @@ public class WaveSpawner : MonoBehaviour
             if (AllEnemiesAreDisabled())
             {
                 countdown = 0;
+                OnAllEnemiesDisabled?.Invoke();
+
                 levelUnlocker.UnlockLevel(levelToUnlock);
-                SceneManager.LoadScene("LevelSelect");
+                //SceneManager.LoadScene("LevelSelect");
+
             }
         }
     }
