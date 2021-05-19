@@ -24,7 +24,6 @@ public class ContinueScreen : MonoBehaviour
 
     void ToLevelSelection()
     {
-        continueScreen.SetActive(false);
         sceneFader.FadeTo("LevelSelect");
     }
 
