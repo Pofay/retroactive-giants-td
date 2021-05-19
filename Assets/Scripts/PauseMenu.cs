@@ -10,8 +10,11 @@ public class PauseMenu : MonoBehaviour
     public Button mainMenuButton;
     public Button retryButton;
 
+    private SceneFader sceneFader;
+
     void Awake()
     {
+        sceneFader = FindObjectOfType<SceneFader>();
         pauseScreen.SetActive(false);
         continueButton.onClick.AddListener(() => Unpause());
         mainMenuButton.onClick.AddListener(() => ToMainMenu());
@@ -49,6 +52,6 @@ public class PauseMenu : MonoBehaviour
     void ToMainMenu()
     {
         Unpause();
-        SceneManager.LoadScene("MainMenu");
+        sceneFader.FadeTo("MainMenu");
     }
 }

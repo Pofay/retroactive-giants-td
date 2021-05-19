@@ -10,10 +10,12 @@ public class LevelSelector : MonoBehaviour
     public Button mainMenuButton;
 
     public int numberOfLevels = 3;
+    private SceneFader sceneFader;
 
 
     void Awake()
     {
+        sceneFader = FindObjectOfType<SceneFader>();
         int maxLevelUnlocked = PlayerPrefs.GetInt("maxLevelReached", 0);
         mainMenuButton.onClick.AddListener(() => ToMainMenu());
         for (var i = 0; i < numberOfLevels; i++)
@@ -40,11 +42,11 @@ public class LevelSelector : MonoBehaviour
 
     public void ToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        sceneFader.FadeTo("MainMenu");
     }
 
-    public void LoadLevel(string sceneName)
+    public void LoadLevel(string level)
     {
-        SceneManager.LoadScene(sceneName);
+        sceneFader.FadeTo(level);
     }
 }

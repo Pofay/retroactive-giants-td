@@ -9,9 +9,11 @@ public class GameOverMenu : MonoBehaviour
     public Button mainMenuButton;
 
     private PlayerStats player;
+    private SceneFader sceneFader;
 
     void Awake()
     {
+        sceneFader = FindObjectOfType<SceneFader>();
         player = GetComponent<PlayerStats>();
         gameOverScreen.SetActive(false);
         player.OnLivesEmptied += TriggerGameOver;
@@ -34,6 +36,6 @@ public class GameOverMenu : MonoBehaviour
     void ToMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        sceneFader.FadeTo("MainMenu");
     }
 }
