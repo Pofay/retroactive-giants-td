@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ContinueScreen : MonoBehaviour
@@ -36,6 +34,4 @@ public class ContinueScreen : MonoBehaviour
     {
         continueScreen.SetActive(true);
     }
-
-
 }
