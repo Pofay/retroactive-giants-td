@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public class Shop : MonoBehaviour
@@ -37,5 +35,4 @@ public class Shop : MonoBehaviour
     {
         turretConstructor.SetTurretToConstruct(2);
     }
-
 }
