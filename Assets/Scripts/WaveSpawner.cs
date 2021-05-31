@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -10,6 +9,7 @@ public class WaveSpawner : MonoBehaviour
     public float countdown = 5;
     [Min(0)] public int levelToUnlock;
     public event Action OnAllEnemiesDisabled;
+    public event Action<int, int> OnWaveChanged;
 
     private LevelUnlocker levelUnlocker;
     private IList<GameObject> enemiesSpawned;
@@ -27,6 +27,7 @@ public class WaveSpawner : MonoBehaviour
     {
         levelUnlocker = new LevelUnlocker();
         currentWave = Instantiate(wavesForLevel[currentWaveIndex]);
+        OnWaveChanged?.Invoke(currentWaveIndex +1 , wavesForLevel.Length);
     }
 
     private void PrepareNextWave()
@@ -35,6 +36,7 @@ public class WaveSpawner : MonoBehaviour
         {
             currentRound = 0;
             currentWave = Instantiate(wavesForLevel[currentWaveIndex]);
+            OnWaveChanged?.Invoke(currentWaveIndex + 1, wavesForLevel.Length);
         }
     }
 
@@ -57,8 +59,6 @@ public class WaveSpawner : MonoBehaviour
                 OnAllEnemiesDisabled?.Invoke();
 
                 levelUnlocker.UnlockLevel(levelToUnlock);
-                //SceneManager.LoadScene("LevelSelect");
-
             }
         }
     }
@@ -89,7 +89,7 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator BeginSpawning()
     {
         yield return SpawnEnemiesForRound();
-        if (IsCurrentWaveFinished())
+        if (IsCurrentWaveRoundFinished())
         {
             currentWaveIndex++;
             PrepareNextWave();
@@ -106,7 +106,7 @@ public class WaveSpawner : MonoBehaviour
         currentRound++;
     }
 
-    private bool IsCurrentWaveFinished()
+    private bool IsCurrentWaveRoundFinished()
     {
         return currentRound == currentWave.numberOfRounds;
     }
