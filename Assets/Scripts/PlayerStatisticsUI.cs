@@ -22,12 +22,12 @@ public class PlayerStatisticsUI : MonoBehaviour
 
     private void ShowCurrency(int currency)
     {
-        currencyText.text = string.Format("Currency: {0}", currency);
+        currencyText.text = string.Format("{0}", currency);
     }
 
     private void ShowLives(int lives)
     {
-        livesText.text = string.Format("Lives: {0}", lives);
+        livesText.text = string.Format("{0}", lives);
     }
 
     void OnDestroy()
