@@ -4862,7 +4862,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2962089441412037814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 0, z: -0.68}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8865323056930355262}
@@ -4997,8 +4997,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 350
+  upgradeCost: 0
+  upgradedVersion: {fileID: 0}
   range: 20
-  useLaser: 0
   lineRenderer: {fileID: 467641934}
   impactEffect: {fileID: 5258962416696430548}
   impactLight: {fileID: 357528872830242045}
@@ -9785,7 +9786,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5857625605966783191}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.3974535, z: 0}
+  m_LocalPosition: {x: 0, y: 1.226, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5470675581193334424}
@@ -9941,7 +9942,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7587618001922640503}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0.49525392, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 63.703358}
   m_Children: []
   m_Father: {fileID: 2472656565513807372}
