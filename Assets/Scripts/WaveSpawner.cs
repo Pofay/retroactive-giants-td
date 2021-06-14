@@ -113,6 +113,6 @@ public class WaveSpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        enemiesSpawned.Add(Instantiate(currentWave.enemyPrefab));
+        enemiesSpawned.Add(Instantiate(currentWave.enemyPrefab, transform.position, Quaternion.identity));
     }
 }
