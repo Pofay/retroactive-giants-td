@@ -18,7 +18,6 @@
 
     public void OnPointerEnter(Node context)
     {
-        // Change material to something else
         context.MakeMaterialGreen();
     }
 
