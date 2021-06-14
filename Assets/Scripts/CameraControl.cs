@@ -1,28 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class CameraControl : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [Header("Camera Movement Speed settings")]
     public float panSpeed = 30f;
+    [Header("Camera Bounding Box Settings")]
+    public float maxPanLimitX = 40f;
+    public float minPanLimitX = 40f;
+    public float maxPanLimitY = 40f;
+    public float minPanLimitY = 40f;
     public float panBorderThickness = 10f;
-    public float scrollSpeed = 5f;
-    public float maxY = 80f;
-    public float minY = 10f;
 
-    private bool doMovement = true;
     private Vector2 mousePosition;
 
     void Update()
     {
         MoveCamera(mousePosition);
-    }
-
-    private void GetInput()
-    {
-        ScrollCamera();
     }
 
     public void PanCamera(InputAction.CallbackContext context)
@@ -52,14 +46,15 @@ public class CameraControl : MonoBehaviour
         {
             transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
         }
+        var clampedPosition = ClampCurrentPosition();
+        transform.position = clampedPosition;
     }
 
-    private void ScrollCamera()
+    private Vector3 ClampCurrentPosition()
     {
-        var scroll = Input.GetAxis("Mouse ScrollWheel");
-        var currentPos = transform.position;
-        currentPos.y -= (scroll * 1000) * scrollSpeed * Time.deltaTime;
-        currentPos.y = Mathf.Clamp(currentPos.y, minY, maxY);
-        transform.position = currentPos;
+        var clampedPosition = transform.position;
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, -minPanLimitX, maxPanLimitX);
+        clampedPosition.z = Mathf.Clamp(clampedPosition.z, -minPanLimitY, maxPanLimitY);
+        return clampedPosition;
     }
 }
