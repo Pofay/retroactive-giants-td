@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2534462426582159559}
+  - component: {fileID: 7355303721861684099}
   m_Layer: 0
   m_Name: Start
   m_TagString: Untagged
@@ -31,6 +32,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7355303721861684099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2534462426582159558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c2b8234f1588c45889900fabd2a6b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wavesForLevel:
+  - {fileID: 11400000, guid: f06b1474a23440841afca2a2b0554d93, type: 2}
+  - {fileID: 11400000, guid: de7d5445163707e49930cfdcfc719658, type: 2}
+  - {fileID: 11400000, guid: b25d632c378e5dd41bc6204e04a1f842, type: 2}
+  countdown: 5
+  levelToUnlock: 0
 --- !u!1 &2534462427213358955
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,7 +61,6 @@ GameObject:
   - component: {fileID: 2534462427213358967}
   - component: {fileID: 2534462427213358966}
   - component: {fileID: 2534462427213358965}
-  - component: {fileID: 2534462427213358964}
   m_Layer: 0
   m_Name: Start
   m_TagString: Untagged
@@ -111,21 +129,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &2534462427213358964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2534462427213358955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2c2b8234f1588c45889900fabd2a6b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wavesForLevel:
-  - {fileID: 11400000, guid: f06b1474a23440841afca2a2b0554d93, type: 2}
-  - {fileID: 11400000, guid: de7d5445163707e49930cfdcfc719658, type: 2}
-  - {fileID: 11400000, guid: b25d632c378e5dd41bc6204e04a1f842, type: 2}
-  countdown: 5
-  levelToUnlock: 0
