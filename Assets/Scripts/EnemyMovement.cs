@@ -30,10 +30,22 @@ public class EnemyMovement : MonoBehaviour
     {
         Vector3 direction = target.position - transform.position;
         transform.Translate(direction.normalized * currentSpeed * Time.deltaTime, Space.World);
+        var lookRotation = CalculateRotationWithNoUpward(direction);
+        RotateToTarget(lookRotation);
         if (HasReachedCurrentWayPoint())
         {
             SetNextWaypoint();
         }
+    }
+
+    private void RotateToTarget(Quaternion lookRotation)
+    {
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+    }
+
+    private Quaternion CalculateRotationWithNoUpward(Vector3 direction)
+    {
+        return Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
     }
 
     private bool HasReachedCurrentWayPoint()
