@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465798, g: 0.49641532, b: 0.57481927, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028532, g: 0.22571588, b: 0.3069237, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1228,7 +1228,7 @@ MonoBehaviour:
   levelButtonPrefab: {fileID: 701162902986694112, guid: fa03681699d29164ea75d18911905baa,
     type: 3}
   mainMenuButton: {fileID: 701162904540794045}
-  numberOfLevels: 3
+  numberOfLevels: 2
 --- !u!1 &2099706464
 GameObject:
   m_ObjectHideFlags: 0
