@@ -25,7 +25,6 @@ public class CameraControl : MonoBehaviour
         {
             mousePosition = context.ReadValue<Vector2>();
         }
-
     }
 
     private void MoveCamera(Vector2 mousePosition)
