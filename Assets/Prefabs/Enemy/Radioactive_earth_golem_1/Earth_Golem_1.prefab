@@ -1035,6 +1035,7 @@ GameObject:
   - component: {fileID: 2820718410429586458}
   - component: {fileID: 8600265282549787595}
   - component: {fileID: 6561509383109531766}
+  - component: {fileID: 2217507633175391806}
   m_Layer: 0
   m_Name: Earth_Golem_1
   m_TagString: Enemy
@@ -1124,3 +1125,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currencyOnKill: 25
   livesOnKill: 0
+--- !u!114 &2217507633175391806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8301769195490208465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e687dca9f5ce54d9b2bc51bab59ec9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locomotionSmoothing: 0.1
