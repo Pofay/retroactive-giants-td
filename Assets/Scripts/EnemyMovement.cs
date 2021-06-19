@@ -82,7 +82,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void Slow(float slowPercentage, float time)
     {
-        if (!isSlowed)
+        if (!isSlowed && gameObject.activeSelf)
         {
             isSlowed = true;
             StartCoroutine(TriggerSlowDebuff(slowPercentage, time));
