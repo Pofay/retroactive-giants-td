@@ -147,7 +147,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2894891926295145817}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 0f2c5202b918687408ac5bc7429a03ea, type: 3}
+  m_Avatar: {fileID: 9000000, guid: aed669ffa978a7a4ea48be7a85dd0174, type: 3}
   m_Controller: {fileID: 9100000, guid: 64e2ef14a02f69a4b94edbee54ca296a, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
@@ -947,7 +947,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4786284747052807415}
-  m_LocalRotation: {x: 0.16163918, y: -0, z: -0, w: 0.98684996}
+  m_LocalRotation: {x: -0.114295475, y: 0.69780844, z: 0.114295475, w: 0.69780844}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
@@ -955,7 +955,7 @@ RectTransform:
   - {fileID: 5500498337476996728}
   m_Father: {fileID: 3562361510642363099}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 18.604, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -18.604, y: 90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 5}
