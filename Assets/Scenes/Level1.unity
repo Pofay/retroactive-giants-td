@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3293,30 +3293,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 823907067}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &869782082 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2534462426582159558, guid: fa3588b2b78e5734180b89bdf4ce51b0,
-    type: 3}
-  m_PrefabInstance: {fileID: 2534462426881376900}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &869782083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 869782082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2c2b8234f1588c45889900fabd2a6b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wavesForLevel:
-  - {fileID: 11400000, guid: f06b1474a23440841afca2a2b0554d93, type: 2}
-  - {fileID: 11400000, guid: de7d5445163707e49930cfdcfc719658, type: 2}
-  - {fileID: 11400000, guid: b25d632c378e5dd41bc6204e04a1f842, type: 2}
-  countdown: 5
-  levelToUnlock: 1
 --- !u!1001 &884850461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7355,8 +7331,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2534462427213358964, guid: fa3588b2b78e5734180b89bdf4ce51b0, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa3588b2b78e5734180b89bdf4ce51b0, type: 3}
 --- !u!1001 &3217403513646386502
 PrefabInstance:
