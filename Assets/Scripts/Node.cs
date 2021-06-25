@@ -74,7 +74,14 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public bool CanBuildTurret()
     {
-        return turretConstructor.CanBuildTurret();
+        if (turretConstructor != null)
+        {
+            return turretConstructor.CanBuildTurret();
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void ShowTurretPrompt()
@@ -93,7 +100,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     public void ReplaceWithUpgradedVersion()
     {
         var turret = mountedTurretGO.GetComponent<Turret>();
-        if(turret.upgradedVersion != null)
+        if (turret.upgradedVersion != null)
         {
             turretConstructor.BuildUpgradedTurret(this, positionOffset);
             HideTurretPrompt();

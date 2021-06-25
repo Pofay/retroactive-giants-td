@@ -16,9 +16,12 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        currentHealth -= damage;
-        OnHealthChanged?.Invoke(currentHealth, maxHealth);
-        if(currentHealth < 0)
+        if (currentHealth > 0)
+        {
+            currentHealth -= damage;
+            OnHealthChanged?.Invoke(currentHealth, maxHealth);
+        }
+        else
         {
             this.gameObject.SetActive(false);
         }
