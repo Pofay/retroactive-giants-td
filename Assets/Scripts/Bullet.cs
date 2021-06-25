@@ -20,8 +20,7 @@ public class Bullet : MonoBehaviour
         this.target = target;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (target == null)
         {
