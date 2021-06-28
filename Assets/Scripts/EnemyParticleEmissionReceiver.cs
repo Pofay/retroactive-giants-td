@@ -25,7 +25,7 @@ public class EnemyParticleEmissionReceiver : MonoBehaviour
         }
         else
         {
-            if (!isCoroutineStarted)
+            if (!isCoroutineStarted && gameObject.activeSelf)
             {
                 StartCoroutine(StopReceivingUntilInterval(turret.damageInterval));
             }
