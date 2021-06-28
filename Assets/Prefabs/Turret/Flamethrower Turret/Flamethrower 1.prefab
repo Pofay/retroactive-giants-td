@@ -66,6 +66,8 @@ MonoBehaviour:
   upgradedVersion: {fileID: 0}
   range: 15
   flames: {fileID: 5905867287772835131}
+  damage: 15
+  damageInterval: 0.5
 --- !u!1 &3943067088184640701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,6 +1173,16 @@ PrefabInstance:
       propertyPath: CollisionModule.m_Bounce.scalar
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1384311075086258194, guid: d7b0852dd1d1e2d4f89b4713178c0e5e,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1384311075086258194, guid: d7b0852dd1d1e2d4f89b4713178c0e5e,
+        type: 3}
+      propertyPath: autoRandomSeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1384311075086258204, guid: d7b0852dd1d1e2d4f89b4713178c0e5e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1256,6 +1268,11 @@ PrefabInstance:
       propertyPath: CollisionModule.collidesWith.m_Bits
       value: 512
       objectReference: {fileID: 0}
+    - target: {fileID: 5917386927306789830, guid: d7b0852dd1d1e2d4f89b4713178c0e5e,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5917386928734062822, guid: d7b0852dd1d1e2d4f89b4713178c0e5e,
         type: 3}
       propertyPath: CollisionModule.enabled
@@ -1280,6 +1297,11 @@ PrefabInstance:
         type: 3}
       propertyPath: CollisionModule.collidesWith.m_Bits
       value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5917386928734062822, guid: d7b0852dd1d1e2d4f89b4713178c0e5e,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7b0852dd1d1e2d4f89b4713178c0e5e, type: 3}

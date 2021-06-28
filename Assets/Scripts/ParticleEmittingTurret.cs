@@ -4,6 +4,9 @@ using UnityEngine;
 public class ParticleEmittingTurret : Turret
 {
     [SerializeField] private ParticleSystem flames;
+    [Header("Flamethrower Settings")]
+    public float damage = 5f;
+    public float damageInterval = 0.7f;
 
     protected override void Shoot()
     {
