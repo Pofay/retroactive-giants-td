@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5500498337476996728}
   - component: {fileID: 2904675320656742064}
   - component: {fileID: 1389787777810587999}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 1368300781812564688}
   - component: {fileID: 6595411329700598208}
   - component: {fileID: 354425527509807186}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HealthBackdrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 546888209286325775}
   - component: {fileID: 2914678193179937530}
   - component: {fileID: 5660806534772012912}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HealthUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 8600265282549787595}
   - component: {fileID: 6561509383109531766}
   - component: {fileID: 2217507633175391806}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fledling_golem_1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -391,9 +391,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3562361510642363099}
     m_Modifications:
+    - target: {fileID: 1201125839554186, guid: 4f31a021a8cc7af458710fb6ae076954, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215002072254110, guid: 4f31a021a8cc7af458710fb6ae076954, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1350766882590570, guid: 4f31a021a8cc7af458710fb6ae076954, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467097521789780, guid: 4f31a021a8cc7af458710fb6ae076954, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497842698705604, guid: 4f31a021a8cc7af458710fb6ae076954, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1713781036754730, guid: 4f31a021a8cc7af458710fb6ae076954, type: 3}
       propertyPath: m_Name
       value: GFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713781036754730, guid: 4f31a021a8cc7af458710fb6ae076954, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753159918419610, guid: 4f31a021a8cc7af458710fb6ae076954, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798525600516028, guid: 4f31a021a8cc7af458710fb6ae076954, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911034780301212, guid: 4f31a021a8cc7af458710fb6ae076954, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4788319935855200, guid: 4f31a021a8cc7af458710fb6ae076954, type: 3}
       propertyPath: m_LocalPosition.x
