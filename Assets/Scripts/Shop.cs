@@ -35,4 +35,9 @@ public class Shop : MonoBehaviour
     {
         turretConstructor.SetTurretToConstruct(2);
     }
+
+    public void PurchaseFlamethrower()
+    {
+        turretConstructor.SetTurretToConstruct(3);
+    }
 }
