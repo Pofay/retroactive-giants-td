@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 219067940391051568}
   - component: {fileID: 219067940391051569}
   - component: {fileID: 2007155819115064418}
+  - component: {fileID: 3267589673857438151}
   m_Layer: 0
   m_Name: Bullet_Upgraded_1
   m_TagString: Untagged
@@ -92,8 +93,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829cc1bc8da18c446bc074be9f5b84c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactEffect: {fileID: 1626357405638025137, guid: 1133dd3bc89692b4e95f776f9a397944,
+  impactVFX: {fileID: 1626357405638025137, guid: 1133dd3bc89692b4e95f776f9a397944,
     type: 3}
   damage: 20
   explosiveRadius: 0
   speed: 70
+--- !u!114 &3267589673857438151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219067940391051583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dca477698157af14293868f76426dbb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
