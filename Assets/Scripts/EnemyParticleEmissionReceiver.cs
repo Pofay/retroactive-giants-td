@@ -38,7 +38,6 @@ public class EnemyParticleEmissionReceiver : MonoBehaviour
         yield return new WaitForSeconds(damageInterval);
         isReadyToReceiveDamage = true;
         isCoroutineStarted = false;
-        Debug.Log("Was Called");
         yield return null;
     }
 }
