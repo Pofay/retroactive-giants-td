@@ -1183,6 +1183,16 @@ PrefabInstance:
       propertyPath: autoRandomSeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1384311075086258194, guid: d7b0852dd1d1e2d4f89b4713178c0e5e,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1384311075086258194, guid: d7b0852dd1d1e2d4f89b4713178c0e5e,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 1384311075086258204, guid: d7b0852dd1d1e2d4f89b4713178c0e5e,
         type: 3}
       propertyPath: m_LocalPosition.x
