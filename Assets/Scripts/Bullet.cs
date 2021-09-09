@@ -6,7 +6,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [Header("Unity Setup Settings")]
-    public GameObject impactEffect;
+    public GameObject impactVFX;
 
     [Header("Game Attributes")]
     public float damage = 10;
@@ -14,6 +14,12 @@ public class Bullet : MonoBehaviour
     public float speed = 70f;
 
     private Transform target;
+    private IImpactEffect impactEffect;
+
+    void Start()
+    {
+        impactEffect = GetComponent<IImpactEffect>();
+    }
 
     public void Seek(Transform target)
     {
@@ -47,7 +53,7 @@ public class Bullet : MonoBehaviour
 
     private void HitTarget()
     {
-        var effect = Instantiate(impactEffect, transform.position, transform.rotation);
+        var effect = Instantiate(impactVFX, transform.position, transform.rotation);
         Destroy(effect, 2f);
 
         if (explosiveRadius > 0f)
@@ -76,8 +82,9 @@ public class Bullet : MonoBehaviour
     void Damage(Transform enemy)
     {
         var enemyHealth = enemy.GetComponent<EnemyHealth>();
-        if(enemyHealth != null)
+        if (enemyHealth != null)
         {
+            impactEffect.ApplyEffect(target);
             enemyHealth.TakeDamage(damage);
         }
     }
