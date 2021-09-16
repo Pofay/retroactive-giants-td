@@ -8,10 +8,11 @@ public class SlowingImpactEffect : MonoBehaviour, IImpactEffect
 
     public void ApplyEffect(Transform target)
     {
-        var targetMovement = target.GetComponent<EnemyMovement>();
-        if (targetMovement != null)
+        var slowStatusEffect = new CryoSlowEffect(slowPercentage, slowDuration);
+        var statusEffectHandler = target.GetComponent<StatusEffectsHandler>();
+        if(statusEffectHandler  != null)
         {
-            targetMovement.Slow(slowPercentage, slowDuration);
+            statusEffectHandler.AddEffect(slowStatusEffect);
         }
     }
 }
