@@ -27,7 +27,7 @@ public class LaserTurret : Turret
     protected override void Shoot()
     {
         targetHealth.TakeDamage(damageOverTime * Time.deltaTime);
-        targetMovement.Slow(slowPercentage, slowDuration);
+        // TODO: Make a LaserSlowEffect and pass to target's StatusEffectandler
 
         lineRenderer.enabled = true;
         if (impactEffect.isStopped)
