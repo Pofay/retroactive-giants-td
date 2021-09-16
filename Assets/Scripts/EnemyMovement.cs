@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -10,12 +11,17 @@ public class EnemyMovement : MonoBehaviour
     private WaypointsContainer waypoints;
     private float currentSpeed;
 
-    private bool isSlowed;
+    public float CurrentSpeed
+    {
+        get { return currentSpeed; }
+        set { currentSpeed = value; }
+    }
+
+    public float BaseSpeed { get { return speed; } }
 
     void Awake()
     {
         currentSpeed = speed;
-        isSlowed = false;
     }
 
     void Start()
@@ -78,26 +84,8 @@ public class EnemyMovement : MonoBehaviour
         target = waypoints.points[wavePointIndex];
     }
 
-    public void Slow(float slowPercentage, float time)
+    public void ResetSpeed()
     {
-        if (!isSlowed && gameObject.activeSelf)
-        {
-            isSlowed = true;
-            StartCoroutine(TriggerSlowDebuff(slowPercentage, time));
-        }
-    }
-
-    private IEnumerator TriggerSlowDebuff(float amount, float time)
-    {
-        currentSpeed = speed * (1f - amount);
-        yield return new WaitForSeconds(time);
-        ResetMovement();
-        yield return null;
-    }
-
-    public void ResetMovement()
-    {
-        isSlowed = false;
         currentSpeed = speed;
     }
 }
