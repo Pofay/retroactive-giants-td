@@ -111,4 +111,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowDuration: 2
-  slowPercentage: 0.8
+  slowPercentage: 0.4

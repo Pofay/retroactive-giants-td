@@ -5004,7 +5004,7 @@ MonoBehaviour:
   impactEffect: {fileID: 5258962416696430548}
   impactLight: {fileID: 357528872830242045}
   damageOverTime: 30
-  slowPercentage: 0.2
+  slowPercentage: 0.45
   slowDuration: 2
 --- !u!1 &5258962416696430550
 GameObject:
