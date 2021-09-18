@@ -22,7 +22,7 @@ public abstract class Turret : MonoBehaviour
 
     public bool IsStillUpgradable => upgradedVersion != null;
 
-    void Start()
+    public virtual void Start()
     {
         InvokeRepeating("UpdateTarget", 0, 0.5f);
         targeting = GetComponent<TurretTargeting>();
