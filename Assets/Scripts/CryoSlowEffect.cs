@@ -8,13 +8,11 @@ public class CryoSlowEffect : IStatusEffect
 
     private float slowPercentage;
     private float duration;
-    private EnemyMovement targetMovement;
 
     public float RunningDuration { get; private set; }
 
-    public CryoSlowEffect(GameObject target, float slowPercentage, float duration)
+    public CryoSlowEffect(float slowPercentage, float duration)
     {
-        this.targetMovement = target.GetComponent<EnemyMovement>();
         this.slowPercentage = slowPercentage;
         this.duration = duration;
         this.RunningDuration = duration;
@@ -24,6 +22,7 @@ public class CryoSlowEffect : IStatusEffect
     public IEnumerator ApplyEffect(GameObject target)
     {
         RefreshDuration();
+        var targetMovement = target.GetComponent<EnemyMovement>();
 
         IsActive = true;
         targetMovement.AddModifier(Id, -(targetMovement.BaseSpeed * (slowPercentage)));
@@ -34,11 +33,11 @@ public class CryoSlowEffect : IStatusEffect
             yield return new WaitForEndOfFrame();
         }
 
-        RemoveAppliedEffect(targetMovement.gameObject);
+        RemoveAppliedEffect(targetMovement);
         yield return null;
     }
 
-    public void RemoveAppliedEffect(GameObject target)
+    private void RemoveAppliedEffect(EnemyMovement targetMovement)
     {
         targetMovement.RemoveModifier(Id);
         IsActive = false;
