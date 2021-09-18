@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-
 using UnityEngine;
 
 public class StatusEffectsHandler : MonoBehaviour
@@ -13,30 +12,22 @@ public class StatusEffectsHandler : MonoBehaviour
 
     public void AddEffect(IStatusEffect effect)
     {
-        if(effects.ContainsKey(effect.Id))
+        if (effects.ContainsKey(effect.Id))
         {
-            effects[effect.Id].RefreshDuration();
-        }
-        else
-        {
-            effects[effect.Id] = effect;
-        }
-    }
-
-    void FixedUpdate()
-    {
-        foreach(var entry in effects)
-        {
-            var effectId = entry.Key;
-            var effect = entry.Value;
-            if(effect.RunningDuration > 0)
+            var existingEffect = effects[effect.Id];
+            if (existingEffect.IsActive)
             {
-                effect.Tick(gameObject, Time.deltaTime);
+                existingEffect.RefreshDuration();
             }
             else
             {
-                effect.ResetStatus();
+                StartCoroutine(existingEffect.ApplyEffect(gameObject));
             }
+        }
+        else
+        {
+            StartCoroutine(effect.ApplyEffect(gameObject));
+            effects[effect.Id] = effect;
         }
     }
 }
