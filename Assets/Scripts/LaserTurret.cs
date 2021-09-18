@@ -13,6 +13,14 @@ public class LaserTurret : Turret
 
     private EnemyMovement targetMovement;
     private EnemyHealth targetHealth;
+    private IStatusEffect statusEffect;
+
+    public override void Start()
+    {
+        base.Start();
+        // TODO: May need to extract a StatusEffectFactory
+        statusEffect = new LaserSlowEffect(slowPercentage, slowDuration);
+    }
 
     protected override void UpdateTarget()
     {
@@ -27,7 +35,8 @@ public class LaserTurret : Turret
     protected override void Shoot()
     {
         targetHealth.TakeDamage(damageOverTime * Time.deltaTime);
-        // TODO: Make a LaserSlowEffect and pass to target's StatusEffectandler
+        var statusEffectHandler = target.GetComponent<StatusEffectsHandler>();
+        statusEffectHandler.AddEffect(statusEffect);
 
         lineRenderer.enabled = true;
         if (impactEffect.isStopped)
