@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
-public interface IStatusEffect 
+public interface IStatusEffect
 {
     string Id { get; }
     float RunningDuration { get; }
+    bool IsActive { get; }
 
-    void Tick(GameObject target, float time);
-    void ResetStatus();
+    IEnumerator ApplyEffect(GameObject target);
     void RefreshDuration();
 }
