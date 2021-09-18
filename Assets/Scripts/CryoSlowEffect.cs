@@ -5,11 +5,10 @@ public class CryoSlowEffect : IStatusEffect
 {
     public string Id => "CRYO_SLOW_EFFECT";
     public bool IsActive { get; private set; }
+    public float RunningDuration { get; private set; }
 
     private float slowPercentage;
     private float duration;
-
-    public float RunningDuration { get; private set; }
 
     public CryoSlowEffect(float slowPercentage, float duration)
     {
