@@ -8,7 +8,7 @@ public class SlowingImpactEffect : MonoBehaviour, IImpactEffect
 
     public void ApplyEffect(Transform target)
     {
-        var slowStatusEffect = new CryoSlowEffect(slowPercentage, slowDuration);
+        var slowStatusEffect = new CryoSlowEffect(target.gameObject, slowPercentage, slowDuration);
         var statusEffectHandler = target.GetComponent<StatusEffectsHandler>();
         if(statusEffectHandler  != null)
         {
