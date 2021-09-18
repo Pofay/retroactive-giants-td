@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -11,10 +12,11 @@ public class EnemyMovement : MonoBehaviour
     private WaypointsContainer waypoints;
     private float currentSpeed;
 
+    private IDictionary<string, float> modifiers;
+
     public float CurrentSpeed
     {
         get { return currentSpeed; }
-        set { currentSpeed = value; }
     }
 
     public float BaseSpeed { get { return speed; } }
@@ -26,8 +28,31 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
+        modifiers = new Dictionary<string, float>();
         waypoints = FindObjectOfType<WaypointsContainer>();
         target = waypoints.points[0];
+    }
+
+    public void AddModifier(string id, float value)
+    {
+        modifiers[id] = value;
+        RecalculateCurrentSpeed();
+    }
+
+    private void RecalculateCurrentSpeed()
+    {
+        currentSpeed = BaseSpeed;
+        foreach (var modifier in modifiers)
+        {
+            var modifierValue = modifier.Value;
+            currentSpeed += modifierValue;
+        }
+    }
+
+    public void RemoveModifier(string effectId)
+    {
+        modifiers.Remove(effectId);
+        RecalculateCurrentSpeed();
     }
 
     void FixedUpdate()
