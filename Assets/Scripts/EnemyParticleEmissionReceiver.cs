@@ -7,12 +7,16 @@ public class EnemyParticleEmissionReceiver : MonoBehaviour
     private EnemyHealth health;
     private bool isReadyToReceiveDamage;
     private bool isCoroutineStarted;
+    private IStatusEffect burnEffect;
+    private StatusEffectsHandler statusHandler;
+
 
     void Start()
     {
         health = GetComponent<EnemyHealth>();
+        statusHandler = GetComponent<StatusEffectsHandler>();
         isReadyToReceiveDamage = true;
-
+        burnEffect = new BurnEffect(6, 2, 6);
     }
 
     void OnParticleCollision(GameObject other)
@@ -22,6 +26,7 @@ public class EnemyParticleEmissionReceiver : MonoBehaviour
         {
             health.TakeDamage(turret.damage);
             isReadyToReceiveDamage = false;
+            statusHandler.AddEffect(burnEffect);
         }
         else
         {
