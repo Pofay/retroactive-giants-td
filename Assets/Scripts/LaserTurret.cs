@@ -8,18 +8,15 @@ public class LaserTurret : Turret
     public ParticleSystem impactEffect;
     public Light impactLight;
     public int damageOverTime = 30;
-    [Range(0f, 1f)] public float slowPercentage = 0.2f;
-    public float slowDuration = 2f;
-
+    public StatusEffectFactory effectFactory;
+    
     private EnemyMovement targetMovement;
     private EnemyHealth targetHealth;
-    private IStatusEffect statusEffect;
+    
 
     public override void Start()
     {
         base.Start();
-        // TODO: May need to extract a StatusEffectFactory
-        statusEffect = new LaserSlowEffect(slowPercentage, slowDuration);
     }
 
     protected override void UpdateTarget()
@@ -36,7 +33,7 @@ public class LaserTurret : Turret
     {
         targetHealth.TakeDamage(damageOverTime * Time.deltaTime);
         var statusEffectHandler = target.GetComponent<StatusEffectsHandler>();
-        statusEffectHandler.AddEffect(statusEffect);
+        statusEffectHandler.AddEffect(effectFactory);
 
         lineRenderer.enabled = true;
         if (impactEffect.isStopped)
