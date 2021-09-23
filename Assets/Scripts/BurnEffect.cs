@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BurnEffect : IStatusEffect
 {
-    public string Id => "FLAMETHROWER_EFFECT";
+    public string Id { get; private set; }
     public bool IsActive { get; private set; }
     public float RunningDuration { get; private set; }
 
@@ -11,8 +11,9 @@ public class BurnEffect : IStatusEffect
     private float tickInterval;
     private float duration;
 
-    public BurnEffect(float damage, float tickInterval, float duration) 
+    public BurnEffect(string effectId, float damage, float tickInterval, float duration) 
     {
+        this.Id = effectId;
         this.damage = damage;
         this.tickInterval = tickInterval;
         this.duration = duration;
