@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class LaserSlowEffect : IStatusEffect
+public class SlowEffect : IStatusEffect
 {
-    public string Id => "LASER_SLOW_EFFECT";
-    public float RunningDuration { get; private set; }
+    public string Id { get; private set; }
     public bool IsActive { get; private set; }
+    public float RunningDuration { get; private set; }
 
     private float slowPercentage;
     private float duration;
 
-    public LaserSlowEffect(float slowPercentage, float duration)
+    public SlowEffect(string effectId, float slowPercentage, float duration)
     {
+        this.Id = effectId;
         this.slowPercentage = slowPercentage;
         this.duration = duration;
         this.RunningDuration = duration;

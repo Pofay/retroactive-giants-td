@@ -12,7 +12,7 @@ public class StatusEffectsHandler : MonoBehaviour
 
     public void AddEffect(StatusEffectFactory effectFactory)
     {
-        if (effects.ContainsKey(effectFactory.EffectId))
+        if (effects.ContainsKey(effectFactory.effectId))
         {
             RerunOrRefreshExistingEffect(effectFactory);
         }
@@ -26,12 +26,12 @@ public class StatusEffectsHandler : MonoBehaviour
     {
         var newEffect = effectFactory.CreateEffect();
         StartCoroutine(newEffect.ApplyEffect(gameObject));
-        effects[effectFactory.EffectId] = newEffect;
+        effects[effectFactory.effectId] = newEffect;
     }
 
     private void RerunOrRefreshExistingEffect(StatusEffectFactory effectFactory)
     {
-        var existingEffect = effects[effectFactory.EffectId];
+        var existingEffect = effects[effectFactory.effectId];
         if (existingEffect.IsActive)
         {
             existingEffect.RefreshDuration();
