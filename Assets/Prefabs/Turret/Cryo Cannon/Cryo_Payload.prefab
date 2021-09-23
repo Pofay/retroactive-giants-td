@@ -112,3 +112,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowDuration: 2
   slowPercentage: 0.4
+  statusEffectFactory: {fileID: 11400000, guid: 55fbf41cab68acf43b71d71e476f8d6f,
+    type: 2}

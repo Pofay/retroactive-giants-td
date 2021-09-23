@@ -5003,9 +5003,8 @@ MonoBehaviour:
   lineRenderer: {fileID: 467641934}
   impactEffect: {fileID: 5258962416696430548}
   impactLight: {fileID: 357528872830242045}
-  damageOverTime: 30
-  slowPercentage: 0.45
-  slowDuration: 2
+  damageOverTime: 15
+  effectFactory: {fileID: 11400000, guid: 948686e2b3384654582d4657cb7b648e, type: 2}
 --- !u!1 &5258962416696430550
 GameObject:
   m_ObjectHideFlags: 0
