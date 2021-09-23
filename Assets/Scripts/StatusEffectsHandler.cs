@@ -10,24 +10,35 @@ public class StatusEffectsHandler : MonoBehaviour
         effects = new Dictionary<string, IStatusEffect>();
     }
 
-    public void AddEffect(IStatusEffect effect)
+    public void AddEffect(StatusEffectFactory effectFactory)
     {
-        if (effects.ContainsKey(effect.Id))
+        if (effects.ContainsKey(effectFactory.EffectId))
         {
-            var existingEffect = effects[effect.Id];
-            if (existingEffect.IsActive)
-            {
-                existingEffect.RefreshDuration();
-            }
-            else
-            {
-                StartCoroutine(existingEffect.ApplyEffect(gameObject));
-            }
+            RerunOrRefreshExistingEffect(effectFactory);
         }
         else
         {
-            StartCoroutine(effect.ApplyEffect(gameObject));
-            effects[effect.Id] = effect;
+            CreateAndAddEffect(effectFactory);
+        }
+    }
+
+    private void CreateAndAddEffect(StatusEffectFactory effectFactory)
+    {
+        var newEffect = effectFactory.CreateEffect();
+        StartCoroutine(newEffect.ApplyEffect(gameObject));
+        effects[effectFactory.EffectId] = newEffect;
+    }
+
+    private void RerunOrRefreshExistingEffect(StatusEffectFactory effectFactory)
+    {
+        var existingEffect = effects[effectFactory.EffectId];
+        if (existingEffect.IsActive)
+        {
+            existingEffect.RefreshDuration();
+        }
+        else
+        {
+            StartCoroutine(existingEffect.ApplyEffect(gameObject));
         }
     }
 }
