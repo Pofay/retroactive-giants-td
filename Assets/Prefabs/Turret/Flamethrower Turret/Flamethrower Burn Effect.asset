@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 781c7b6a88c031245b1fd490f05c9b12, type: 3}
   m_Name: Flamethrower Burn Effect
   m_EditorClassIdentifier: 
+  effectId: FLAMETHROWER_BURN
   damage: 6
   tickInterval: 2
   duration: 6
