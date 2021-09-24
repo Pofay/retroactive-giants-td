@@ -14,11 +14,11 @@ public class Bullet : MonoBehaviour
     public float speed = 70f;
 
     private Transform target;
-    private IImpactEffect impactEffect;
+    private IImpactEffect[] impactEffects;
 
     void Start()
     {
-        impactEffect = GetComponent<IImpactEffect>();
+        impactEffects = GetComponents<IImpactEffect>();
     }
 
     public void Seek(Transform target)
@@ -84,7 +84,10 @@ public class Bullet : MonoBehaviour
         var enemyHealth = enemy.GetComponent<EnemyHealth>();
         if (enemyHealth != null)
         {
-            impactEffect.ApplyEffect(target);
+            foreach(var impactEffect in impactEffects)
+            {
+                impactEffect.ApplyEffect(target);
+            }
             enemyHealth.TakeDamage(damage);
         }
     }
