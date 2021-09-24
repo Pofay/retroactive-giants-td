@@ -10,6 +10,15 @@ public class StatusEffectsHandler : MonoBehaviour
         effects = new Dictionary<string, IStatusEffect>();
     }
 
+    public bool ContainsActiveEffect(string effectId)
+    {
+        if(effects.ContainsKey(effectId))
+        {
+            return effects[effectId].IsActive;
+        }
+        return false;
+    }
+
     public void AddEffect(StatusEffectFactory effectFactory)
     {
         if (effects.ContainsKey(effectFactory.effectId))

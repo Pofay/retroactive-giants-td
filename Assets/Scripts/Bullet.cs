@@ -9,7 +9,6 @@ public class Bullet : MonoBehaviour
     public GameObject impactVFX;
 
     [Header("Game Attributes")]
-    public float damage = 10;
     public float explosiveRadius = 0f;
     public float speed = 70f;
 
@@ -62,7 +61,7 @@ public class Bullet : MonoBehaviour
         }
         else
         {
-            Damage(target);
+            ApplyImpactEffects(target);
         }
         Destroy(gameObject);
     }
@@ -74,21 +73,16 @@ public class Bullet : MonoBehaviour
         {
             if (collider.CompareTag("Enemy"))
             {
-                Damage(collider.transform);
+                ApplyImpactEffects(collider.transform);
             }
         }
     }
 
-    void Damage(Transform enemy)
+    void ApplyImpactEffects(Transform enemy)
     {
-        var enemyHealth = enemy.GetComponent<EnemyHealth>();
-        if (enemyHealth != null)
+        foreach (var impactEffect in impactEffects)
         {
-            foreach(var impactEffect in impactEffects)
-            {
-                impactEffect.ApplyEffect(target);
-            }
-            enemyHealth.TakeDamage(damage);
+            impactEffect.ApplyEffect(target);
         }
     }
 

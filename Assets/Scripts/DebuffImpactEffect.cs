@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class SlowingImpactEffect : MonoBehaviour, IImpactEffect
+public class DebuffImpactEffect : MonoBehaviour, IImpactEffect
 {
     public StatusEffectFactory statusEffectFactory;
 
