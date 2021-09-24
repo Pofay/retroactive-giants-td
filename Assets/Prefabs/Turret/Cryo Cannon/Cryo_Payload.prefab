@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 219067940391051569}
   - component: {fileID: 2007155819115064418}
   - component: {fileID: 8407877529611148533}
+  - component: {fileID: -6685951666824481068}
   m_Layer: 0
   m_Name: Cryo_Payload
   m_TagString: Untagged
@@ -110,7 +111,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4986b77e0b26c49890f6c02d91907c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowDuration: 2
-  slowPercentage: 0.4
   statusEffectFactory: {fileID: 11400000, guid: dc7a66ef967a2af4bbb416fca5734d68,
     type: 2}
+--- !u!114 &-6685951666824481068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219067940391051583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dca477698157af14293868f76426dbb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  damageModifier: {fileID: 11400000, guid: fd58add10dc780841b6e44e56faadcc8, type: 2}
