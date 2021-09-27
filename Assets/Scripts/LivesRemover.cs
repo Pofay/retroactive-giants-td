@@ -11,6 +11,11 @@ public class LivesRemover : MonoBehaviour
         playerStats = FindObjectOfType<PlayerStats>();
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        RemoveLives(1);
+    }
+
     public void RemoveLives(int amount)
     {
         playerStats.RemoveLives(amount);
