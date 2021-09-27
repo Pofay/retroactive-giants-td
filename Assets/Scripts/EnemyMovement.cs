@@ -2,35 +2,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float speed = 10f;
     private Transform target;
-
-    private int wavePointIndex = 0;
-    private WaypointsContainer waypoints;
+    private NavMeshAgent agent;
+    public float speed = 10f;
     private float currentSpeed;
 
     private IDictionary<string, float> modifiers;
 
-    public float CurrentSpeed
-    {
-        get { return currentSpeed; }
-    }
-
     public float BaseSpeed { get { return speed; } }
-
-    void Awake()
-    {
-        currentSpeed = speed;
-    }
 
     void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
         modifiers = new Dictionary<string, float>();
-        waypoints = FindObjectOfType<WaypointsContainer>();
-        target = waypoints.points[0];
+        target = FindObjectOfType<LivesRemover>().transform;
+        agent.SetDestination(target.position);
+        ChangeSpeed(speed);
     }
 
     public void AddModifier(string id, float value)
@@ -41,11 +32,11 @@ public class EnemyMovement : MonoBehaviour
 
     private void RecalculateCurrentSpeed()
     {
-        currentSpeed = BaseSpeed;
+        ChangeSpeed(BaseSpeed);
         foreach (var modifier in modifiers)
         {
             var modifierValue = modifier.Value;
-            currentSpeed += modifierValue;
+            ChangeSpeed(currentSpeed + modifierValue);
         }
     }
 
@@ -57,14 +48,14 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 direction = target.position - transform.position;
-        transform.Translate(direction.normalized * currentSpeed * Time.deltaTime, Space.World);
-        var lookRotation = CalculateRotationWithNoUpward(direction);
+        var lookRotation = CalculateRotationWithNoUpward(transform.forward);
         RotateToTarget(lookRotation);
-        if (HasReachedCurrentWayPoint())
-        {
-            SetNextWaypoint();
-        }
+    }
+
+    private void ChangeSpeed(float speed)
+    {
+        currentSpeed = speed;
+        agent.speed = currentSpeed;
     }
 
     private void RotateToTarget(Quaternion lookRotation)
@@ -80,33 +71,6 @@ public class EnemyMovement : MonoBehaviour
     private bool HasReachedCurrentWayPoint()
     {
         return Vector3.Distance(transform.position, target.position) <= 0.4;
-    }
-
-    private bool HasNotReachedLastWaypoint()
-    {
-        return wavePointIndex < waypoints.points.Length - 1;
-    }
-
-    private void SetNextWaypoint()
-    {
-        if (HasNotReachedLastWaypoint())
-        {
-            SetTargetToNextWaypoint();
-        }
-        else
-        {
-            if (target.GetComponent<LivesRemover>() != null)
-            {
-                target.GetComponent<LivesRemover>().RemoveLives(1);
-                this.gameObject.SetActive(false);
-            }
-        }
-    }
-
-    private void SetTargetToNextWaypoint()
-    {
-        wavePointIndex++;
-        target = waypoints.points[wavePointIndex];
     }
 
     public void ResetSpeed()

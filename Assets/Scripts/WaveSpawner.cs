@@ -7,7 +7,9 @@ public class WaveSpawner : MonoBehaviour
 {
     public WaveDetails[] wavesForLevel;
     public float countdown = 5;
-    [Min(0)] public int levelToUnlock;
+
+    [Min(0)]
+    public int levelToUnlock;
     public event Action OnAllEnemiesDisabled;
     public event Action<int, int> OnWaveChanged;
 
@@ -27,7 +29,7 @@ public class WaveSpawner : MonoBehaviour
     {
         levelUnlocker = new LevelUnlocker();
         currentWave = Instantiate(wavesForLevel[currentWaveIndex]);
-        OnWaveChanged?.Invoke(currentWaveIndex +1 , wavesForLevel.Length);
+        OnWaveChanged?.Invoke(currentWaveIndex + 1, wavesForLevel.Length);
     }
 
     private void PrepareNextWave()
@@ -113,6 +115,7 @@ public class WaveSpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        enemiesSpawned.Add(Instantiate(currentWave.enemyPrefab, transform.position, Quaternion.identity));
+        var enemy = Instantiate(currentWave.enemyPrefab, transform.position, Quaternion.identity);
+        enemiesSpawned.Add(enemy);
     }
 }
