@@ -7,15 +7,15 @@ public class ContinueScreen : MonoBehaviour
     public Button toNextLevelButton;
     public Button toLevelSelectionButton;
 
-    private WaveSpawner spawner;
+    private LevelUnlocker unlocker;
     private SceneFader sceneFader;
 
     void Awake()
     {
         sceneFader = FindObjectOfType<SceneFader>();
         continueScreen.SetActive(false);
-        spawner = FindObjectOfType<WaveSpawner>();
-        spawner.OnAllEnemiesDisabled += ShowWinScreen;
+        unlocker = FindObjectOfType<LevelUnlocker>();
+        unlocker.OnAllEnemiesDisabled += ShowWinScreen;
         toNextLevelButton.onClick.AddListener(() => ToNextLevel());
         toLevelSelectionButton.onClick.AddListener(() => ToLevelSelection());
     }
@@ -27,7 +27,7 @@ public class ContinueScreen : MonoBehaviour
 
     void ToNextLevel()
     {
-        sceneFader.FadeTo(string.Format("Level{0}", spawner.levelToUnlock + 1));
+        sceneFader.FadeTo(string.Format("Level{0}", unlocker.levelToUnlock));
     }
 
     void ShowWinScreen()

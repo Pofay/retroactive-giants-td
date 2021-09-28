@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
@@ -8,26 +7,17 @@ public class WaveSpawner : MonoBehaviour
     public WaveDetails[] wavesForLevel;
     public float countdown = 5;
 
-    [Min(0)]
-    public int levelToUnlock;
-    public event Action OnAllEnemiesDisabled;
     public event Action<int, int> OnWaveChanged;
-
-    private LevelUnlocker levelUnlocker;
-    private IList<GameObject> enemiesSpawned;
+    public event Action<GameObject> OnSpawn;
+    public bool IsFinishedSpawning { get; private set; }
 
     private WaveDetails currentWave;
     private int currentRound = 0;
     private int currentWaveIndex = 0;
 
-    void Awake()
-    {
-        enemiesSpawned = new List<GameObject>();
-    }
-
     void Start()
     {
-        levelUnlocker = new LevelUnlocker();
+        IsFinishedSpawning = false;
         currentWave = Instantiate(wavesForLevel[currentWaveIndex]);
         OnWaveChanged?.Invoke(currentWaveIndex + 1, wavesForLevel.Length);
     }
@@ -55,27 +45,8 @@ public class WaveSpawner : MonoBehaviour
         }
         else
         {
-            if (AllEnemiesAreDisabled())
-            {
-                countdown = 0;
-                OnAllEnemiesDisabled?.Invoke();
-
-                levelUnlocker.UnlockLevel(levelToUnlock);
-            }
+            IsFinishedSpawning = true;
         }
-    }
-
-    private bool AllEnemiesAreDisabled()
-    {
-        var allEnemiesDisabled = true;
-        for (var i = 0; i < enemiesSpawned.Count; i++)
-        {
-            if (enemiesSpawned[i].activeSelf == true)
-            {
-                allEnemiesDisabled = false;
-            }
-        }
-        return allEnemiesDisabled;
     }
 
     private bool IsNextWaveAvailable()
@@ -116,6 +87,6 @@ public class WaveSpawner : MonoBehaviour
     private void SpawnEnemy()
     {
         var enemy = Instantiate(currentWave.enemyPrefab, transform.position, Quaternion.identity);
-        enemiesSpawned.Add(enemy);
+        OnSpawn?.Invoke(enemy);
     }
 }
