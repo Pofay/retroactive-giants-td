@@ -16,4 +16,4 @@ MonoBehaviour:
     type: 3}
   enemiesPerRound: 5
   numberOfRounds: 1
-  timeBetweenSpawns: 5
+  timeBetweenSpawns: 10

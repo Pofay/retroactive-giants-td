@@ -48,8 +48,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f06b1474a23440841afca2a2b0554d93, type: 2}
   - {fileID: 11400000, guid: de7d5445163707e49930cfdcfc719658, type: 2}
   - {fileID: 11400000, guid: b25d632c378e5dd41bc6204e04a1f842, type: 2}
-  countdown: 5
-  levelToUnlock: 0
+  countdown: 0
 --- !u!1 &2534462427213358955
 GameObject:
   m_ObjectHideFlags: 0

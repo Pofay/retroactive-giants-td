@@ -36,12 +36,12 @@ public class WaveSpawner : MonoBehaviour
     {
         if (IsNextWaveAvailable())
         {
+            countdown -= Time.deltaTime;
             if (countdown < 0f && currentRound < currentWave.numberOfRounds)
             {
                 StartCoroutine(BeginSpawning());
                 ResetCountdown();
             }
-            countdown -= Time.deltaTime;
         }
         else
         {
