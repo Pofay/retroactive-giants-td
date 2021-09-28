@@ -18,23 +18,23 @@ public class LevelSelector : MonoBehaviour
         sceneFader = FindObjectOfType<SceneFader>();
         int maxLevelUnlocked = PlayerPrefs.GetInt("maxLevelReached", 0);
         mainMenuButton.onClick.AddListener(() => ToMainMenu());
-        for (var i = 0; i < numberOfLevels; i++)
+        for (var level = 1; level <= numberOfLevels; level++)
         {
-            GenerateLevelButton(maxLevelUnlocked, i);
+            GenerateLevelButton(maxLevelUnlocked, level);
         }
     }
 
-    private void GenerateLevelButton(int maxLevelUnlocked, int i)
+    private void GenerateLevelButton(int maxLevelUnlocked, int level)
     {
         var levelButtonGO = Instantiate(levelButtonPrefab);
         levelButtonGO.transform.SetParent(selectionContent.transform);
         levelButtonGO.transform.localScale = new Vector3(1, 1, 1);
         var levelButton = levelButtonGO.GetComponent<Button>();
         var levelButtonText = levelButtonGO.GetComponentInChildren<TextMeshProUGUI>();
-        levelButtonText.text = (i + 1).ToString();
-        var sceneName = ("Level" + (i + 1));
+        levelButtonText.text = (level).ToString();
+        var sceneName = ("Level" + level);
         levelButton.onClick.AddListener(() => LoadLevel(sceneName));
-        if (i > maxLevelUnlocked)
+        if (level > maxLevelUnlocked)
         {
             levelButton.interactable = false;
         }
