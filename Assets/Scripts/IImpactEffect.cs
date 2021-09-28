@@ -2,5 +2,5 @@
 
 public interface IImpactEffect 
 {
-    void ApplyEffect(Transform target);
+    void ApplyEffect(GameObject target);
 }

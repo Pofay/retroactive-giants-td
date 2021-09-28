@@ -61,7 +61,7 @@ public class Bullet : MonoBehaviour
         }
         else
         {
-            ApplyImpactEffects(target);
+            ApplyImpactEffects(target.gameObject);
         }
         Destroy(gameObject);
     }
@@ -73,12 +73,13 @@ public class Bullet : MonoBehaviour
         {
             if (collider.CompareTag("Enemy"))
             {
-                ApplyImpactEffects(collider.transform);
+                Debug.Log(collider.name);
+                ApplyImpactEffects(collider.gameObject);
             }
         }
     }
 
-    void ApplyImpactEffects(Transform enemy)
+    void ApplyImpactEffects(GameObject target)
     {
         foreach (var impactEffect in impactEffects)
         {

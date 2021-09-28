@@ -7,13 +7,12 @@ public class DamageImpactEffect : MonoBehaviour, IImpactEffect
     [Header("Damage Modifier")]
     public DamageModifier damageModifier;
 
-    public void ApplyEffect(Transform target)
+    public void ApplyEffect(GameObject target)
     {
         var enemyHealth = target.GetComponent<EnemyHealth>();
         if (enemyHealth != null)
         {
             var damageWithModifier = damageModifier.CalculateDamage(damage, target.gameObject);
-            Debug.Log("Damage with Modifier: " + damageWithModifier);
             enemyHealth.TakeDamage(damageWithModifier);
         }
     }
