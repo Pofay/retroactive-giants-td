@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc473d4301fe70f47ba299f1cfc15d14, type: 3}
   m_Name: Level1_Wave3
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8301769195490208465, guid: 3c54d5adfd3e1e3419dda4c371b7ccee,
+  enemyPrefab: {fileID: 8301769195490208465, guid: 6c8893e8928eaaf448017b7459642a6f,
     type: 3}
   enemiesPerRound: 2
   numberOfRounds: 1
