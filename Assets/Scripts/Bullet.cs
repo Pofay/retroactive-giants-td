@@ -73,7 +73,6 @@ public class Bullet : MonoBehaviour
         {
             if (collider.CompareTag("Enemy"))
             {
-                Debug.Log(collider.name);
                 ApplyImpactEffects(collider.gameObject);
             }
         }
