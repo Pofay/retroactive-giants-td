@@ -5,8 +5,8 @@ public class BurnEffect : IStatusEffect
 {
     public string Id { get; private set; }
     public bool IsActive { get; private set; }
-    public float RunningDuration { get; private set; }
 
+    private float RunningDuration { get; set; }
     private float damage;
     private float tickInterval;
     private float duration;
