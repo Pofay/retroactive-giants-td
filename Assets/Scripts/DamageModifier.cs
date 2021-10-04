@@ -15,9 +15,9 @@ public class DamageModifier : ScriptableObject
         {
             if (statusEffectHandler.ContainsActiveEffect(EffectId))
             {
-                return (damage * modifierPercentage) + damage;
+                return (damage * modifierPercentage);
             }
         }
-        return damage;
+        return 0f;
     }
 }

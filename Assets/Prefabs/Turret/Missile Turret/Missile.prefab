@@ -62,7 +62,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 40
-  damageModifier: {fileID: 11400000, guid: d278c3637f88d9f48b8ee33add97bf3f, type: 2}
+  modifiers:
+  - {fileID: 11400000, guid: d278c3637f88d9f48b8ee33add97bf3f, type: 2}
 --- !u!1001 &7695530334005365085
 PrefabInstance:
   m_ObjectHideFlags: 0

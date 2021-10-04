@@ -96,7 +96,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactVFX: {fileID: 1626357405638025137, guid: 1133dd3bc89692b4e95f776f9a397944,
     type: 3}
-  damage: 10
   explosiveRadius: 2.5
   speed: 10
 --- !u!114 &8407877529611148533
@@ -126,4 +125,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  damageModifier: {fileID: 11400000, guid: fd58add10dc780841b6e44e56faadcc8, type: 2}
+  modifiers:
+  - {fileID: 11400000, guid: fd58add10dc780841b6e44e56faadcc8, type: 2}
