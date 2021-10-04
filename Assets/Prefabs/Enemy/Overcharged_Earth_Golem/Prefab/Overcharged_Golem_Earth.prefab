@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 2295861592927274315}
   - component: {fileID: 7853408752538679752}
   m_Layer: 9
-  m_Name: Earth_Golem_2
+  m_Name: Overcharged_Golem_Earth
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -296,7 +296,7 @@ Transform:
   m_GameObject: {fileID: 8301769195490208465}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_Children:
   - {fileID: 7410287740730614396}
   - {fileID: 2952895668151864498}
