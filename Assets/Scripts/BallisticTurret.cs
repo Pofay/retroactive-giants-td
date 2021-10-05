@@ -6,8 +6,9 @@ public class BallisticTurret : Turret
 {
     [Header("Ballistic Turret Attribute(default)")]
     public float fireRate = 1f;
-    private float fireCountdown = 0f;
     public GameObject bulletPrefab;
+
+    private float fireCountdown = 0f;
 
     protected override void Shoot()
     {
