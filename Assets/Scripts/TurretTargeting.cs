@@ -29,9 +29,9 @@ public class TurretTargeting : MonoBehaviour
                 nearestEnemy = enemy;
             }
         }
-        if (nearestEnemy != null && IsInRange(shortestDistance, range))
+        if (nearestEnemy != null && IsInRange(shortestDistance, range)
+            && nearestEnemy.GetComponent<EnemyHealth>().isActiveAndEnabled)
         {
-            //LockOn(nearestEnemy.transform);
             return nearestEnemy.transform;
         }
         else
