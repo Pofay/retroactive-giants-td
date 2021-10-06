@@ -4,9 +4,10 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public event Action<float, float> OnHealthChanged;
+    public event Action OnDeath;
 
-    [SerializeField] private float maxHealth;
-
+    [SerializeField]
+    private float maxHealth;
     private float currentHealth;
 
     void Start()
@@ -23,7 +24,7 @@ public class EnemyHealth : MonoBehaviour
         }
         else
         {
-            this.gameObject.SetActive(false);
+            OnDeath?.Invoke();
         }
     }
 }
