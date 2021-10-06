@@ -9,10 +9,10 @@ public class LaserTurret : Turret
     public Light impactLight;
     public int damageOverTime = 30;
     public StatusEffectFactory effectFactory;
-    
+
     private EnemyMovement targetMovement;
     private EnemyHealth targetHealth;
-    
+
 
     public override void Start()
     {
