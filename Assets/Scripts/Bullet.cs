@@ -23,24 +23,30 @@ public class Bullet : MonoBehaviour
     public void Seek(Transform target)
     {
         this.target = target;
+        StartCoroutine(SpawnAndSeek());
     }
 
-    void FixedUpdate()
+    private IEnumerator SpawnAndSeek()
     {
         if (target == null)
         {
             Destroy(gameObject);
+            yield return new WaitForEndOfFrame();
         }
         else
         {
             var direction = target.position - transform.position;
             var distanceThisFrame = speed * Time.deltaTime;
 
-            if (direction.magnitude <= distanceThisFrame)
+            while (!(direction.magnitude <= distanceThisFrame))
             {
-                HitTarget();
+                direction = target.position - transform.position;
+                distanceThisFrame = speed * Time.deltaTime;
+                MoveToTarget(direction, distanceThisFrame);
+                yield return new WaitForEndOfFrame();
             }
-            MoveToTarget(direction, distanceThisFrame);
+            HitTarget();
+            yield return new WaitForEndOfFrame();
         }
     }
 
@@ -52,9 +58,6 @@ public class Bullet : MonoBehaviour
 
     private void HitTarget()
     {
-        var effect = Instantiate(impactVFX, transform.position, transform.rotation);
-        Destroy(effect, 2f);
-
         if (explosiveRadius > 0f)
         {
             Explode();
@@ -63,7 +66,20 @@ public class Bullet : MonoBehaviour
         {
             ApplyImpactEffects(target.gameObject);
         }
-        Destroy(gameObject);
+        SpawnVFX();
+        DisableMesh();
+        Destroy(gameObject, 1f);
+    }
+
+    private void SpawnVFX()
+    {
+        var effect = Instantiate(impactVFX, transform.position, transform.rotation);
+        Destroy(effect, 2f);
+    }
+
+    private void DisableMesh()
+    {
+        GetComponentInChildren<MeshRenderer>().enabled = false;
     }
 
     void Explode()
