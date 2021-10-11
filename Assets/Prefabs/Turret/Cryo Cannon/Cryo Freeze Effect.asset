@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Cryo Freeze Effect
   m_EditorClassIdentifier: 
   effectId: CRYO_FREEZE
-  slowPercentage: 0.3
+  slowPercentage: 0.45
   duration: 3
