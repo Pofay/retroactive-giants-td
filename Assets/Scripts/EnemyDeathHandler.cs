@@ -6,19 +6,19 @@ public class EnemyDeathHandler : MonoBehaviour
 {
     private Animator animator;
 
-    private bool hasPerformedCleanup;
+    private bool hasStartedDeathSequence;
 
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
         var health = GetComponent<EnemyHealth>();
-        health.OnDeath += PerformCleanup;
-        hasPerformedCleanup = false;
+        health.OnDeath += StartDeathSequence;
+        hasStartedDeathSequence = false;
     }
 
-    private void PerformCleanup()
+    private void StartDeathSequence()
     {
-        if (!hasPerformedCleanup)
+        if (!hasStartedDeathSequence)
         {
             StartCoroutine(PerformDeathSequence());
         }
@@ -26,12 +26,11 @@ public class EnemyDeathHandler : MonoBehaviour
 
     private IEnumerator PerformDeathSequence()
     {
-        hasPerformedCleanup = true;
+        hasStartedDeathSequence = true;
         animator.SetTrigger("Death");
         GetComponent<SphereCollider>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<EnemyHealth>().enabled = false;
-        GetComponentInChildren<EnemyHealthUI>().enabled = false;
         yield return new WaitForSeconds(2f);
         gameObject.SetActive(false);
         yield return new WaitForEndOfFrame();
