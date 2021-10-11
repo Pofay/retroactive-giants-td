@@ -8,6 +8,7 @@ public class EnemyHealthUI : MonoBehaviour
 {
     [SerializeField] private Image healthSlider;
     private EnemyHealth health;
+    private EnemyHealthUI healthUI;
     private Transform cam;
 
     void Awake()
@@ -15,9 +16,11 @@ public class EnemyHealthUI : MonoBehaviour
         health = GetComponentInParent<EnemyHealth>();
     }
 
+
     void Start()
     {
         cam = Camera.main.transform;
+        health.OnDeath += HideUI;
         health.OnHealthChanged += DisplayCurrentHealth;
     }
 
@@ -25,6 +28,11 @@ public class EnemyHealthUI : MonoBehaviour
     {
         var lookDirection = new Vector3(cam.position.x, transform.position.y, cam.position.z);
         transform.LookAt(lookDirection, Vector3.down);
+    }
+
+    private void HideUI()
+    {
+        gameObject.SetActive(false);
     }
 
     private void DisplayCurrentHealth(float currentHealth, float maxHealth)
@@ -35,11 +43,13 @@ public class EnemyHealthUI : MonoBehaviour
     void OnDisable()
     {
         health.OnHealthChanged -= DisplayCurrentHealth;
+        health.OnDeath -= HideUI;
     }
 
     void OnEnable()
     {
         health.OnHealthChanged += DisplayCurrentHealth;
+        health.OnDeath += HideUI;
     }
 }
 
