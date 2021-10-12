@@ -10,6 +10,7 @@ public class LaserTurret : Turret
     public int damageOverTime = 30;
     public StatusEffectFactory effectFactory;
 
+    private AudioSource audioSource;
     private EnemyMovement targetMovement;
     private EnemyHealth targetHealth;
 
@@ -17,6 +18,7 @@ public class LaserTurret : Turret
     public override void Start()
     {
         base.Start();
+        audioSource = GetComponent<AudioSource>();
     }
 
     protected override void UpdateTarget()
@@ -35,6 +37,16 @@ public class LaserTurret : Turret
         var statusEffectHandler = target.GetComponent<StatusEffectsHandler>();
         statusEffectHandler.AddEffect(effectFactory);
 
+        DrawLaserBeamToTarget();
+        SpawnImpactVFX();
+        if(!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
+    }
+
+    private void DrawLaserBeamToTarget()
+    {
         lineRenderer.enabled = true;
         if (impactEffect.isStopped)
         {
@@ -43,7 +55,10 @@ public class LaserTurret : Turret
         }
         lineRenderer.SetPosition(0, targeting.FirePointPosition);
         lineRenderer.SetPosition(1, target.position);
+    }
 
+    private void SpawnImpactVFX()
+    {
         var firePointDirection = targeting.FirePointPosition - target.position;
         impactEffect.transform.rotation = Quaternion.LookRotation(firePointDirection);
         impactEffect.transform.position = target.position + firePointDirection.normalized;
@@ -53,9 +68,8 @@ public class LaserTurret : Turret
     {
         if (target == null)
         {
-            lineRenderer.enabled = false;
-            impactLight.enabled = false;
-            impactEffect.Stop();
+            DisableVFX();
+            audioSource.Stop();
             return;
         }
         else
@@ -63,5 +77,12 @@ public class LaserTurret : Turret
             targeting.LookAtCurrentTarget(target);
         }
         Shoot();
+    }
+
+    private void DisableVFX()
+    {
+        lineRenderer.enabled = false;
+        impactLight.enabled = false;
+        impactEffect.Stop();
     }
 }
