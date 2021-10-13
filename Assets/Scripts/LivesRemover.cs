@@ -14,6 +14,7 @@ public class LivesRemover : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         RemoveLives(1);
+        other.gameObject.SetActive(false);
     }
 
     public void RemoveLives(int amount)
