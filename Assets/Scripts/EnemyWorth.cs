@@ -5,7 +5,7 @@ public class EnemyWorth : MonoBehaviour
     public int currencyOnKill = 25;
     public int livesOnKill = 0;
 
-    void OnDisable()
+    public void AddCurrencyToPlayer()
     {
         var playerStats = FindObjectOfType<PlayerStats>();
         if(playerStats != null)
