@@ -37,15 +37,20 @@ public class LaserTurret : Turret
         var statusEffectHandler = target.GetComponent<StatusEffectsHandler>();
         statusEffectHandler.AddEffect(effectFactory);
 
-        DrawLaserBeamToTarget();
-        SpawnImpactVFX();
-        if(!audioSource.isPlaying)
+        DrawLaser();
+        DrawImpactVFX();
+        PlaySound();
+    }
+
+    private void PlaySound()
+    {
+        if (!audioSource.isPlaying)
         {
             audioSource.Play();
         }
     }
 
-    private void DrawLaserBeamToTarget()
+    private void DrawLaser()
     {
         lineRenderer.enabled = true;
         if (impactEffect.isStopped)
@@ -57,7 +62,7 @@ public class LaserTurret : Turret
         lineRenderer.SetPosition(1, target.position);
     }
 
-    private void SpawnImpactVFX()
+    private void DrawImpactVFX()
     {
         var firePointDirection = targeting.FirePointPosition - target.position;
         impactEffect.transform.rotation = Quaternion.LookRotation(firePointDirection);
