@@ -59,6 +59,7 @@ public class LevelUnlocker : MonoBehaviour
             if (!spawner.IsFinishedSpawning)
             {
                 isFinishedSpawning = false;
+                return isFinishedSpawning;
             }
         }
         return isFinishedSpawning;
