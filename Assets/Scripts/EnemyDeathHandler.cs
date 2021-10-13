@@ -6,6 +6,7 @@ public class EnemyDeathHandler : MonoBehaviour
 {
     private Animator animator;
     private EnemyWorth enemyWorth;
+    private AudioSource audioSource;
 
     private bool hasStartedDeathSequence;
 
@@ -13,6 +14,7 @@ public class EnemyDeathHandler : MonoBehaviour
     {
         animator = GetComponentInChildren<Animator>();
         enemyWorth = GetComponent<EnemyWorth>();
+        audioSource = GetComponent<AudioSource>();
         var health = GetComponent<EnemyHealth>();
         health.OnDeath += StartDeathSequence;
         hasStartedDeathSequence = false;
@@ -29,13 +31,19 @@ public class EnemyDeathHandler : MonoBehaviour
     private IEnumerator PerformDeathSequence()
     {
         hasStartedDeathSequence = true;
+        AddCurrencyToPlayer();
         PerformDeathAnimation();
         DisableCollisionAndNavigation();
         HideHealthbar();
-        enemyWorth.AddCurrencyToPlayer();
         yield return new WaitForSeconds(2f);
         gameObject.SetActive(false);
         yield return new WaitForEndOfFrame();
+    }
+
+    private void AddCurrencyToPlayer()
+    {
+        audioSource.Play();
+        enemyWorth.AddCurrencyToPlayer();
     }
 
     private void HideHealthbar()
