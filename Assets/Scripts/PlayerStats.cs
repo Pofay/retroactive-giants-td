@@ -38,8 +38,11 @@ public class PlayerStats : MonoBehaviour
         {
             lives -= amount;
             OnLivesChange?.Invoke(lives);
+            if (lives <= 0)
+            {
+                OnLivesEmptied?.Invoke();
+            }
         }
-        OnLivesEmptied?.Invoke();
     }
 
     public bool HasEnoughCurrencyForTurret(Turret t)
