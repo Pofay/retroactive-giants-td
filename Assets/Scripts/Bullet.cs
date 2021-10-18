@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour
     [Header("Game Attributes")]
     public float explosiveRadius = 0f;
     public float speed = 70f;
+    public float lifetime = 1f;
 
     private Transform target;
     private IImpactEffect[] impactEffects;
@@ -66,15 +67,16 @@ public class Bullet : MonoBehaviour
         {
             ApplyImpactEffects(target.gameObject);
         }
-        SpawnVFX();
+        ShowVFX();
         DisableMesh();
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, lifetime);
     }
 
-    private void SpawnVFX()
+    private void ShowVFX()
     {
         var effect = Instantiate(impactVFX, transform.position, transform.rotation);
-        Destroy(effect, 2f);
+        var duration = effect.GetComponent<ParticleSystem>().main.duration;
+        Destroy(effect, duration);
     }
 
     private void DisableMesh()
