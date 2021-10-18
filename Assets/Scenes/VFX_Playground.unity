@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -222,7 +222,7 @@ Transform:
   - {fileID: 1942222679}
   - {fileID: 2004506445}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &238109001
 GameObject:
@@ -307,7 +307,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &689524366
 PrefabInstance:
@@ -468,7 +468,7 @@ Transform:
   m_LocalScale: {x: 3.7148, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 62.779003, y: -75.586006, z: 81.742004}
 --- !u!1001 &764344800
 PrefabInstance:
@@ -1367,7 +1367,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1942222679 stripped
 Transform:
@@ -1460,75 +1460,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 423f9d4ac74f4614d8e7927fe815b5cb, type: 3}
---- !u!1001 &2147054893
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 742073825746857423, guid: ab6bb2c7a8ff34b42931b13235156a70,
-        type: 3}
-      propertyPath: m_Name
-      value: Missile Launcher
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329993263576997852, guid: ab6bb2c7a8ff34b42931b13235156a70,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9.079362
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329993263576997852, guid: ab6bb2c7a8ff34b42931b13235156a70,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329993263576997852, guid: ab6bb2c7a8ff34b42931b13235156a70,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -34.61677
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329993263576997852, guid: ab6bb2c7a8ff34b42931b13235156a70,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329993263576997852, guid: ab6bb2c7a8ff34b42931b13235156a70,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329993263576997852, guid: ab6bb2c7a8ff34b42931b13235156a70,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329993263576997852, guid: ab6bb2c7a8ff34b42931b13235156a70,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329993263576997852, guid: ab6bb2c7a8ff34b42931b13235156a70,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329993263576997852, guid: ab6bb2c7a8ff34b42931b13235156a70,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329993263576997852, guid: ab6bb2c7a8ff34b42931b13235156a70,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329993263576997852, guid: ab6bb2c7a8ff34b42931b13235156a70,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ab6bb2c7a8ff34b42931b13235156a70, type: 3}
 --- !u!1001 &890650870764700396
 PrefabInstance:
   m_ObjectHideFlags: 0
