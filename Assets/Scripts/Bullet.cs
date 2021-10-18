@@ -69,6 +69,7 @@ public class Bullet : MonoBehaviour
         }
         ShowVFX();
         DisableMesh();
+        DisableLights();
         Destroy(gameObject, lifetime);
     }
 
@@ -82,6 +83,15 @@ public class Bullet : MonoBehaviour
     private void DisableMesh()
     {
         GetComponentInChildren<MeshRenderer>().enabled = false;
+    }
+
+    private void DisableLights()
+    {
+        var light = GetComponentInChildren<Light>();
+        if (light != null)
+        {
+            light.enabled = false;
+        }
     }
 
     void Explode()
