@@ -99,7 +99,7 @@ MonoBehaviour:
     type: 3}
   explosiveRadius: 0
   speed: 70
-  lifetime: 0.5
+  lifetime: 1
 --- !u!114 &3267589673857438151
 MonoBehaviour:
   m_ObjectHideFlags: 0

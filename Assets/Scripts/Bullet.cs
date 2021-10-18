@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
     private Transform target;
     private IImpactEffect[] impactEffects;
 
-    void Start()
+    void Awake()
     {
         impactEffects = GetComponents<IImpactEffect>();
     }
