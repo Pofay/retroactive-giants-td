@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public class SoundImpactEffect : MonoBehaviour, IImpactEffect
 
     void Start()
     {
-            soundFX = GetComponent<AudioSource>();
+        soundFX = GetComponent<AudioSource>();
     }
 
     public void ApplyEffect(GameObject target)
