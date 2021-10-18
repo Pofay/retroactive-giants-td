@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-// Screams to be called TurretTargeting
 public abstract class Turret : MonoBehaviour
 {
-
     [Header("Currency cost")]
     public int cost;
 
