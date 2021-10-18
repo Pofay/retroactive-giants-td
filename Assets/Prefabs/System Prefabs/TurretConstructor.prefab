@@ -52,6 +52,8 @@ MonoBehaviour:
   - {fileID: 3855285012939619382, guid: 42d9c37ec5ce7474ba89dda3d4765c8a, type: 3}
   - {fileID: 742073825746857423, guid: ab6bb2c7a8ff34b42931b13235156a70, type: 3}
   - {fileID: 2962089441412037814, guid: 5309bdacff92d56468edbcef0f12deb6, type: 3}
+  buildEffect: {fileID: 2009844030189171074, guid: 0a6f9a27940a5b54fa1234cf5d699ecf,
+    type: 3}
 --- !u!114 &1166153255
 MonoBehaviour:
   m_ObjectHideFlags: 0
