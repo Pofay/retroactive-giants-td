@@ -17,7 +17,6 @@ public class ShopItemButton : MonoBehaviour
 
     private void TriggerAnimation(bool isOn)
     {
-        Debug.Log("Clicked");
         animator.SetBool("selected", isOn);
     }
 }
