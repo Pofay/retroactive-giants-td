@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6682,6 +6682,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 492b68897191992449f3d9cb6cb6f3dd,
+        type: 2}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8eed1658ecf3202419d53265cbf56062,
+        type: 2}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5a66b96a68cf8a84ab07e7b90535678e,
+        type: 2}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9dcf57aed96bc75408ba16ca5fe3aae0,
+        type: 2}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: e0a31a8b04d2f7948bedae3b3c8aa0d3,
+        type: 2}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: b25d632c378e5dd41bc6204e04a1f842,
+        type: 2}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: b25d632c378e5dd41bc6204e04a1f842,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa3588b2b78e5734180b89bdf4ce51b0, type: 3}
 --- !u!1001 &3217403513646386502
@@ -6691,6 +6738,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1166153255, guid: 9b713213d3cb9384782098b1c2829258, type: 3}
+      propertyPath: lives
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166153255, guid: 9b713213d3cb9384782098b1c2829258, type: 3}
+      propertyPath: startingLevelData
+      value: 
+      objectReference: {fileID: 11400000, guid: 54849994169cd2640ade4fb75c072b9e,
+        type: 2}
     - target: {fileID: 1166153256, guid: 9b713213d3cb9384782098b1c2829258, type: 3}
       propertyPath: gameOverScreen
       value: 
