@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc473d4301fe70f47ba299f1cfc15d14, type: 3}
-  m_Name: Level1_Wave3
+  m_Script: {fileID: 11500000, guid: 3eee2377d2db47145a97301edcdb5319, type: 3}
+  m_Name: Level Starting Stats
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8301769195490208465, guid: 6c8893e8928eaaf448017b7459642a6f,
-    type: 3}
-  enemiesPerRound: 2
-  numberOfRounds: 1
-  timeBetweenSpawns: 10
+  startingCurrency: 800
+  startingLives: 10
