@@ -17,7 +17,7 @@ public class Shop : MonoBehaviour
         for (var i = 0; i < turretsGO.Length; i++)
         {
             var turret = turretsGO[i].GetComponent<Turret>();
-            textComponents[i].text = string.Format("$ {0}", turret.cost.ToString());
+            textComponents[i].text = string.Format(" $ {0}", turret.cost.ToString());
         }
     }
 
