@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -7947,22 +7947,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 616565541, guid: c52f55e8d8ebd714d86fda54ce55230a, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 616565541, guid: c52f55e8d8ebd714d86fda54ce55230a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 616565541, guid: c52f55e8d8ebd714d86fda54ce55230a, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 616565541, guid: c52f55e8d8ebd714d86fda54ce55230a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 807621387, guid: c52f55e8d8ebd714d86fda54ce55230a, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -7976,22 +7960,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 807621387, guid: c52f55e8d8ebd714d86fda54ce55230a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1760292828, guid: c52f55e8d8ebd714d86fda54ce55230a, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1760292828, guid: c52f55e8d8ebd714d86fda54ce55230a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1760292828, guid: c52f55e8d8ebd714d86fda54ce55230a, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1760292828, guid: c52f55e8d8ebd714d86fda54ce55230a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -8163,11 +8131,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4279197607704687939, guid: c52f55e8d8ebd714d86fda54ce55230a,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4279197607704687939, guid: c52f55e8d8ebd714d86fda54ce55230a,
-        type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
@@ -8226,16 +8189,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7433192830928727145, guid: c52f55e8d8ebd714d86fda54ce55230a,
-        type: 3}
-      propertyPath: m_IsOn
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7842791350114454093, guid: c52f55e8d8ebd714d86fda54ce55230a,
-        type: 3}
-      propertyPath: m_Name
-      value: HealthText
-      objectReference: {fileID: 0}
     - target: {fileID: 8804216338963726222, guid: c52f55e8d8ebd714d86fda54ce55230a,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -8254,26 +8207,6 @@ PrefabInstance:
     - target: {fileID: 8804216338963726222, guid: c52f55e8d8ebd714d86fda54ce55230a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162479066785171791, guid: c52f55e8d8ebd714d86fda54ce55230a,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162479066785171791, guid: c52f55e8d8ebd714d86fda54ce55230a,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162479066785171791, guid: c52f55e8d8ebd714d86fda54ce55230a,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162479066785171791, guid: c52f55e8d8ebd714d86fda54ce55230a,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
