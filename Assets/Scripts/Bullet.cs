@@ -29,26 +29,18 @@ public class Bullet : MonoBehaviour
 
     private IEnumerator SpawnAndSeek()
     {
-        if (target == null)
-        {
-            Destroy(gameObject);
-            yield return new WaitForEndOfFrame();
-        }
-        else
-        {
-            var direction = target.position - transform.position;
-            var distanceThisFrame = speed * Time.deltaTime;
+        var direction = target.position - transform.position;
+        var distanceThisFrame = speed * Time.deltaTime;
 
-            while (!(direction.magnitude <= distanceThisFrame))
-            {
-                direction = target.position - transform.position;
-                distanceThisFrame = speed * Time.deltaTime;
-                MoveToTarget(direction, distanceThisFrame);
-                yield return new WaitForEndOfFrame();
-            }
-            HitTarget();
+        while (!(direction.magnitude <= distanceThisFrame))
+        {
+            direction = target.position - transform.position;
+            distanceThisFrame = speed * Time.deltaTime;
+            MoveToTarget(direction, distanceThisFrame);
             yield return new WaitForEndOfFrame();
         }
+        HitTarget();
+        yield return new WaitForEndOfFrame();
     }
 
     private void MoveToTarget(Vector3 direction, float distanceThisFrame)

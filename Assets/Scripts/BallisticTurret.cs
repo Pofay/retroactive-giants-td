@@ -12,8 +12,11 @@ public class BallisticTurret : Turret
 
     protected override void Shoot()
     {
-        var bulletInstance = Instantiate(bulletPrefab, targeting.FirePointPosition, targeting.FirePointRotation);
-        bulletInstance.GetComponent<Bullet>().Seek(target);
+        if (target != null)
+        {
+            var bulletInstance = Instantiate(bulletPrefab, targeting.FirePointPosition, targeting.FirePointRotation);
+            bulletInstance.GetComponent<Bullet>().Seek(target);
+        }
     }
 
     protected override void Update()
