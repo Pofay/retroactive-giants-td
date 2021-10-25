@@ -8,8 +8,29 @@ public class PlayerStats : MonoBehaviour
     public event Action OnLivesEmptied;
 
     [Header("Player Statistics")]
-    [SerializeField] private int currency = 500;
-    [SerializeField] private int lives = 20;
+    [SerializeField]
+    private PlayerStatisticsData startingLevelData;
+
+    private int currency;
+    private int lives;
+
+    void Start()
+    {
+        SetInitialCurrency();
+        SetInitialLives();
+    }
+
+    private void SetInitialLives()
+    {
+        lives = startingLevelData.startingLives;
+        OnLivesChange?.Invoke(lives);
+    }
+
+    private void SetInitialCurrency()
+    {
+        currency = startingLevelData.startingCurrency;
+        OnCurrencyChange?.Invoke(currency);
+    }
 
     public void ReduceCurrency(int amount)
     {
