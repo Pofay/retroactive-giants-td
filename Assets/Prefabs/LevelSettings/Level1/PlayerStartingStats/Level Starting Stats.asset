@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Level Starting Stats
   m_EditorClassIdentifier: 
   startingCurrency: 750
-  startingLives: 10
+  startingLives: 15
