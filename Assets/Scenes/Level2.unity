@@ -2783,7 +2783,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: 0, y: 30, z: 0}
+  m_LocalPosition: {x: 0, y: 28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6163,9 +6163,86 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
         type: 3}
+      propertyPath: wavesForLevel.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
       propertyPath: levelToUnlock
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: f451397278af6154dbead5ff4aaac94d,
+        type: 2}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 41ffc6ec443f30a47bb4a1fd88369195,
+        type: 2}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5368013fc00224141bac7c30298160bd,
+        type: 2}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 57e953548c00d1a4abf64f4e64cad51f,
+        type: 2}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 66b566bca25ebfe4f8e478c9b07e3053,
+        type: 2}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: dbea1da33026b1542b5b8af39ea41787,
+        type: 2}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: fdc169286d4ef3244be89befa89aae0a,
+        type: 2}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: f0c6125de0a6b7942afbb34be87ece3c,
+        type: 2}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 24b2c49f1e24fd44797b0061dc328e82,
+        type: 2}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 75e426d0a04a3244e86c0cb53758b96e,
+        type: 2}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 10a6f9febd29c3c48a1fd98224867df6,
+        type: 2}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: wavesForLevel.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: 104b3e3b4af81f14caba98598f8086b8,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 2534462427213358964, guid: fa3588b2b78e5734180b89bdf4ce51b0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fa3588b2b78e5734180b89bdf4ce51b0, type: 3}
