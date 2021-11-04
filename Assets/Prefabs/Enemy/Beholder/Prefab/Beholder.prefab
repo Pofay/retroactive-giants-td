@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a08d72ebb2a90448ecf74dd0ba5f1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  maxHealth: 115
 --- !u!114 &8600265282549787595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5587af8d69c88ed4bb62592484fedc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currencyOnKill: 25
+  currencyOnKill: 10
   livesOnKill: 0
 --- !u!114 &2217507633175391806
 MonoBehaviour:
@@ -608,6 +608,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487410016656463647, guid: b2798769e2566ef44b36a74b691b2f6c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487410016656463647, guid: b2798769e2566ef44b36a74b691b2f6c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487410016656463647, guid: b2798769e2566ef44b36a74b691b2f6c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7487410016656624447, guid: b2798769e2566ef44b36a74b691b2f6c,
         type: 3}
