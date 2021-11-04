@@ -4997,14 +4997,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54c52c8d42a70b7489dd012478bc42a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 350
+  cost: 200
   upgradeCost: 0
   upgradedVersion: {fileID: 0}
   range: 20
   lineRenderer: {fileID: 467641934}
   impactEffect: {fileID: 5258962416696430548}
   impactLight: {fileID: 357528872830242045}
-  damageOverTime: 15
+  damageOverTime: 30
   effectFactory: {fileID: 11400000, guid: f397d569a5f20d040b6a89efab4b4cc0, type: 2}
 --- !u!82 &1959680536
 AudioSource:
