@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc473d4301fe70f47ba299f1cfc15d14, type: 3}
-  m_Name: Level1_Wave7
+  m_Name: Wave3
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8301769195490208465, guid: 3c54d5adfd3e1e3419dda4c371b7ccee,
+  enemyPrefab: {fileID: 8301769195490208465, guid: 3f020fac279f05d4f9af2034d0d553b1,
     type: 3}
-  enemiesPerRound: 4
-  numberOfRounds: 4
-  timeBetweenSpawns: 8
+  enemiesPerRound: 6
+  numberOfRounds: 5
+  timeBetweenSpawns: 10
