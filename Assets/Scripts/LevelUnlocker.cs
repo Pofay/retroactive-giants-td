@@ -89,7 +89,7 @@ public class LevelUnlocker : MonoBehaviour
 
     private void UnlockLevel()
     {
-        var currentUnlockedLevels = PlayerPrefs.GetInt("maxLevelReached", 0);
+        var currentUnlockedLevels = PlayerPrefs.GetInt("maxLevelReached", 1);
         if (currentUnlockedLevels < levelToUnlock)
         {
             PlayerPrefs.SetInt("maxLevelReached", levelToUnlock);

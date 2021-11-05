@@ -16,7 +16,7 @@ public class LevelSelector : MonoBehaviour
     void Awake()
     {
         sceneFader = FindObjectOfType<SceneFader>();
-        int maxLevelUnlocked = PlayerPrefs.GetInt("maxLevelReached", 0);
+        int maxLevelUnlocked = PlayerPrefs.GetInt("maxLevelReached", 1);
         mainMenuButton.onClick.AddListener(() => ToMainMenu());
         for (var level = 1; level <= numberOfLevels; level++)
         {
