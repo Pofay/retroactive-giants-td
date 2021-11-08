@@ -6,6 +6,7 @@ public class WaveSpawner : MonoBehaviour
 {
     public WaveDetails[] wavesForLevel;
     public float countdown = 5;
+    public bool isAllowedToSpawn = true;
 
     public event Action<int, int> OnWaveChanged;
     public event Action<GameObject> OnSpawn;
@@ -34,7 +35,7 @@ public class WaveSpawner : MonoBehaviour
 
     public void Update()
     {
-        if (IsNextWaveAvailable())
+        if (IsNextWaveAvailable() && isAllowedToSpawn)
         {
             countdown -= Time.deltaTime;
             if (countdown < 0f && currentRound < currentWave.numberOfRounds)
