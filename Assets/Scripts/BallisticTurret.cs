@@ -27,7 +27,6 @@ public class BallisticTurret : Turret
         }
         else if (!target.gameObject.activeSelf)
         {
-            UpdateTarget();
             return;
         }
         else
