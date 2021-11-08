@@ -27,14 +27,19 @@ public class PauseMenu : MonoBehaviour
         {
             if (!pauseScreen.activeSelf)
             {
-                pauseScreen.SetActive(true);
-                Time.timeScale = 0f;
+                Pause();
             }
             else
             {
                 Unpause();
             }
         }
+    }
+
+    private void Pause()
+    {
+        pauseScreen.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void Retry()
