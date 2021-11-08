@@ -102,8 +102,11 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         var turret = mountedTurretGO.GetComponent<Turret>();
         if (turret.upgradedVersion != null)
         {
-            turretConstructor.BuildUpgradedTurret(this, positionOffset);
-            HideTurretPrompt();
+            if (turretConstructor.CanBuildUpgradedTurret(turret))
+            {
+                turretConstructor.BuildUpgradedTurret(this, positionOffset);
+                HideTurretPrompt();
+            }
         }
     }
 

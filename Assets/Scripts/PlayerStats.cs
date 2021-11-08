@@ -70,4 +70,9 @@ public class PlayerStats : MonoBehaviour
     {
         return currency >= t.cost;
     }
+
+    public bool HasEnoughCurrencyForCost(int cost)
+    {
+        return currency >= cost;
+    }
 }

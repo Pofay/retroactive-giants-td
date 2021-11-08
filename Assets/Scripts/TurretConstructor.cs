@@ -28,6 +28,11 @@ public class TurretConstructor : MonoBehaviour
         return false;
     }
 
+    public bool CanBuildUpgradedTurret(Turret t)
+    {
+        return playerStats.HasEnoughCurrencyForCost(t.upgradeCost);
+    }
+
     public void SetTurretToConstruct(int turretIndex)
     {
         turretToBuild = turretPrefabs[turretIndex];
