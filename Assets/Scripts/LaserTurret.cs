@@ -77,6 +77,12 @@ public class LaserTurret : Turret
             audioSource.Stop();
             return;
         }
+        else if (!target.gameObject.activeSelf)
+        {
+            DisableVFX();
+            audioSource.Stop();
+            return;
+        }
         else
         {
             targeting.LookAtCurrentTarget(target);

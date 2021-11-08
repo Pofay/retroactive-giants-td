@@ -37,6 +37,11 @@ public class ParticleEmittingTurret : Turret
             DisableFlames();
             return;
         }
+        else if (!target.gameObject.activeSelf)
+        {
+            DisableFlames();
+            return;
+        }
         else
         {
             targeting.LookAtCurrentTarget(target);

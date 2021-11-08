@@ -25,11 +25,15 @@ public class BallisticTurret : Turret
         {
             return;
         }
+        else if (!target.gameObject.activeSelf)
+        {
+            UpdateTarget();
+            return;
+        }
         else
         {
             targeting.LookAtCurrentTarget(target);
         }
-
         if (fireCountdown <= 0f)
         {
             Shoot();
