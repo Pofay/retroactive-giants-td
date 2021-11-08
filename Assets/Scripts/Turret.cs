@@ -19,7 +19,7 @@ public abstract class Turret : MonoBehaviour
 
     public virtual void Start()
     {
-        InvokeRepeating("UpdateTarget", 0, 0.5f);
+        InvokeRepeating("UpdateTarget", 0, 0.2f);
         targeting = GetComponent<TurretTargeting>();
     }
 
