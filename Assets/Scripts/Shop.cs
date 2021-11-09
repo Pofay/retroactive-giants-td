@@ -13,10 +13,12 @@ public class Shop : MonoBehaviour
     void Start()
     {
         var textComponents = GetComponentsInChildren<TextMeshProUGUI>();
+        var shopButtons = GetComponentsInChildren<ShopItemButton>();
         var turretsGO = turretConstructor.AvailableTurrets;
         for (var i = 0; i < turretsGO.Length; i++)
         {
             var turret = turretsGO[i].GetComponent<Turret>();
+            var shopButton = shopButtons[i].OnHoverText = turret.name;
             textComponents[i].text = string.Format(" $ {0}", turret.cost.ToString());
         }
     }
