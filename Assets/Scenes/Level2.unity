@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5813,6 +5813,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 104b3e3b4af81f14caba98598f8086b8,
         type: 2}
+    - target: {fileID: 7355303721861684099, guid: fa3588b2b78e5734180b89bdf4ce51b0,
+        type: 3}
+      propertyPath: isAllowedToSpawn
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2534462427213358964, guid: fa3588b2b78e5734180b89bdf4ce51b0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fa3588b2b78e5734180b89bdf4ce51b0, type: 3}
@@ -6275,6 +6280,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c52f55e8d8ebd714d86fda54ce55230a, type: 3}
+--- !u!114 &810669789553172952 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6760908678804198776, guid: c52f55e8d8ebd714d86fda54ce55230a,
+    type: 3}
+  m_PrefabInstance: {fileID: 810669789553172951}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &810669789553172953 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8833036559579181878, guid: c52f55e8d8ebd714d86fda54ce55230a,
+    type: 3}
+  m_PrefabInstance: {fileID: 810669789553172951}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &810669789553172954 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2013920937453314451, guid: c52f55e8d8ebd714d86fda54ce55230a,
+    type: 3}
+  m_PrefabInstance: {fileID: 810669789553172951}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &890650870764700396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6482,6 +6517,21 @@ PrefabInstance:
       propertyPath: toNextLevelButton
       value: 
       objectReference: {fileID: 112945536}
+    - target: {fileID: 7889083488107755921, guid: 9b713213d3cb9384782098b1c2829258,
+        type: 3}
+      propertyPath: gameFinishedScreen
+      value: 
+      objectReference: {fileID: 810669789553172954}
+    - target: {fileID: 7889083488107755921, guid: 9b713213d3cb9384782098b1c2829258,
+        type: 3}
+      propertyPath: mainMenuButton
+      value: 
+      objectReference: {fileID: 810669789553172953}
+    - target: {fileID: 7889083488107755921, guid: 9b713213d3cb9384782098b1c2829258,
+        type: 3}
+      propertyPath: quitButton
+      value: 
+      objectReference: {fileID: 810669789553172952}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b713213d3cb9384782098b1c2829258, type: 3}
 --- !u!114 &3217403513646386504 stripped
