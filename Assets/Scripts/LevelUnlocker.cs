@@ -8,7 +8,14 @@ public class LevelUnlocker : MonoBehaviour
     [SerializeField]
     [Range(1, 3)]
     public int levelToUnlock;
+
     public event Action OnAllEnemiesDisabled;
+    public event Action OnLastLevelCompleted;
+
+    [SerializeField]
+    private int maxLevel = 3;
+    [SerializeField]
+    private bool isAtLastLevel = false;
 
     private WaveSpawner[] spawners;
     private List<GameObject> enemies;
@@ -67,11 +74,26 @@ public class LevelUnlocker : MonoBehaviour
 
     private IEnumerator CheckIfPlayerHasWon()
     {
+        var frameInstruction = new WaitForEndOfFrame();
         isCheckingForWinCondition = true;
         yield return new WaitUntil(() => AreAllEnemiesDisabled());
-        UnlockLevel();
-        OnAllEnemiesDisabled?.Invoke();
-        yield return new WaitForEndOfFrame();
+        yield return frameInstruction;
+        if (isAtLastLevel)
+        {
+            OnLastLevelCompleted?.Invoke();
+            yield return frameInstruction;
+        }
+        else
+        {
+            OnAllEnemiesDisabled?.Invoke();
+            UnlockLevel();
+            yield return frameInstruction;
+        }
+    }
+
+    private bool HasReachedMaxLevel(int currentUnlockedLevel)
+    {
+        return currentUnlockedLevel == maxLevel;
     }
 
     private bool AreAllEnemiesDisabled()
