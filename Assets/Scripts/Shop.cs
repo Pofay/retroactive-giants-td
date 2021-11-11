@@ -5,7 +5,7 @@ public class Shop : MonoBehaviour
 {
     private TurretConstructor turretConstructor;
 
-    private void Awake()
+    void Awake()
     {
         turretConstructor = FindObjectOfType<TurretConstructor>();
     }
@@ -14,7 +14,7 @@ public class Shop : MonoBehaviour
     {
         var textComponents = GetComponentsInChildren<TextMeshProUGUI>();
         var shopButtons = GetComponentsInChildren<ShopItemButton>();
-        var turretsGO = turretConstructor.AvailableTurrets;
+        var turretsGO = turretConstructor.turretPrefabs;
         for (var i = 0; i < turretsGO.Length; i++)
         {
             var turret = turretsGO[i].GetComponent<Turret>();

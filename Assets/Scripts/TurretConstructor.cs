@@ -11,8 +11,6 @@ public class TurretConstructor : MonoBehaviour
     private PlayerStats playerStats;
     private GameObject turretToBuild;
 
-    public GameObject[] AvailableTurrets => turretPrefabs;
-
     void Awake()
     {
         playerStats = GetComponent<PlayerStats>();
