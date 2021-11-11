@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eee2377d2db47145a97301edcdb5319, type: 3}
   m_Name: Level Starting Stats
   m_EditorClassIdentifier: 
-  startingCurrency: 750
+  startingCurrency: 600
   startingLives: 15

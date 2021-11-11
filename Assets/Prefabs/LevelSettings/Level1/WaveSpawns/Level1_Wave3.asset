@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8301769195490208465, guid: e11facf7541853d4680dcb136278da84,
     type: 3}
-  enemiesPerRound: 2
+  enemiesPerRound: 5
   numberOfRounds: 2
-  timeBetweenSpawns: 6
+  timeBetweenSpawns: 10

@@ -15,5 +15,5 @@ MonoBehaviour:
   enemyPrefab: {fileID: 8301769195490208465, guid: c5ef9e13e6de8f34d8cc50bd51cd0ed7,
     type: 3}
   enemiesPerRound: 5
-  numberOfRounds: 1
+  numberOfRounds: 2
   timeBetweenSpawns: 10
