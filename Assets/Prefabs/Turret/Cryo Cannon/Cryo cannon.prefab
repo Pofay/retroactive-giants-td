@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 5500406814358778770}
   - component: {fileID: 5190283309671271868}
   m_Layer: 0
-  m_Name: Cryo_cannon
+  m_Name: Cryo cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,11 +94,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20fdfb9503de69d47b3ba9ff69ad8d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 100
+  cost: 275
   upgradeCost: 60
   upgradedVersion: {fileID: 0}
   range: 15
-  fireRate: 0.5
+  fireRate: 0.4
   bulletPrefab: {fileID: 219067940391051583, guid: 25a60c64ca09c9441882bd6b57358ba3,
     type: 3}
 --- !u!1 &2519330483608933926

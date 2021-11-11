@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4040926988707262434}
   - component: {fileID: 36999355}
   m_Layer: 0
-  m_Name: Flamethrower 1
+  m_Name: Flamethrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,13 +62,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a341d843dfc2214caa566f393506423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 250
+  cost: 280
   upgradeCost: 0
   upgradedVersion: {fileID: 0}
   range: 15
   flames: {fileID: 5905867287772835131}
-  damage: 25
-  damageInterval: 0.5
+  damage: 35
+  damageInterval: 0.7
 --- !u!82 &36999355
 AudioSource:
   m_ObjectHideFlags: 0
