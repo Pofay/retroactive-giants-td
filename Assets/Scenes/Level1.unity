@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4716,6 +4716,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1360519899, guid: c52f55e8d8ebd714d86fda54ce55230a,
         type: 3}
+    - target: {fileID: 7811514030142689232, guid: 48bb487da36d3a643a12e1adb2bd4f7a,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 805474409}
+    - target: {fileID: 7811514030142689232, guid: 48bb487da36d3a643a12e1adb2bd4f7a,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PurchaseLaserBeamer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811514030142689232, guid: 48bb487da36d3a643a12e1adb2bd4f7a,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8060472648737452031, guid: 48bb487da36d3a643a12e1adb2bd4f7a,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -7139,8 +7154,7 @@ PrefabInstance:
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 810669789284905406, guid: c52f55e8d8ebd714d86fda54ce55230a,
-        type: 3}
+      objectReference: {fileID: 805474409}
     - target: {fileID: 7811514030142689232, guid: 48bb487da36d3a643a12e1adb2bd4f7a,
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -8067,7 +8081,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 805474409}
-        m_MethodName: PurchaseLaserBeamer
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9707,16 +9721,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretConstructor
       objectReference: {fileID: 0}
+    - target: {fileID: 3217403513204276938, guid: 9b713213d3cb9384782098b1c2829258,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3217403513204276939, guid: 9b713213d3cb9384782098b1c2829258,
         type: 3}
       propertyPath: turretPrefabs.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3217403513204276939, guid: 9b713213d3cb9384782098b1c2829258,
         type: 3}
       propertyPath: turretPrefabs.Array.data[3]
       value: 
-      objectReference: {fileID: 2962089441412037814, guid: 83477faea48bf1c438c7185c9ac7c39d,
+      objectReference: {fileID: 2962089441412037814, guid: 5309bdacff92d56468edbcef0f12deb6,
         type: 3}
     - target: {fileID: 3217403513646386504, guid: 9b713213d3cb9384782098b1c2829258,
         type: 3}
@@ -9979,8 +9998,7 @@ PrefabInstance:
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 810669789284905406, guid: c52f55e8d8ebd714d86fda54ce55230a,
-        type: 3}
+      objectReference: {fileID: 805474409}
     - target: {fileID: 7811514030142689232, guid: 48bb487da36d3a643a12e1adb2bd4f7a,
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
