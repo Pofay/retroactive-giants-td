@@ -18,6 +18,6 @@ public class DamageModifier : ScriptableObject
                 return (damage * modifierPercentage);
             }
         }
-        return damage;
+        return 0;
     }
 }
