@@ -4849,7 +4849,7 @@ GameObject:
   - component: {fileID: 7288767273182278826}
   - component: {fileID: 1959680536}
   m_Layer: 0
-  m_Name: LaserBeamer
+  m_Name: Laser Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5004,7 +5004,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 467641934}
   impactEffect: {fileID: 5258962416696430548}
   impactLight: {fileID: 357528872830242045}
-  damageOverTime: 30
+  damageOverTime: 50
   effectFactory: {fileID: 11400000, guid: f397d569a5f20d040b6a89efab4b4cc0, type: 2}
 --- !u!82 &1959680536
 AudioSource:
