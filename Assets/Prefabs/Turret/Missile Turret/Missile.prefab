@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca477698157af14293868f76426dbb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 40
+  damage: 100
   modifiers:
   - {fileID: 11400000, guid: d278c3637f88d9f48b8ee33add97bf3f, type: 2}
 --- !u!114 &6019418190005634622
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bab9065dab3d1b43b16e9de195b5d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 5ff823f546b52574a931e1d9b44290a6, type: 3}
+  impactSFXName: Missile Launcher
 --- !u!82 &1286896290064933844
 AudioSource:
   m_ObjectHideFlags: 0
