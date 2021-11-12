@@ -4,7 +4,7 @@
 public class BurnEffectFactory : StatusEffectFactory
 {
     [Header("Burn Effect Values")]
-    [Range(3f, 9f)]
+    [Range(3f, 40f)]
     public float damage;
     [Range(0f, 3f)]
     public float tickInterval;
