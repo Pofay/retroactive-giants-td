@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bab9065dab3d1b43b16e9de195b5d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 9930d5b4be15bb04c9d0a6fa0d7e6b2e, type: 3}
+  impactSFXName: Cryo Cannon
 --- !u!82 &-2149302618055692858
 AudioSource:
   m_ObjectHideFlags: 0
