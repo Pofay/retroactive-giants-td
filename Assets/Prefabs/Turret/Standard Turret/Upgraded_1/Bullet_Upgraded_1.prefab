@@ -99,7 +99,7 @@ MonoBehaviour:
     type: 3}
   explosiveRadius: 0
   speed: 70
-  lifetime: 1
+  lifetime: 1.3
 --- !u!114 &3267589673857438151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,4 +223,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bab9065dab3d1b43b16e9de195b5d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: e11a5a019377fbd4c81caa0adcb4c236, type: 3}
+  impactSFXName: Standard Turret Upgraded
