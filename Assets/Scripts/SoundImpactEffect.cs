@@ -5,17 +5,12 @@ using UnityEngine;
 
 public class SoundImpactEffect : MonoBehaviour, IImpactEffect
 {
-    private AudioSource soundFX;
     [SerializeField]
-    private AudioClip audioClip;
-
-    void Start()
-    {
-        soundFX = GetComponent<AudioSource>();
-    }
+    private string impactSFXName;
+    
 
     public void ApplyEffect(GameObject target)
     {
-        soundFX.PlayOneShot(audioClip);
+        ImpactSoundPlayer.instance.Play(impactSFXName);
     }
 }
