@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Flamethrower Burn Effect
   m_EditorClassIdentifier: 
   effectId: FLAMETHROWER_BURN
-  damage: 6
+  damage: 25
   tickInterval: 2
   duration: 6

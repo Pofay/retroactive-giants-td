@@ -67,7 +67,7 @@ MonoBehaviour:
   upgradedVersion: {fileID: 0}
   range: 15
   flames: {fileID: 5905867287772835131}
-  damage: 35
+  damage: 50
   damageInterval: 0.7
 --- !u!82 &36999355
 AudioSource:
