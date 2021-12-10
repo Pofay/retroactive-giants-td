@@ -4985,6 +4985,9 @@ MonoBehaviour:
   partToRotate: {fileID: 5857625605966783188}
   firePoint: {fileID: 5857625607081795929}
   targetTag: Enemy
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &7288767273182278826
 MonoBehaviour:
   m_ObjectHideFlags: 0

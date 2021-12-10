@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8477902887674129533}
   - component: {fileID: 8211546682072322643}
   m_Layer: 0
-  m_Name: StandardTurret
+  m_Name: Standard Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,6 +50,9 @@ MonoBehaviour:
   partToRotate: {fileID: 1144727613748256734}
   firePoint: {fileID: 1414575238140577224}
   targetTag: Enemy
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &8211546682072322643
 MonoBehaviour:
   m_ObjectHideFlags: 0
