@@ -9,30 +9,29 @@ public class TurretTargeting : MonoBehaviour
     public Transform partToRotate;
     public Transform firePoint;
     public string targetTag = "Enemy";
+    public LayerMask targetMask;
 
     public Vector3 FirePointPosition => firePoint.position;
     public Quaternion FirePointRotation => firePoint.rotation;
 
     public Transform CalculateNextTarget(float range)
     {
-        var enemies = GameObject.FindGameObjectsWithTag(targetTag);
+        var possibleTargets = Physics.OverlapSphere(transform.position, range, targetMask);
         var shortestDistance = Mathf.Infinity;
-        GameObject nearestEnemy = null;
-        // Bloody hell.. can't refactor
-        // It's all about finding the nearest enemy that's withing range.
-        foreach (var enemy in enemies)
+        GameObject nearestTarget = null;
+        foreach (var target in possibleTargets)
         {
-            var distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            var distanceToEnemy = Vector3.Distance(transform.position, target.transform.position);
             if (distanceToEnemy < shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
-                nearestEnemy = enemy;
+                nearestTarget = target.gameObject;
             }
         }
-        if (nearestEnemy != null && IsInRange(shortestDistance, range)
-            && nearestEnemy.GetComponent<EnemyHealth>().isActiveAndEnabled)
+        if (nearestTarget != null && IsInRange(shortestDistance, range)
+            && nearestTarget.GetComponent<EnemyHealth>().isActiveAndEnabled)
         {
-            return nearestEnemy.transform;
+            return nearestTarget.transform;
         }
         else
         {
