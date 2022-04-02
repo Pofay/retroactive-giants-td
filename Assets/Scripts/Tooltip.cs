@@ -6,14 +6,20 @@ public class Tooltip : MonoBehaviour
 {
     private static Tooltip instance;
 
-    private TextMeshProUGUI tooltipText;
-    private RectTransform background;
+    [SerializeField] private TextMeshProUGUI tooltipText;
+    [SerializeField] private RectTransform background;
 
     void Awake()
     {
         instance = this;
-        background = transform.Find("TooltipBackground").GetComponent<RectTransform>();
-        tooltipText = transform.Find("TooltipText").GetComponent<TextMeshProUGUI>();
+        if (background == null)
+        {
+            background = transform.Find("TooltipBackground").GetComponent<RectTransform>();
+        }
+        if (tooltipText == null)
+        {
+            tooltipText = transform.Find("TooltipText").GetComponent<TextMeshProUGUI>();
+        }
         HideTooltip();
     }
 
@@ -27,7 +33,7 @@ public class Tooltip : MonoBehaviour
 
     public void ShowTooltip(string text)
     {
-        gameObject.SetActive(true);
+        ActivateTooltip();
 
         tooltipText.SetText(text);
         var textPaddingSize = 4f;
@@ -35,11 +41,23 @@ public class Tooltip : MonoBehaviour
         background.sizeDelta = backgroundSize;
     }
 
+    private void ActivateTooltip()
+    {
+        background.gameObject.SetActive(true);
+        tooltipText.gameObject.SetActive(true);
+    }
+
     public void HideTooltip()
     {
-        gameObject.SetActive(false);
+        DisableTooltip();
     }
-   
+
+    private void DisableTooltip()
+    {
+        background.gameObject.SetActive(false);
+        tooltipText.gameObject.SetActive(false);
+    }
+
     public static void Show(string text)
     {
         instance.ShowTooltip(text);
