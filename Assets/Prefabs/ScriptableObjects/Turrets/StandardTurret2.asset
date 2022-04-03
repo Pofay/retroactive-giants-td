@@ -18,5 +18,5 @@ MonoBehaviour:
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   turretName: Standard Turret 2
-  cost: 200
+  cost: 90
   upgradedDefinition: {fileID: 0}
