@@ -17,5 +17,6 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  turretName: Laser Turret
   cost: 200
   upgradedDefinition: {fileID: 0}

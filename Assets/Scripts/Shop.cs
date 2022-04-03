@@ -17,7 +17,7 @@ public class Shop : MonoBehaviour
         var buildableTurrets = turretConstructor.buildableTurrets;
         for (var i = 0; i < buildableTurrets.Length; i++)
         {
-            var shopButton = shopButtons[i].OnHoverText = buildableTurrets[i].turretName;
+            shopButtons[i].OnHoverText = buildableTurrets[i].turretName;
             textComponents[i].text = string.Format(" $ {0}", buildableTurrets[i].cost.ToString());
         }
     }

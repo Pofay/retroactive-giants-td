@@ -17,5 +17,6 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  turretName: Missile Turret
   cost: 250
   upgradedDefinition: {fileID: 0}
