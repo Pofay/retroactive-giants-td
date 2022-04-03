@@ -8792,10 +8792,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3217403513204276939, guid: 9b713213d3cb9384782098b1c2829258,
         type: 3}
+      propertyPath: buildableTurrets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3217403513204276939, guid: 9b713213d3cb9384782098b1c2829258,
+        type: 3}
       propertyPath: turretPrefabs.Array.data[3]
       value: 
       objectReference: {fileID: 2962089441412037814, guid: 5309bdacff92d56468edbcef0f12deb6,
         type: 3}
+    - target: {fileID: 3217403513204276939, guid: 9b713213d3cb9384782098b1c2829258,
+        type: 3}
+      propertyPath: buildableTurrets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: aac4cd66b15a8a84285a7a3bfe1dd575,
+        type: 2}
+    - target: {fileID: 3217403513204276939, guid: 9b713213d3cb9384782098b1c2829258,
+        type: 3}
+      propertyPath: buildableTurrets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3bb39f6d9becf0347b04bb43911e2da9,
+        type: 2}
+    - target: {fileID: 3217403513204276939, guid: 9b713213d3cb9384782098b1c2829258,
+        type: 3}
+      propertyPath: buildableTurrets.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e02644a30ccdb640a932f3f7e9bcdac,
+        type: 2}
     - target: {fileID: 3217403513646386504, guid: 9b713213d3cb9384782098b1c2829258,
         type: 3}
       propertyPath: pauseScreen
