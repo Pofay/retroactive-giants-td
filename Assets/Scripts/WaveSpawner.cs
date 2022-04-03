@@ -88,9 +88,6 @@ public class WaveSpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        //var enemy = Instantiate(currentWave.enemyPrefab, transform.position, Quaternion.identity);
-        //OnSpawn?.Invoke(enemy);
-
         var asyncOperationHandle = currentWave.enemyAssetReference.InstantiateAsync(transform.position, Quaternion.identity, spawnParent.transform);
         asyncOperationHandle.Completed += (handle) =>
         {
