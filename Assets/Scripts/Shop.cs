@@ -14,12 +14,11 @@ public class Shop : MonoBehaviour
     {
         var textComponents = GetComponentsInChildren<TextMeshProUGUI>();
         var shopButtons = GetComponentsInChildren<ShopItemButton>();
-        var turretsGO = turretConstructor.turretPrefabs;
-        for (var i = 0; i < turretsGO.Length; i++)
+        var buildableTurrets = turretConstructor.buildableTurrets;
+        for (var i = 0; i < buildableTurrets.Length; i++)
         {
-            var turret = turretsGO[i].GetComponent<Turret>();
-            var shopButton = shopButtons[i].OnHoverText = turret.name;
-            textComponents[i].text = string.Format(" $ {0}", turret.cost.ToString());
+            var shopButton = shopButtons[i].OnHoverText = buildableTurrets[i].turretName;
+            textComponents[i].text = string.Format(" $ {0}", buildableTurrets[i].cost.ToString());
         }
     }
 

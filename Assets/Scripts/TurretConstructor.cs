@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 [RequireComponent(typeof(PlayerStats))]
 public class TurretConstructor : MonoBehaviour
 {
     [Header("Buildable Turrets")]
-    public GameObject[] turretPrefabs;
+    public BuildableTurretDefinition[] buildableTurrets;
     [Header("Build Effect")]
     public GameObject buildEffect;
 
     private PlayerStats playerStats;
-    private GameObject turretToBuild;
+    private BuildableTurretDefinition selectedTurretToBuild;
 
     void Awake()
     {
@@ -18,10 +19,9 @@ public class TurretConstructor : MonoBehaviour
 
     public bool CanBuildTurret()
     {
-        if (turretToBuild != null)
+        if (selectedTurretToBuild != null)
         {
-            var t = turretToBuild.GetComponent<Turret>();
-            return playerStats.HasEnoughCurrencyForTurret(t);
+            return playerStats.HasEnoughCurrencyForCost(selectedTurretToBuild.cost);
         }
         return false;
     }
@@ -33,17 +33,17 @@ public class TurretConstructor : MonoBehaviour
 
     public void SetTurretToConstruct(int turretIndex)
     {
-        turretToBuild = turretPrefabs[turretIndex];
+        selectedTurretToBuild = buildableTurrets[turretIndex];
     }
 
     public void BuildTurret(Node node, Vector3 offset)
     {
-        var turret = turretToBuild.GetComponent<Turret>();
-        var turretPosition = node.transform.position + offset;
-        SpawnBuildParticles(turretPosition);
-        var turretGO = Instantiate(turretToBuild, turretPosition, transform.rotation);
-        node.mountedTurretGO = turretGO;
-        playerStats.ReduceCurrency(turret.cost);
+        //var turretPosition = node.transform.position + offset;
+        //var turret = selectedTurretToBuild.GetComponent<Turret>();
+        //SpawnBuildParticles(turretPosition);
+        //var turretGO = Instantiate(selectedTurretToBuild, turretPosition, transform.rotation);
+        //node.mountedTurretGO = turretGO;
+        //playerStats.ReduceCurrency(turret.cost);
     }
 
     public void BuildUpgradedTurret(Node node, Vector3 offset)
