@@ -46,6 +46,19 @@ public class TurretConstructor : MonoBehaviour
         InstantiateTurret(selectedTurretToBuild, node, turretPosition);
     }
 
+    public void BuildUpgradedTurret(Node node, Vector3 offset)
+    {
+        var turretPosition = node.transform.position + offset;
+        var mountedTurret = node.mountedTurretGO.GetComponent<Turret>();
+        InstantiateTurret(mountedTurret.upgradedVersion, node, turretPosition);
+        DestroyTurret(node.mountedTurretGO);
+    }
+    public void RefundTurret(Turret t)
+    {
+        playerStats.AddCurrency(t.cost);
+        DestroyTurret(t.gameObject);
+    }
+
     private void InstantiateTurret(BuildableTurretDefinition turretToBuild, Node node, Vector3 turretPosition)
     {
         var asyncOperationHandle = turretToBuild.turretReference.InstantiateAsync(turretPosition, transform.rotation);
@@ -66,29 +79,15 @@ public class TurretConstructor : MonoBehaviour
         };
     }
 
-    public void BuildUpgradedTurret(Node node, Vector3 offset)
-    {
-        var turretPosition = node.transform.position + offset;
-        var mountedTurret = node.mountedTurretGO.GetComponent<Turret>();
-        InstantiateTurret(mountedTurret.upgradedVersion, node, turretPosition);
-        DestroyTurret(node.mountedTurretGO);
-    }
-
-    private void DestroyTurret(GameObject turret)
-    {
-        turrets.Remove(turret);
-        Addressables.ReleaseInstance(turret);
-    }
-
     private void SpawnBuildParticles(Vector3 turretPosition)
     {
         var buildParticles = Instantiate(buildEffect, turretPosition, Quaternion.identity);
         Destroy(buildParticles, buildParticles.GetComponentInChildren<ParticleSystem>().main.duration);
     }
 
-    public void RefundTurret(Turret t)
+    private void DestroyTurret(GameObject turret)
     {
-        playerStats.AddCurrency(t.cost);
-        DestroyTurret(t.gameObject);
+        turrets.Remove(turret);
+        Addressables.ReleaseInstance(turret);
     }
 }
