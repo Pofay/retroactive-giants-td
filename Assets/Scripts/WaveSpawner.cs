@@ -7,6 +7,7 @@ public class WaveSpawner : MonoBehaviour
     public WaveDetails[] wavesForLevel;
     public float countdown = 5;
     public bool isAllowedToSpawn = true;
+    public GameObject spawnParent;
 
     public event Action<int, int> OnWaveChanged;
     public event Action<GameObject> OnSpawn;
@@ -87,7 +88,13 @@ public class WaveSpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        var enemy = Instantiate(currentWave.enemyPrefab, transform.position, Quaternion.identity);
-        OnSpawn?.Invoke(enemy);
+        //var enemy = Instantiate(currentWave.enemyPrefab, transform.position, Quaternion.identity);
+        //OnSpawn?.Invoke(enemy);
+
+        var asyncOperationHandle = currentWave.enemyAssetReference.InstantiateAsync(transform.position, Quaternion.identity, spawnParent.transform);
+        asyncOperationHandle.Completed += (handle) =>
+        {
+            OnSpawn?.Invoke(handle.Result);
+        };
     }
 }

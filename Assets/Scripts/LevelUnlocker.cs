@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class LevelUnlocker : MonoBehaviour
 {
@@ -39,6 +40,11 @@ public class LevelUnlocker : MonoBehaviour
 
     void OnDisable()
     {
+        foreach(var enemyReference in enemies)
+        {
+            Addressables.ReleaseInstance(enemyReference);
+        }
+
         foreach (var spawner in spawners)
         {
             spawner.OnSpawn -= AddToEnemyList;
