@@ -7,7 +7,7 @@ public abstract class Turret : MonoBehaviour
 
     [Header("Upgrade Attributes")]
     public int upgradeCost;
-    public GameObject upgradedVersion;
+    public BuildableTurretDefinition upgradedVersion;
 
     [Header("General Combat Attributes")]
     public float range = 15f;

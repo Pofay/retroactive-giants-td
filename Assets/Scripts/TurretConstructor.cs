@@ -43,26 +43,36 @@ public class TurretConstructor : MonoBehaviour
     public void BuildTurret(Node node, Vector3 offset)
     {
         var turretPosition = node.transform.position + offset;
-        var asyncOperationHandle = selectedTurretToBuild.turretReference.InstantiateAsync(turretPosition, transform.rotation);
+        InstantiateTurret(selectedTurretToBuild, node, turretPosition);
+    }
+
+    private void InstantiateTurret(BuildableTurretDefinition turretToBuild, Node node, Vector3 turretPosition)
+    {
+        var asyncOperationHandle = turretToBuild.turretReference.InstantiateAsync(turretPosition, transform.rotation);
         asyncOperationHandle.Completed += (handle) =>
         {
             SpawnBuildParticles(turretPosition);
             var turretGO = handle.Result;
+            var turret = turretGO.GetComponent<Turret>();
+            turret.cost = turretToBuild.cost;
+            if (turretToBuild.HasUpgradedVariant())
+            {
+                turret.upgradeCost = turretToBuild.UpgradedTurretDefinition.cost;
+                turret.upgradedVersion = turretToBuild.UpgradedTurretDefinition;
+            }
             node.mountedTurretGO = turretGO;
-            playerStats.ReduceCurrency(selectedTurretToBuild.cost);
+            playerStats.ReduceCurrency(turretToBuild.cost);
             turrets.Add(turretGO);
         };
     }
 
     public void BuildUpgradedTurret(Node node, Vector3 offset)
     {
-        var mountedTurret = node.mountedTurretGO.GetComponent<Turret>();
         var turretPosition = node.transform.position + offset;
-        SpawnBuildParticles(turretPosition);
-        var turretGO = Instantiate(mountedTurret.upgradedVersion, turretPosition, transform.rotation);
-        node.mountedTurretGO = turretGO;
-        playerStats.ReduceCurrency(mountedTurret.upgradeCost);
-        Destroy(mountedTurret.gameObject);
+        var mountedTurret = node.mountedTurretGO.GetComponent<Turret>();
+        InstantiateTurret(mountedTurret.upgradedVersion, node, turretPosition);
+        turrets.Remove(node.mountedTurretGO);
+        Addressables.ReleaseInstance(node.mountedTurretGO);
     }
 
     private void SpawnBuildParticles(Vector3 turretPosition)
