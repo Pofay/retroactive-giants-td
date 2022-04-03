@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.AddressableAssets;
 
 [RequireComponent(typeof(PlayerStats))]
@@ -12,9 +13,12 @@ public class TurretConstructor : MonoBehaviour
     private PlayerStats playerStats;
     private BuildableTurretDefinition selectedTurretToBuild;
 
+    private List<GameObject> turrets;
+
     void Awake()
     {
         playerStats = GetComponent<PlayerStats>();
+        turrets = new List<GameObject>();
     }
 
     public bool CanBuildTurret()
@@ -38,12 +42,16 @@ public class TurretConstructor : MonoBehaviour
 
     public void BuildTurret(Node node, Vector3 offset)
     {
-        //var turretPosition = node.transform.position + offset;
-        //var turret = selectedTurretToBuild.GetComponent<Turret>();
-        //SpawnBuildParticles(turretPosition);
-        //var turretGO = Instantiate(selectedTurretToBuild, turretPosition, transform.rotation);
-        //node.mountedTurretGO = turretGO;
-        //playerStats.ReduceCurrency(turret.cost);
+        var turretPosition = node.transform.position + offset;
+        var asyncOperationHandle = selectedTurretToBuild.turretReference.InstantiateAsync(turretPosition, transform.rotation);
+        asyncOperationHandle.Completed += (handle) =>
+        {
+            SpawnBuildParticles(turretPosition);
+            var turretGO = handle.Result;
+            node.mountedTurretGO = turretGO;
+            playerStats.ReduceCurrency(selectedTurretToBuild.cost);
+            turrets.Add(turretGO);
+        };
     }
 
     public void BuildUpgradedTurret(Node node, Vector3 offset)
