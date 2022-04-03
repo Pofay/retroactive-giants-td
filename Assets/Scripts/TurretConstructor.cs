@@ -71,8 +71,13 @@ public class TurretConstructor : MonoBehaviour
         var turretPosition = node.transform.position + offset;
         var mountedTurret = node.mountedTurretGO.GetComponent<Turret>();
         InstantiateTurret(mountedTurret.upgradedVersion, node, turretPosition);
-        turrets.Remove(node.mountedTurretGO);
-        Addressables.ReleaseInstance(node.mountedTurretGO);
+        DestroyTurret(node.mountedTurretGO);
+    }
+
+    private void DestroyTurret(GameObject turret)
+    {
+        turrets.Remove(turret);
+        Addressables.ReleaseInstance(turret);
     }
 
     private void SpawnBuildParticles(Vector3 turretPosition)
@@ -84,6 +89,6 @@ public class TurretConstructor : MonoBehaviour
     public void RefundTurret(Turret t)
     {
         playerStats.AddCurrency(t.cost);
-        Destroy(t.gameObject);
+        DestroyTurret(t.gameObject);
     }
 }
