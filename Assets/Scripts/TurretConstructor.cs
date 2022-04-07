@@ -59,24 +59,34 @@ public class TurretConstructor : MonoBehaviour
         DestroyTurret(t.gameObject);
     }
 
-    private void InstantiateTurret(BuildableTurretDefinition turretToBuild, Node node, Vector3 turretPosition)
+    private void InstantiateTurret(BuildableTurretDefinition turretSpecification, Node node, Vector3 turretPosition)
     {
-        var asyncOperationHandle = turretToBuild.turretReference.InstantiateAsync(turretPosition, transform.rotation);
+        var asyncOperationHandle = turretSpecification.turretReference.InstantiateAsync(turretPosition, transform.rotation);
         asyncOperationHandle.Completed += (handle) =>
         {
-            SpawnBuildParticles(turretPosition);
             var turretGO = handle.Result;
             var turret = turretGO.GetComponent<Turret>();
-            turret.cost = turretToBuild.cost;
-            if (turretToBuild.HasUpgradedVariant())
-            {
-                turret.upgradeCost = turretToBuild.UpgradedTurretDefinition.cost;
-                turret.upgradedVersion = turretToBuild.UpgradedTurretDefinition;
-            }
-            node.mountedTurretGO = turretGO;
-            playerStats.ReduceCurrency(turretToBuild.cost);
+            MountTurretOnNode(node, turretGO);
             turrets.Add(turretGO);
+            SpawnBuildParticles(turretPosition);
+            SetCostOfTurretFromDefinition(turretSpecification, turret);
+            playerStats.ReduceCurrency(turretSpecification.cost);
         };
+    }
+
+    private void MountTurretOnNode(Node node, GameObject turretGO)
+    {
+        node.mountedTurretGO = turretGO;
+    }
+
+    private void SetCostOfTurretFromDefinition(BuildableTurretDefinition turretSpecification, Turret turret)
+    {
+        turret.cost = turretSpecification.cost;
+        if (turretSpecification.HasUpgradedVariant())
+        {
+            turret.upgradeCost = turretSpecification.UpgradedTurretDefinition.cost;
+            turret.upgradedVersion = turretSpecification.UpgradedTurretDefinition;
+        }
     }
 
     private void SpawnBuildParticles(Vector3 turretPosition)
