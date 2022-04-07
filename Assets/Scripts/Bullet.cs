@@ -62,7 +62,12 @@ public class Bullet : MonoBehaviour
         ShowVFX();
         DisableMesh();
         DisableLights();
-        Destroy(gameObject, lifetime);
+        this.gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        this.target = null;
     }
 
     private void ShowVFX()
