@@ -15,7 +15,7 @@ public abstract class Turret : MonoBehaviour
     protected TurretTargeting targeting;
     protected Transform target;
 
-    public bool IsStillUpgradable => upgradedVersion != null;
+    public bool IsUpgradeable => upgradedVersion != null;
 
     public virtual void Start()
     {

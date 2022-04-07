@@ -53,8 +53,11 @@ public class TurretConstructor : MonoBehaviour
     {
         var turretPosition = node.transform.position + offset;
         var mountedTurret = node.mountedTurretGO.GetComponent<Turret>();
-        InstantiateTurret(mountedTurret.upgradedVersion, node, turretPosition);
-        DestroyTurret(node.mountedTurretGO);
+        if (mountedTurret.IsUpgradeable)
+        {
+            InstantiateTurret(mountedTurret.upgradedVersion, node, turretPosition);
+            DestroyTurret(node.mountedTurretGO);
+        }
     }
     public void RefundTurret(Turret t)
     {

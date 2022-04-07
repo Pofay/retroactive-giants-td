@@ -72,18 +72,6 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         currentState = state;
     }
 
-    public bool CanBuildTurret()
-    {
-        if (turretConstructor != null)
-        {
-            return turretConstructor.CanBuildTurret();
-        }
-        else
-        {
-            return false;
-        }
-    }
-
     public void ShowTurretPrompt()
     {
         turretPrompt.Show(mountedTurretGO.GetComponent<Turret>());
@@ -99,15 +87,8 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void ReplaceWithUpgradedVersion()
     {
-        var turret = mountedTurretGO.GetComponent<Turret>();
-        if (turret.upgradedVersion != null)
-        {
-            if (turretConstructor.CanBuildUpgradedTurret(turret))
-            {
-                turretConstructor.BuildUpgradedTurret(this, positionOffset);
-                HideTurretPrompt();
-            }
-        }
+        turretConstructor.BuildUpgradedTurret(this, positionOffset);
+        HideTurretPrompt();
     }
 
     public void RefundTurret()
