@@ -6,9 +6,11 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 {
     public Color hoverColor;
     public GameObject mountedTurretGO;
+    public bool IsMounted => mountedTurretGO != null;
 
     private Renderer materialRenderer;
     private TurretConstructor turretConstructor;
+
     private Color startColor;
     private Vector3 positionOffset;
     private INodeState currentState;

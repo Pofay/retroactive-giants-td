@@ -10,7 +10,10 @@ public class EmptyNodeState : INodeState
     {
         context.BuildTurret();
         context.MakeMaterialDefault();
-        context.SetState(new MountedNodeState());
+        if (context.IsMounted)
+        {
+            context.SetState(new MountedNodeState());
+        }
     }
 
     public void OnPointerEnter(Node context)
