@@ -42,8 +42,11 @@ public class TurretConstructor : MonoBehaviour
 
     public void BuildTurret(Node node, Vector3 offset)
     {
-        var turretPosition = node.transform.position + offset;
-        InstantiateTurret(selectedTurretToBuild, node, turretPosition);
+        if (CanBuildTurret())
+        {
+            var turretPosition = node.transform.position + offset;
+            InstantiateTurret(selectedTurretToBuild, node, turretPosition);
+        }
     }
 
     public void BuildUpgradedTurret(Node node, Vector3 offset)
