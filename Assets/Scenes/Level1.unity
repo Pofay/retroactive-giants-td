@@ -8879,7 +8879,7 @@ PrefabInstance:
         type: 3}
       propertyPath: buildableTurrets.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: aac4cd66b15a8a84285a7a3bfe1dd575,
+      objectReference: {fileID: 11400000, guid: 1605019c7fd65054d8745445951cc250,
         type: 2}
     - target: {fileID: 3217403513204276939, guid: 9b713213d3cb9384782098b1c2829258,
         type: 3}
