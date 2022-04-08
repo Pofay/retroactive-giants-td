@@ -17,6 +17,10 @@ public abstract class Turret : MonoBehaviour
 
     public bool IsUpgradeable => upgradedVersion != null;
 
+    public virtual void Awake()
+    {
+    }
+
     public virtual void Start()
     {
         InvokeRepeating("UpdateTarget", 0, 0.2f);
