@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc473d4301fe70f47ba299f1cfc15d14, type: 3}
   m_Name: Wave12
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8301769195490208465, guid: 6c8893e8928eaaf448017b7459642a6f,
-    type: 3}
+  enemyAssetReference:
+    m_AssetGUID: 6c8893e8928eaaf448017b7459642a6f
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   enemiesPerRound: 8
   numberOfRounds: 2
   timeBetweenSpawns: 16
