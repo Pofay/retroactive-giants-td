@@ -6,7 +6,6 @@ public class BallisticTurret : Turret
 {
     [Header("Ballistic Turret Attribute(default)")]
     public float fireRate = 1f;
-    public GameObject bulletPrefab;
     public GameObject projectilePoolGO;
 
     private float fireCountdown = 0f;
@@ -25,10 +24,15 @@ public class BallisticTurret : Turret
         if (target != null && projectilePool.IsReady)
         {
             var bulletInstance = projectilePool.GetProjectile();
-            bulletInstance.transform.position = targeting.FirePointPosition;
-            bulletInstance.transform.rotation = targeting.FirePointRotation;
-            bulletInstance.GetComponent<Bullet>().Seek(target, projectilePool);
+            SetupPositionAndTarget(bulletInstance);
         }
+    }
+
+    private void SetupPositionAndTarget(GameObject bulletInstance)
+    {
+        bulletInstance.transform.position = targeting.FirePointPosition;
+        bulletInstance.transform.rotation = targeting.FirePointRotation;
+        bulletInstance.GetComponent<Bullet>().Seek(target, projectilePool);
     }
 
     protected override void Update()
@@ -51,5 +55,13 @@ public class BallisticTurret : Turret
             fireCountdown = 1f / fireRate;
         }
         fireCountdown -= Time.deltaTime;
+    }
+
+    void OnDestroy()
+    {
+        if (projectilePool != null)
+        {
+            Destroy(projectilePool.gameObject, 3f);
+        }
     }
 }
