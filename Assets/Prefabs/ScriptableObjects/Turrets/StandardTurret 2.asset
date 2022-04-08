@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9effb492849a00841a7011f95d3b08f6, type: 3}
-  m_Name: StandardTurret1
+  m_Name: StandardTurret 2
   m_EditorClassIdentifier: 
   turretReference:
-    m_AssetGUID: 42d9c37ec5ce7474ba89dda3d4765c8a
+    m_AssetGUID: 84f7413cb4935874bb620201b03b790c
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  turretName: Standard Turret 1
-  cost: 100
-  upgradedDefinition: {fileID: 11400000, guid: d53f21aa26ade0145b4a51a335b61924, type: 2}
+  turretName: Standard Turret 2
+  cost: 90
+  upgradedDefinition: {fileID: 0}
