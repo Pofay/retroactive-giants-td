@@ -15,15 +15,17 @@ public class Bullet : MonoBehaviour
 
     private Transform target;
     private IImpactEffect[] impactEffects;
+    private ProjectilePool pool;
 
     void Awake()
     {
         impactEffects = GetComponents<IImpactEffect>();
     }
 
-    public void Seek(Transform target)
+    public void Seek(Transform target, ProjectilePool pool)
     {
         this.target = target;
+        this.pool = pool;
         StartCoroutine(SpawnAndSeek());
     }
 
@@ -62,12 +64,24 @@ public class Bullet : MonoBehaviour
         ShowVFX();
         DisableMesh();
         DisableLights();
-        this.gameObject.SetActive(false);
+        this.pool.Return(this);
     }
 
     private void OnDisable()
     {
+        ResetState();
+    }
+
+    private void ResetState()
+    {
         this.target = null;
+        GetComponentInChildren<MeshRenderer>().enabled = true;
+
+        var light = GetComponentInChildren<Light>();
+        if (light != null)
+        {
+            light.enabled = true;
+        }
     }
 
     private void ShowVFX()
