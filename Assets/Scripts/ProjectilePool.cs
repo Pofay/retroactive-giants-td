@@ -40,7 +40,6 @@ public class ProjectilePool : MonoBehaviour
             obj => obj.SetActive(true),
             obj => obj.SetActive(false),
             obj => Destroy(obj), false, 3, 5);
-
     }
 
     public GameObject GetProjectile()
@@ -57,5 +56,11 @@ public class ProjectilePool : MonoBehaviour
     {
         var bulletGO = bullet.gameObject;
         projectilePool.Release(bulletGO);
+    }
+
+    private void OnDestroy()
+    {
+        projectilePool.Dispose();
+        Addressables.Release(loadHandle);
     }
 }
