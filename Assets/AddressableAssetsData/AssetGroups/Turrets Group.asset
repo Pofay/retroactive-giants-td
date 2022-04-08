@@ -33,6 +33,14 @@ MonoBehaviour:
     m_Address: Turret/Standard Turret_Upgraded_1.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 17b38964b69c7bb4b985ebacc6be091d
+    m_Address: Turret/Cryo cannon.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 83477faea48bf1c438c7185c9ac7c39d
+    m_Address: Turret/Flamethrower.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: addbd9eb5af193e46a60a3e9f898c577, type: 2}
   m_SchemaSet:
