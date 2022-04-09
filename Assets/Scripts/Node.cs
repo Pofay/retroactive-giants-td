@@ -7,6 +7,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     public Color hoverColor;
     public GameObject mountedTurretGO;
     public bool IsMounted => mountedTurretGO != null;
+    public bool CanBuildTurret => turretConstructor.CanBuildTurret();
 
     private Renderer materialRenderer;
     private TurretConstructor turretConstructor;

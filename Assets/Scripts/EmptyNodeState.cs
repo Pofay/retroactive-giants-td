@@ -8,7 +8,7 @@ public class EmptyNodeState : INodeState
 {
     public void OnPointerDown(Node context)
     {
-        if (!context.IsMounted)
+        if (!context.IsMounted && context.CanBuildTurret)
         {
             context.BuildTurret();
             context.MakeMaterialDefault();
