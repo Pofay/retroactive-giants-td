@@ -15,12 +15,16 @@ public class Bullet : MonoBehaviour
 
     private Transform target;
     private IImpactEffect[] impactEffects;
+    private MeshRenderer meshRenderer;
+    private Light possiblyEmptyLight;
     private ProjectilePool pool;
     private bool isSeeking = false;
 
     void Awake()
     {
         impactEffects = GetComponents<IImpactEffect>();
+        meshRenderer = GetComponentInChildren<MeshRenderer>();
+        possiblyEmptyLight = GetComponentInChildren<Light>();
     }
 
     public void Seek(Transform target, ProjectilePool pool)
@@ -82,12 +86,10 @@ public class Bullet : MonoBehaviour
     {
         this.target = null;
         isSeeking = false;
-        GetComponentInChildren<MeshRenderer>().enabled = true;
-
-        var light = GetComponentInChildren<Light>();
-        if (light != null)
+        this.meshRenderer.enabled = true;
+        if (possiblyEmptyLight != null)
         {
-            light.enabled = true;
+            possiblyEmptyLight.enabled = true;
         }
     }
 
@@ -100,15 +102,14 @@ public class Bullet : MonoBehaviour
 
     private void DisableMesh()
     {
-        GetComponentInChildren<MeshRenderer>().enabled = false;
+        this.meshRenderer.enabled = false;
     }
 
     private void DisableLights()
     {
-        var light = GetComponentInChildren<Light>();
-        if (light != null)
+        if (possiblyEmptyLight != null)
         {
-            light.enabled = false;
+            possiblyEmptyLight.enabled = false;
         }
     }
 
