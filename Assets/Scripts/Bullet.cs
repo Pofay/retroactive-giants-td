@@ -16,6 +16,7 @@ public class Bullet : MonoBehaviour
     private Transform target;
     private IImpactEffect[] impactEffects;
     private ProjectilePool pool;
+    private bool isSeeking = false;
 
     void Awake()
     {
@@ -26,11 +27,15 @@ public class Bullet : MonoBehaviour
     {
         this.target = target;
         this.pool = pool;
-        StartCoroutine(SpawnAndSeek());
+        if (!isSeeking)
+        {
+            StartCoroutine(SpawnAndSeek());
+        }
     }
 
     private IEnumerator SpawnAndSeek()
     {
+        isSeeking = true;
         var direction = target.position - transform.position;
         var distanceThisFrame = speed * Time.deltaTime;
 
@@ -43,6 +48,7 @@ public class Bullet : MonoBehaviour
         }
         HitTarget();
         yield return new WaitForEndOfFrame();
+        isSeeking = false;
     }
 
     private void MoveToTarget(Vector3 direction, float distanceThisFrame)
@@ -75,6 +81,7 @@ public class Bullet : MonoBehaviour
     private void ResetState()
     {
         this.target = null;
+        isSeeking = false;
         GetComponentInChildren<MeshRenderer>().enabled = true;
 
         var light = GetComponentInChildren<Light>();
