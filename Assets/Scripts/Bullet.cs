@@ -9,7 +9,6 @@ public class Bullet : MonoBehaviour
     public GameObject impactVFX;
 
     [Header("Game Attributes")]
-    public float explosiveRadius = 0f;
     public float speed = 70f;
     public float lifetime = 1f;
 
@@ -63,15 +62,7 @@ public class Bullet : MonoBehaviour
 
     private void HitTarget()
     {
-        if (explosiveRadius > 0f)
-        {
-            Explode();
-        }
-        else
-        {
-            ApplyImpactEffects(target.gameObject);
-        }
-        ShowVFX();
+        ApplyImpactEffects(target.gameObject);
         DisableMesh();
         DisableLights();
         this.pool.Return(this);
@@ -93,13 +84,6 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    private void ShowVFX()
-    {
-        var effect = Instantiate(impactVFX, transform.position, transform.rotation);
-        var duration = effect.GetComponent<ParticleSystem>().main.duration;
-        Destroy(effect, duration);
-    }
-
     private void DisableMesh()
     {
         this.meshRenderer.enabled = false;
@@ -113,29 +97,11 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    void Explode()
-    {
-        var colliders = Physics.OverlapSphere(transform.position, explosiveRadius);
-        foreach (var collider in colliders)
-        {
-            if (collider.CompareTag("Enemy"))
-            {
-                ApplyImpactEffects(collider.gameObject);
-            }
-        }
-    }
-
     void ApplyImpactEffects(GameObject target)
     {
         foreach (var impactEffect in impactEffects)
         {
             impactEffect.ApplyEffect(target);
         }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, explosiveRadius);
     }
 }
