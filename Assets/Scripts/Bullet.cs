@@ -5,25 +5,18 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [Header("Unity Setup Settings")]
-    public GameObject impactVFX;
-
     [Header("Game Attributes")]
     public float speed = 70f;
     public float lifetime = 1f;
 
     private Transform target;
     private IImpactEffect[] impactEffects;
-    private MeshRenderer meshRenderer;
-    private Light possiblyEmptyLight;
     private ProjectilePool pool;
     private bool isSeeking = false;
 
-    void Awake()
+    void Start()
     {
         impactEffects = GetComponents<IImpactEffect>();
-        meshRenderer = GetComponentInChildren<MeshRenderer>();
-        possiblyEmptyLight = GetComponentInChildren<Light>();
     }
 
     public void Seek(Transform target, ProjectilePool pool)
@@ -63,8 +56,6 @@ public class Bullet : MonoBehaviour
     private void HitTarget()
     {
         ApplyImpactEffects(target.gameObject);
-        DisableMesh();
-        DisableLights();
         this.pool.Return(this);
     }
 
@@ -77,24 +68,6 @@ public class Bullet : MonoBehaviour
     {
         this.target = null;
         isSeeking = false;
-        this.meshRenderer.enabled = true;
-        if (possiblyEmptyLight != null)
-        {
-            possiblyEmptyLight.enabled = true;
-        }
-    }
-
-    private void DisableMesh()
-    {
-        this.meshRenderer.enabled = false;
-    }
-
-    private void DisableLights()
-    {
-        if (possiblyEmptyLight != null)
-        {
-            possiblyEmptyLight.enabled = false;
-        }
     }
 
     void ApplyImpactEffects(GameObject target)
