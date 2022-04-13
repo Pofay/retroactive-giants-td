@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -6685951666824481068}
   - component: {fileID: -3820861559779174241}
   - component: {fileID: -2149302618055692858}
+  - component: {fileID: -4252689843457613587}
   m_Layer: 0
   m_Name: Cryo_Payload
   m_TagString: Untagged
@@ -33,6 +34,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -18.648296, y: 1.84, z: 45.44971}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -56,10 +58,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -84,6 +88,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &2007155819115064418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +135,8 @@ MonoBehaviour:
   damage: 30
   modifiers:
   - {fileID: 11400000, guid: fd58add10dc780841b6e44e56faadcc8, type: 2}
+  isAOE: 1
+  explosiveRadius: 5
 --- !u!114 &-3820861559779174241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,3 +246,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4252689843457613587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219067940391051583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63fd2c6c034fde469207d80a9df1a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impactVFX: {fileID: 1626357405638025137, guid: 1133dd3bc89692b4e95f776f9a397944,
+    type: 3}
