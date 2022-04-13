@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileAssetRef:
-    m_AssetGUID: f9a65346ae1a26140892fc97a8a2458f
+    m_AssetGUID: 81d34a64438f72449bd66c24aad79eb8
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
