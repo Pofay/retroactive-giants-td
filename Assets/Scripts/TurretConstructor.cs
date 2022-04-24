@@ -53,7 +53,7 @@ public class TurretConstructor : MonoBehaviour
     {
         var turretPosition = node.transform.position + offset;
         var mountedTurret = node.mountedTurretGO.GetComponent<Turret>();
-        if (mountedTurret.IsUpgradeable)
+        if (mountedTurret.IsUpgradeable && playerStats.HasEnoughCurrencyForCost(mountedTurret.upgradeCost))
         {
             InstantiateTurret(mountedTurret.upgradedVersion, node, turretPosition);
             DestroyTurret(node.mountedTurretGO);
