@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class VFXImpactEffect : MonoBehaviour, IImpactEffect
 {
-    [SerializeField] private GameObject impactVFX;
+    public VFXEventChannel eventChannel;
+
+    [SerializeField] private GameObject prefab;
 
     public void ApplyEffect(GameObject target)
     {
@@ -13,9 +15,7 @@ public class VFXImpactEffect : MonoBehaviour, IImpactEffect
 
     private void ShowVFX()
     {
-        var effect = Instantiate(impactVFX, transform.position, transform.rotation);
-        var duration = effect.GetComponent<ParticleSystem>().main.duration;
-        Destroy(effect, duration);
+        eventChannel.RaiseEvent(transform.position, transform.rotation, prefab);
     }
 
 }
