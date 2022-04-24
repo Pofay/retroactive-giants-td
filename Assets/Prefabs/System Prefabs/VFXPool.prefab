@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1728023674066911374}
   - component: {fileID: 1728023674066911375}
+  - component: {fileID: 52517664}
+  - component: {fileID: 52517663}
+  - component: {fileID: 52517662}
   m_Layer: 0
   m_Name: VFXPool
   m_TagString: Untagged
@@ -45,3 +48,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventChannel: {fileID: 11400000, guid: dd923a5addf66b24482cec34cb026759, type: 2}
+--- !u!114 &52517664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728023674066911368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee1c85a7571f954ba8e9a2d6106dc5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExplosionName: Cryo
+  vfxAssetRef:
+    m_AssetGUID: f68ea98c4d28a0d44a95c611e0aa7ba8
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+--- !u!114 &52517663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728023674066911368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee1c85a7571f954ba8e9a2d6106dc5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExplosionName: Bullet
+  vfxAssetRef:
+    m_AssetGUID: eb72f622a3d86de4e8df43d0b46c0419
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+--- !u!114 &52517662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728023674066911368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee1c85a7571f954ba8e9a2d6106dc5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExplosionName: Missile
+  vfxAssetRef:
+    m_AssetGUID: 17d7d39301e3fd5489ac22ce66e10cde
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

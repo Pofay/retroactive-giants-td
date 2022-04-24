@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventChannel: {fileID: 11400000, guid: dd923a5addf66b24482cec34cb026759, type: 2}
-  prefab: {fileID: 4924922767981232740, guid: 17d7d39301e3fd5489ac22ce66e10cde, type: 3}
+  explosionName: Missile
 --- !u!1001 &7695530334005365085
 PrefabInstance:
   m_ObjectHideFlags: 0
