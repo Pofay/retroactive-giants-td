@@ -70,9 +70,7 @@ MonoBehaviour:
   upgradeCost: 0
   upgradedVersion: {fileID: 0}
   range: 20
-  fireRate: 1
-  bulletPrefab: {fileID: 219067940391051583, guid: f9a65346ae1a26140892fc97a8a2458f,
-    type: 3}
+  fireRate: 2
   projectilePoolGO: {fileID: 1034052330009192614, guid: b96f4e5792639c645a79aebeef563037,
     type: 3}
 --- !u!1 &4177915151405840613
