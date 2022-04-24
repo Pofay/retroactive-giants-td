@@ -189,8 +189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a63fd2c6c034fde469207d80a9df1a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactVFX: {fileID: 4924922767981232740, guid: 17d7d39301e3fd5489ac22ce66e10cde,
-    type: 3}
+  eventChannel: {fileID: 11400000, guid: dd923a5addf66b24482cec34cb026759, type: 2}
+  prefab: {fileID: 4924922767981232740, guid: 17d7d39301e3fd5489ac22ce66e10cde, type: 3}
 --- !u!1001 &7695530334005365085
 PrefabInstance:
   m_ObjectHideFlags: 0
