@@ -6,10 +6,10 @@ using UnityEngine.Events;
 [CreateAssetMenu(menuName = "System/Event Channels/VFX", order = 1)]
 public class VFXEventChannel : ScriptableObject
 {
-    public UnityEvent<Vector3, Quaternion, GameObject> OnEventRaised;
+    public UnityEvent<Vector3, Quaternion, string> OnEventRaised;
 
-    public void RaiseEvent(Vector3 position, Quaternion rotation, GameObject prefab)
+    public void RaiseEvent(Vector3 position, Quaternion rotation, string explosionName)
     {
-        OnEventRaised?.Invoke(position, rotation, prefab);
+        OnEventRaised?.Invoke(position, rotation, explosionName);
     }
 }

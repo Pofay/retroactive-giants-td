@@ -6,7 +6,7 @@ public class VFXImpactEffect : MonoBehaviour, IImpactEffect
 {
     public VFXEventChannel eventChannel;
 
-    [SerializeField] private GameObject prefab;
+    [SerializeField] private string explosionName;
 
     public void ApplyEffect(GameObject target)
     {
@@ -15,7 +15,8 @@ public class VFXImpactEffect : MonoBehaviour, IImpactEffect
 
     private void ShowVFX()
     {
-        eventChannel.RaiseEvent(transform.position, transform.rotation, prefab);
+        Debug.Log("Called");
+        eventChannel.RaiseEvent(transform.position, transform.rotation, explosionName);
     }
 
 }
