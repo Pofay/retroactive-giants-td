@@ -101,6 +101,14 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/ScriptableObjects/Turrets/Flamethrower.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 25a60c64ca09c9441882bd6b57358ba3
+    m_Address: Assets/Prefabs/Turret/Cryo Cannon/Cryoball.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b50a284d8d6deb04889351085ac3c59d
+    m_Address: Assets/Prefabs/Enemy/Ice_Golem_1/Prefab/Ice_Golem_1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: addbd9eb5af193e46a60a3e9f898c577, type: 2}
   m_SchemaSet:
