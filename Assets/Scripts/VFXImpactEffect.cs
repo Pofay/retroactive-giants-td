@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class VFXImpactEffect : MonoBehaviour, IImpactEffect
 {
-    public VFXEventChannel eventChannel;
-
+    [SerializeField] private VFXEventChannel eventChannel;
     [SerializeField] private string explosionName;
+
+    private void Start()
+    {
+        eventChannel = VFXEventChannel.instance;
+    }
 
     public void ApplyEffect(GameObject target)
     {
@@ -15,8 +19,6 @@ public class VFXImpactEffect : MonoBehaviour, IImpactEffect
 
     private void ShowVFX()
     {
-        Debug.Log("Called");
         eventChannel.RaiseEvent(transform.position, transform.rotation, explosionName);
     }
-
 }

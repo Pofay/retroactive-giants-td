@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 public class VFXSpawner : MonoBehaviour
 {
-    public VFXEventChannel eventChannel;
+    [SerializeField] private VFXEventChannel eventChannel;
 
     private Dictionary<string, VFXPool> pools = new Dictionary<string, VFXPool>();
 
@@ -24,27 +24,25 @@ public class VFXSpawner : MonoBehaviour
     {
         if (eventChannel == null)
         {
-            return;
+            eventChannel = VFXEventChannel.instance;
         }
         eventChannel.OnEventRaised.AddListener(SpawnVFX);
     }
 
     private void OnDisable()
     {
-        if (eventChannel == null)
-        {
-            return;
-        }
         eventChannel.OnEventRaised.RemoveListener(SpawnVFX);
     }
 
     private void OnDestroy()
     {
         pools.Clear();
+        eventChannel.OnEventRaised.RemoveListener(SpawnVFX);
     }
 
     private void SpawnVFX(Vector3 position, Quaternion rotation, string explosionName)
     {
+        Debug.Log("Spawning VFX");
         if (pools.ContainsKey(explosionName))
         {
             var vfxPool = pools[explosionName];

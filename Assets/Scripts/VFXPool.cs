@@ -20,13 +20,11 @@ public class VFXPool : MonoBehaviour
     {
         IsReady = false;
         loadHandle = vfxAssetRef.LoadAssetAsync<GameObject>();
-        if (!loadHandle.IsDone)
-        {
-            yield return loadHandle;
-        }
+        yield return loadHandle;
 
         if (loadHandle.Status == AsyncOperationStatus.Succeeded)
         {
+            Debug.Log("VFX Pool: Succeeded in loading");
             CreateObjectPool(loadHandle.Result);
             IsReady = true;
         }
