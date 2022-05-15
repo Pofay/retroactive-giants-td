@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Core Content
+  m_EditorClassIdentifier: 
+  m_GroupName: Core Content
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9bfc3c046fe21a74bb113948056f0fed
+  m_SerializeEntries:
+  - m_GUID: f68ea98c4d28a0d44a95c611e0aa7ba8
+    m_Address: Assets/Prefabs/Turret/Cryo Cannon/CryoExplosion.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 17b38964b69c7bb4b985ebacc6be091d
+    m_Address: Assets/Prefabs/Turret/Cryo Cannon/Cryo cannon.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 83477faea48bf1c438c7185c9ac7c39d
+    m_Address: Assets/Prefabs/Turret/Flamethrower Turret/Flamethrower.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5309bdacff92d56468edbcef0f12deb6
+    m_Address: Assets/Prefabs/Turret/Laser Turret/Laser Turret.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 83786ba32b6173f45a39170bc9f3ef37
+    m_Address: Assets/Prefabs/Turret/Missile Turret/Missile.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ab6bb2c7a8ff34b42931b13235156a70
+    m_Address: Assets/Prefabs/Turret/Missile Turret/Missile Launcher.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: eb72f622a3d86de4e8df43d0b46c0419
+    m_Address: Assets/Prefabs/Turret/Standard Turret/BulletExplosion.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 81d34a64438f72449bd66c24aad79eb8
+    m_Address: Assets/Prefabs/Turret/Standard Turret/Upgraded_1/Bullet - Upgraded.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 84f7413cb4935874bb620201b03b790c
+    m_Address: Assets/Prefabs/Turret/Standard Turret/Upgraded_1/Standard Turret_Upgraded_1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 126526f77a274764990560a4ac4408a7
+    m_Address: Assets/Prefabs/Turret/Standard Turret/Basic/Bullet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 42d9c37ec5ce7474ba89dda3d4765c8a
+    m_Address: Assets/Prefabs/Turret/Standard Turret/Basic/Standard Turret.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 17d7d39301e3fd5489ac22ce66e10cde
+    m_Address: Assets/Prefabs/Turret/Missile Turret/MissleExplosion.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c5ef9e13e6de8f34d8cc50bd51cd0ed7
+    m_Address: Assets/Prefabs/Enemy/Beholder/Prefab/Beholder.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3f020fac279f05d4f9af2034d0d553b1
+    m_Address: Assets/Prefabs/Enemy/Fire_Golem_1/Prefab/Fire_Golem_1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e11facf7541853d4680dcb136278da84
+    m_Address: Assets/Prefabs/Enemy/Fledling_Golem_1/Prefab/Fledling_golem_1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6c8893e8928eaaf448017b7459642a6f
+    m_Address: Assets/Prefabs/Enemy/Overcharged_Earth_Golem/Prefab/Overcharged_Golem_Earth.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3c54d5adfd3e1e3419dda4c371b7ccee
+    m_Address: Assets/Prefabs/Enemy/Radioactive_earth_golem_1/Prefab/Earth_Golem_1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1ef475ebfb44d964bb2037eaa9db1cb2
+    m_Address: Assets/Polygon Arsenal/Prefabs/Combat/Explosions/Sci-Fi/Rocket/RocketExplosionRed.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cf30c2341110d7f46aaa4dd8097403ae
+    m_Address: Assets/Polygon Arsenal/Prefabs/Combat/Explosions/Sci-Fi/Bullet/BulletExplosionRed.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8552d32b513b77347afa9c6a68fcc6ec
+    m_Address: Assets/Polygon Arsenal/Prefabs/Combat/Explosions/Magic/Ice/IceBigExplosion.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d53f21aa26ade0145b4a51a335b61924
+    m_Address: Assets/Prefabs/ScriptableObjects/Turrets/Flamethrower.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: addbd9eb5af193e46a60a3e9f898c577, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 58a3e297bb405c54ebbc3b4703472796, type: 2}
+    - {fileID: 11400000, guid: 13ce3251d1dda8841a2c4cef943c347c, type: 2}
