@@ -13,6 +13,7 @@ public class VFXSpawner : MonoBehaviour
 
     private void Start()
     {
+        SetupEventChannel();
         var vfxPools = GetComponents<VFXPool>();
         foreach (var pool in vfxPools)
         {
@@ -20,7 +21,7 @@ public class VFXSpawner : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    private void SetupEventChannel()
     {
         if (eventChannel == null)
         {
