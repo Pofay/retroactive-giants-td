@@ -24,7 +24,6 @@ public class VFXPool : MonoBehaviour
 
         if (loadHandle.Status == AsyncOperationStatus.Succeeded)
         {
-            Debug.Log("VFX Pool: Succeeded in loading");
             CreateObjectPool(loadHandle.Result);
             IsReady = true;
         }

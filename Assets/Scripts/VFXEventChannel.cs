@@ -23,7 +23,6 @@ public class VFXEventChannel : MonoBehaviour
 
     public void RaiseEvent(Vector3 position, Quaternion rotation, string explosionName)
     {
-        Debug.Log("Raised Event: VFX Spawn");
         OnEventRaised.Invoke(position, rotation, explosionName);
     }
 }

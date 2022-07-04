@@ -43,7 +43,6 @@ public class VFXSpawner : MonoBehaviour
 
     private void SpawnVFX(Vector3 position, Quaternion rotation, string explosionName)
     {
-        Debug.Log("Spawning VFX");
         if (pools.ContainsKey(explosionName))
         {
             var vfxPool = pools[explosionName];
