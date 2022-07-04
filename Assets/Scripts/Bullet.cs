@@ -8,11 +8,17 @@ public class Bullet : MonoBehaviour
     [Header("Game Attributes")]
     public float speed = 70f;
     public float lifetime = 1f;
+    public string initialSoundName;
 
     private Transform target;
     private IImpactEffect[] impactEffects;
     private ProjectilePool pool;
     private bool isSeeking = false;
+
+    private void OnEnable()
+    {
+        SoundPlayer.instance.PlayStartingSFX(initialSoundName);
+    }
 
     void Start()
     {

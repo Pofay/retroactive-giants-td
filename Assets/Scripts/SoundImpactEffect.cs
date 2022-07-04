@@ -8,9 +8,8 @@ public class SoundImpactEffect : MonoBehaviour, IImpactEffect
     [SerializeField]
     private string impactSFXName;
     
-
     public void ApplyEffect(GameObject target)
     {
-        ImpactSoundPlayer.instance.Play(impactSFXName);
+        SoundPlayer.instance.PlayImpactSFX(impactSFXName);
     }
 }
