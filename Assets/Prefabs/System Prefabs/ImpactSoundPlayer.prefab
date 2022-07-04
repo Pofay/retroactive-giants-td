@@ -65,3 +65,24 @@ MonoBehaviour:
     volume: 0.1
     pitch: 1
     source: {fileID: 0}
+  startingSFX:
+  - clip: {fileID: 8300000, guid: c9078c3724d980347b7b29c5e846c2bb, type: 3}
+    name: Standard Turret
+    volume: 0.05
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 753f1d1dacb52274fb9df7a142f8b4a9, type: 3}
+    name: Cryo Cannon
+    volume: 0.1
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 9acc11f5bd28e284fb0fb6dde51df504, type: 3}
+    name: Missile Launcher
+    volume: 0.1
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: c9078c3724d980347b7b29c5e846c2bb, type: 3}
+    name: Standard Turret Upgraded
+    volume: 0.05
+    pitch: 1
+    source: {fileID: 0}
